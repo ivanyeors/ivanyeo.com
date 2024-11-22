@@ -1,13 +1,29 @@
 :root {
+    /* Tokens - Color scales */
     --white: #ffffff;
     --black: #000000;
 
-    --font-primary: 'Arial', sans-serif;
-    --font-size-base: 16px;
-
+    /* Tokens - Spacing */ 
     --spacing-base: 1rem;
-    
+
+    /* Tokens - Radius */ 
     --border-radius: 16px;
+}
+
+/* Tokens - Font */  
+/* <weight>: Use a value from 100 to 900*/
+.lexend-Header {
+    font-family: "Lexend", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: bold;
+}
+
+.lexend-Button {
+    font-family: "Lexend", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
 }
 
 /* Reset CSS */
@@ -21,21 +37,22 @@
 
 
 /* Buttons */
-.btns {
-    display:flex;
-    column-gap: 2rem;
-    background-color: var(--white);
-}
-
 .btn {
     background-color: var(--black);
     color: var(--white);
     cursor: pointer;
+    border-radius: var(--border-radius);
     transition: scale 0.25s ease-in, opacity 0.25s ease-in, filter 0.25s ease-in;
 }
-    
+
 .btn:hover {
     transform: scale(1.2); 
+}
+
+.btns {
+    display:flex;
+    column-gap: 2rem;
+    background-color: var(--white);
 }
 
 .btns:has(.btn:hover) .btn:not(:hover) {
@@ -43,3 +60,6 @@
     opacity: 0.8;
     filter: blur(22px);
 }
+
+
+   
