@@ -8,18 +8,28 @@
 
     /* Tokens - Radius */ 
     --border-radius: 16px;
+
+    --background-color:var(--black)
 }
 
 /* Tokens - Font */  
 /* <weight>: Use a value from 100 to 900*/
-.lexend-Header {
+
+.lexend-header {
     font-family: "Lexend", sans-serif;
     font-optical-sizing: auto;
     font-weight: 700;
     font-style: bold;
 }
 
-.lexend-Button {
+.lexend-body {
+    font-family: "Lexend", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.lexend-button {
     font-family: "Lexend", sans-serif;
     font-optical-sizing: auto;
     font-weight: 300;
@@ -33,26 +43,35 @@
     box-sizing: border-box;
 }
 
-
+/* Body */
+body {
+    padding: 4rem;
+    background-color: var(--background-color);
+    color: var(--white);
+}
 
 
 /* Buttons */
 .btn {
-    background-color: var(--black);
-    color: var(--white);
+    background-color: var(--white);
+    color: var(--black);
     cursor: pointer;
     border-radius: var(--border-radius);
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 12px;
+    padding-bottom: 12px;
     transition: scale 0.25s ease-in, opacity 0.25s ease-in, filter 0.25s ease-in;
 }
 
 .btn:hover {
-    transform: scale(1.2); 
+    transform: scale(1.1); 
 }
 
 .btns {
     display:flex;
-    column-gap: 2rem;
-    background-color: var(--white);
+    column-gap: 1rem;
+    background-color: var(--black);
 }
 
 .btns:has(.btn:hover) .btn:not(:hover) {
