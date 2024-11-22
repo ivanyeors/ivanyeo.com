@@ -1,26 +1,27 @@
+:root {
+    --white: #ffffff;
+    --black: #000000;
+}
+
 .btns {
     display:flex;
     column-gap: 2rem;
-    background-color: white;
+    background-color: var(--white);
 }
 
 .btn {
-    background-color: black;
-    color: var(white);
+    background-color: var(--black);
+    color: var(--white);
     cursor: pointer;
-    transition: 
-        scale 0.25s ease-in;
-        opacity: 0.25s ease-in;
-        filter: 0.25s ease-in;
-
-    & :hover {
-        scale: 1.2;
-    }
-
+    transition: scale 0.25s ease-in, opacity 0.25s ease-in, filter 0.25s ease-in;
+}
+    
+.btn:hover {
+    transform: scale(1.2); 
 }
 
 .btns:has(.btn:hover) .btn:not(:hover) {
-    scale: 0.9;
+    transform: scale(1.2);
     opacity: 0.8;
     filter: blur(22px);
 }
