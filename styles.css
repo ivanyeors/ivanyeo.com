@@ -43,11 +43,12 @@
 /* Body */
 body {
     font-family: var(--font-family);
-    display: grid;
-    padding: 4rem;
+    display: flex;
+    flex-direction: column;
     gap: 4rem;
+    padding: 2rem;
     background-color: var(--bg-color);
-    overflow: hidden;
+    overflow: auto;
     color: white;
 }
 
@@ -109,18 +110,20 @@ h1, h2, h3, p {
     50% {background-position: 400% 0;}
     100% {background-position: 0 0;}
 }
-
 /* Button-hover */
 .btn:hover::before {
     opacity: 1;
 }
-
 .btn:active:after {
     background: transparent;
 }
-
 .btn:active {
     color: var(--white900);
     font-weight: var(--font-weight-bold);
     background: #313131;
+}
+
+.btns {
+    display: flex;
+    gap: 1rem;
 }
