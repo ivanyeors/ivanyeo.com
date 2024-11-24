@@ -5,7 +5,10 @@
     --black600: #262626;
 
     /* Tokens - Spacing */ 
-    --spacing-base: 1rem;
+    --spacing-2xs: 0.5rem;
+    --spacing-xs: 0.875rem;
+    --spacing-s: 1rem;
+    --spacing-m: 1.5rem;
 
     /* Tokens - Radius */ 
     --radius-xs: 8px;
@@ -60,7 +63,7 @@ h1, h2, h3, p {
 
 /* Style the logo container */
 .logo-container {
-    margin-top: 1rem; /* Adjust as needed */
+    margin-top: var(--spacing-2xs); /* Adjust as needed */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -80,6 +83,7 @@ h1, h2, h3, p {
     font-family: var(--font-family);
     font-size: var(--button-text);
     font-weight: var(--font-weight-light);
+    text-decoration: none;
     padding: 1rem 2rem;
     border: none;
     outline: none;
@@ -111,7 +115,7 @@ h1, h2, h3, p {
     position: absolute;
     top: -1px;
     left: -1px;
-    background-size: 600%;
+    background-size: 300%;
     z-index: -1;
     width: calc(100% + 4px);
     height: calc(100% + 4px);
@@ -143,6 +147,6 @@ h1, h2, h3, p {
 
 .btns {
     display: flex;
-    gap: 1rem;
-    padding: 2rem;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-2xs);
 }
