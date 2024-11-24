@@ -69,8 +69,9 @@ h1, h2, h3, p {
 
 /* Adjust the logo size */
 .logo {
-    width: 250px; /* Adjust width */
+    width: 350px; /* Adjust width */
     height: auto; /* Maintain aspect ratio */
+    max-width: 100%; /* Prevent overflow on small screens */
 }
 
 
