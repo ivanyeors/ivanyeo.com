@@ -1,8 +1,24 @@
 :root {
     /* Tokens - Color scales */
-    --white900: #f5f5f5;
-    --black900: #141414;
-    --black600: #262626;
+    --white: #ffffff;
+    --stone25: #FAFBFC;
+    --stone50: #EBEDF0;
+    --stone100: #DADEE3;
+    --stone150: #C9CFD6;
+    --stone200: #B9C0C9;
+    --stone250: #A9B0BA;
+    --stone300: #9AA2AD;
+    --stone400: #8C94A1;
+    --stone500: #7E8794;
+    --stone600: #717985;
+    --stone650: #656C75;
+    --stone700: #585E66;
+    --stone750: #4B5057;
+    --stone800: #3E4247;
+    --stone850: #313438;
+    --stone900: #242629;
+    --stone950: #17191A;
+    --black: #000000;
 
     /* Tokens - Spacing */ 
     --spacing-2xs: 0.5rem;
@@ -15,8 +31,6 @@
     --radius-s: 16px;
     --radius-m: 32px;
     --radius-l: 64px;
-
-    --bg-color: var(--black900);
 
     /* Typography */
     /* <weight>: Use a value from 100 to 900*/
@@ -33,7 +47,12 @@
     --font-weight-bold: 700;
 
      /* sementics tokens */
-    --button-text: var(--font-size-m);
+    --button-text-size: var(--font-size-m);
+
+    --bg-color: var(--stone950);
+    --surface-color: var(--stone850);
+    --border-color: var(--stone700);
+
 }
 
 /* Reset CSS */
@@ -52,13 +71,21 @@ body {
     background-color: var(--bg-color);
     overflow: auto;
     height: 100%;
-    color: white;
+    color: var(--white);
 }
 
-h1, h2, h3, p {
+h1, h2, h3 {
     font-family: var(--font-family);
     font-weight: var(--font-weight-light);
-    padding: 2rem;
+}
+
+p {
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-light);
+}
+
+.space-m {
+    padding: var(--spacing-m);
 }
 
 /* Style the logo container */
@@ -72,7 +99,7 @@ h1, h2, h3, p {
 
 /* Adjust the logo size */
 .logo {
-    width: 350px; /* Adjust width */
+    width: 250px; /* Adjust width */
     height: auto; /* Maintain aspect ratio */
     max-width: 100%; /* Prevent overflow on small screens */
 }
@@ -81,13 +108,14 @@ h1, h2, h3, p {
 /* Buttons */
 .btn {
     font-family: var(--font-family);
-    font-size: var(--button-text);
+    font-size: var(--button-text-size);
     font-weight: var(--font-weight-light);
     text-decoration: none;
     padding: 1rem 2rem;
     border: none;
     outline: none;
-    color: var(--white900);
+    background-color: var(--stone850);
+    color: var(--white);
     cursor: pointer;
     position: relative;
     z-index: 0;
@@ -99,10 +127,13 @@ h1, h2, h3, p {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: var(--black600);
+    background-color: var(--stone850);
+    mix-blend-mode: lighten;
     left: 0;
     top: 0;
     border-radius: var(--radius-s);
+    border: 1px solid var(--border-color); /* Border */
+    
 }
 /* Button-glow */
 .btn::before {
@@ -140,13 +171,56 @@ h1, h2, h3, p {
     background: transparent;
 }
 .btn:active {
-    color: var(--white900);
+    color: var(--white);
     font-weight: var(--font-weight-bold);
-    background: #313131;
+    background: var(--surface-color);
 }
-
 .btns {
     display: flex;
     gap: var(--spacing-xs);
     padding: var(--spacing-2xs);
 }
+
+
+/* Grid container */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Responsive columns */
+    gap: var(--spacing-xs); /* Space between cards */
+    padding: var(--spacing-m); /* Space around the grid */
+  }
+  
+  /* Card styling */
+  .card {
+    aspect-ratio: 1 / 1; /* Maintains a 1:1 aspect ratio for squares */
+    border: 1px solid var(--border-color); /* Border */
+    border-radius: var(--radius-s); /* Rounded corners */
+    padding: var(--spacing-m); /* Space inside each card */
+    background-color: var(--surface-color); /* Card background */
+    text-decoration: none; /* Remove underline from links */
+    color: var(--white); /* Default text color */
+    display: flex; /* Use Flexbox */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: flex-end; /* Push content to the bottom */
+    align-items: flex-start; /* Align content to the left */
+    
+    &:hover {
+    border: 2px solid var(--border-color);
+    box-shadow: 0px 0px 1000px 1000px #161616ab;
+    z-index: 500;
+    }
+  
+  }
+
+/* Card title */
+.card-title {
+    font-size: var(--font-size-l); /* Title font size */
+    margin-bottom: var(--spacing-2xs); /* Space below title */
+  }
+  
+/* Card text */
+.card-text {
+    font-size: var(--font-size-s); /* Body text size */
+    color: var(--white); /* Light gray text */
+    margin-top: 0; /* Ensure no extra spacing above the description */
+  }  
