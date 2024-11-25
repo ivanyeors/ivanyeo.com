@@ -185,11 +185,22 @@ p {
 /* Grid container */
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Responsive columns */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
     gap: var(--spacing-xs); /* Space between cards */
     padding: var(--spacing-m); /* Space around the grid */
   }
-  
+
+/* breakpoints */  
+@media (min-width: 1024px) {
+    .card-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .btns {
+        grid-template-columns: 1fr;
+    }
+}
+
+
   /* Card styling */
   .card {
     aspect-ratio: 1 / 1; /* Maintains a 1:1 aspect ratio for squares */
