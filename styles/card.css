@@ -44,8 +44,8 @@
     border-radius: inherit; /* Match the card's border-radius */
     background: linear-gradient(
         45deg,
-        #0f0c29, #302b63, #780206, #061161,
-        #f0b152, #4B1248, #24243e, #1b1552
+        #2d2d2e, #4d4d4e, #686767, #1d1d1d,
+        #adadac, #4d4d4d, #1c1c1d, #1b1552
     );
     background-size: 250%;
     z-index: -1; /* Place it behind the card content */
