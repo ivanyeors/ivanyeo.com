@@ -69,6 +69,33 @@
     animation: glowing 30s linear infinite;
     transition: opacity 0.3s ease, transform 0.3s ease;    
 }
+.card-gnc::before {
+    background: linear-gradient(
+        45deg,
+        #A11531, #3B0405, #f86f8a, #520317,
+        #aa1a2d, #A80F30, #420609, #E92A43
+    );
+    background-size: 250%;
+    z-index: -1; /* Place it behind the card content */
+    filter: blur(100px); /* Apply blur only to the pseudo-element */
+    opacity: 0; /* Hidden by default */
+    animation: glowing 30s linear infinite;
+    transition: opacity 0.3s ease, transform 0.3s ease;    
+}
+.card-ds::before {
+    background: linear-gradient(
+        45deg,
+        #191d35, #0c3c85, #6096dd, #05088d,
+        #277fe4, #5a6177, #2b409b, #0b92e0
+    );
+    background-size: 250%;
+    z-index: -1; /* Place it behind the card content */
+    filter: blur(100px); /* Apply blur only to the pseudo-element */
+    opacity: 0; /* Hidden by default */
+    animation: glowing 30s linear infinite;
+    transition: opacity 0.3s ease, transform 0.3s ease;    
+}
+
 
 .card:hover::before {
     opacity: 1; /* Show the background effect on hover */
