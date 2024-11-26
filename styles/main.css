@@ -1,0 +1,126 @@
+:root {
+    /* Tokens - Color scales */
+    --white: #ffffff;
+    --stone25: #FAFBFC;
+    --stone50: #EBEDF0;
+    --stone100: #DADEE3;
+    --stone150: #C9CFD6;
+    --stone200: #B9C0C9;
+    --stone250: #A9B0BA;
+    --stone300: #9AA2AD;
+    --stone400: #8C94A1;
+    --stone500: #7E8794;
+    --stone600: #717985;
+    --stone650: #656C75;
+    --stone700: #585E66;
+    --stone750: #4B5057;
+    --stone800: #3E4247;
+    --stone850: #313438;
+    --stone900: #242629;
+    --stone950: #17191A;
+    --black: #000000;
+
+    /* Tokens - Spacing */ 
+    --spacing-2xs: 0.5rem;
+    --spacing-xs: 0.875rem;
+    --spacing-s: 1rem;
+    --spacing-m: 1.5rem;
+    --spacing-l: 2rem;
+
+    /* Tokens - Radius */ 
+    --radius-xs: 8px;
+    --radius-s: 16px;
+    --radius-m: 32px;
+    --radius-l: 64px;
+
+    /* Typography */
+    /* <weight>: Use a value from 100 to 900*/
+    --font-family: "Lexend", sans-serif;
+
+    --font-size-s: 0.875rem; /* 14px */
+    --font-size-m: 1rem;    /* 16px */
+    --font-size-l: 1.5rem;   /* 24px */
+    --font-size-xl: 2rem;   /* 32px */
+    --font-size-2xl: 4rem;   /* 64px */
+
+    --font-weight-light: 300;
+    --font-weight-regular: 400;
+    --font-weight-bold: 700;
+
+     /* sementics tokens */
+    --button-text-size: var(--font-size-m);
+
+    --bg-color: var(--stone950);
+    --surface-color: var(--stone850);
+    --border-color: var(--stone700);
+
+    --text-color-rest: var(--stone300);
+    --text-color-active: var(--stone50);
+    --text-color-hover: var(--stone150);
+    --text-color-pressed: var(--stone200);
+    --text-color-disabled: var(--stone600);
+}
+
+/* sementics tokens */
+.space-s {
+    padding: 0 var(--spacing-s) 0;
+}
+.space-m {
+    padding: 0 var(--spacing-m) 0;
+}
+.space-l {
+    padding: 0 var(--spacing-l) 0;
+}
+
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: var(--font-family);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: var(--bg-color);
+    overflow: auto;
+    height: 100%;
+    color: var(--white);
+}
+
+h1, h2, h3 {
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-light);
+}
+
+p {
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-light);
+}
+
+/* Style the logo container */
+.logo-container {
+    margin-top: var(--spacing-2xs); /* Adjust as needed */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Adjust the logo size */
+.logo {
+    width: 250px; /* Adjust width */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 100%; /* Prevent overflow on small screens */
+}
+
+  .figma-presentation iframe {
+    width: 100%;
+    height: 70vh; /* Occupies 70% of the viewport height */
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-m);
+    
+}

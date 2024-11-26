@@ -1,0 +1,89 @@
+
+/* Grid container */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+    gap: var(--spacing-xs); /* Space between cards */
+    padding: var(--spacing-m); /* Space around the grid */
+  }
+
+/* breakpoints */  
+@media (min-width: 1024px) {
+    .card-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+  /* Card styling */
+  .card {
+    aspect-ratio: 1 / 1; /* Maintains a 1:1 aspect ratio for squares */
+    border: 1px solid var(--border-color); /* Border */
+    border-radius: var(--radius-s); /* Rounded corners */
+    padding: var(--spacing-m); /* Space inside each card */
+    background-color: var(--surface-color); /* Default card background */
+    text-decoration: none; /* Remove underline from links */
+    color: var(--white); /* Default text color */
+    display: flex; /* Use Flexbox */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: flex-end; /* Push content to the bottom */
+    align-items: flex-start; /* Align content to the left */
+    position: relative; /* Ensure pseudo-element positioning works */
+    overflow: hidden; /* Prevent pseudo-element from overflowing */
+    z-index: 1; /* Set proper stacking context */
+    transition: border 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit; /* Match the card's border-radius */
+    background: linear-gradient(
+        45deg,
+        #0f0c29, #302b63, #780206, #061161,
+        #f0b152, #4B1248, #24243e, #1b1552
+    );
+    background-size: 250%;
+    z-index: -1; /* Place it behind the card content */
+    filter: blur(100px); /* Apply blur only to the pseudo-element */
+    opacity: 0; /* Hidden by default */
+    animation: glowing 30s linear infinite;
+    transition: opacity 0.3s ease, transform 0.3s ease;    
+}
+
+/* Unique gradients for each card */
+.card-bruhealth::before {
+    background: linear-gradient(
+        45deg,
+        #0F2027, #203A43, #29dfc0, #084285,
+        #2C5364, #59d396, #0d7c73, #004d3c
+    );
+    background-size: 250%;
+    z-index: -1; /* Place it behind the card content */
+    filter: blur(100px); /* Apply blur only to the pseudo-element */
+    opacity: 0; /* Hidden by default */
+    animation: glowing 30s linear infinite;
+    transition: opacity 0.3s ease, transform 0.3s ease;    
+}
+
+.card:hover::before {
+    opacity: 1; /* Show the background effect on hover */
+    transform: scale(1.1); /* Slightly enlarge for a glowing effect */
+}
+
+/* Card title */
+.card-title {
+    font-size: var(--font-size-l); /* Title font size */
+    margin-bottom: var(--spacing-2xs); /* Space below title */
+  }
+  
+/* Card text */
+.card-text {
+    font-size: var(--font-size-s); /* Body text size */
+    color: var(--white); /* Light gray text */
+    margin-top: 0; /* Ensure no extra spacing above the description */
+  }  
