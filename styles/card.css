@@ -4,13 +4,19 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
     gap: var(--spacing-xs); /* Space between cards */
-    padding: var(--spacing-m); /* Space around the grid */
+    padding: var(--spacing-m) 0; /* Space around the grid */
   }
 
 /* breakpoints */  
 @media (min-width: 1024px) {
     .card-grid {
         grid-template-columns: repeat(3, 1fr);
+    }
+}
+/* Limit the max width when the screen size is greater than 1440px */
+@media (min-width: 1440px) {
+    .card-grid {
+        max-width: 1440px; /* Set a maximum width for large screens */
     }
 }
 
@@ -114,3 +120,21 @@
     color: var(--white); /* Light gray text */
     margin-top: 0; /* Ensure no extra spacing above the description */
   }  
+
+
+.card-small {
+    border: 1px solid var(--border-color); /* Border */
+    border-radius: var(--radius-s); /* Rounded corners */
+    padding: var(--spacing-s) var(--spacing-l); /* Space inside each card */
+    background-color: var(--surface-color); /* Default card background */
+    text-decoration: none; /* Remove underline from links */
+    color: var(--white); /* Default text color */
+    display: flex; /* Use Flexbox */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: flex-start; /* Push content to the bottom */
+    align-items: flex-start; /* Align content to the left */
+    position: relative; /* Ensure pseudo-element positioning works */
+    overflow: hidden; /* Prevent pseudo-element from overflowing */
+    z-index: 1; /* Set proper stacking context */
+    transition: border 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+    }

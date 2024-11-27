@@ -15,6 +15,11 @@
     <link rel="stylesheet" href="styles/main.css?v=1.0">
     <link rel="stylesheet" href="styles/breadcrumbs.css?v=1.0">
     <link rel="stylesheet" href="styles/button.css?v=1.0">
+    <link rel="stylesheet" href="styles/card.css?v=1.0">
+    <link rel="stylesheet" href="styles/images.css">
+
+    <script src="script.js"></script>
+
 </head>
 
 
@@ -31,22 +36,65 @@
     </div>
 </header>
 
-<body>
-    <h1 class="space-l"> Bruhealth Redesign</h1>
-    <p class="space-l"> Transforming a pandemic management app into a holistic health management app</p>
+<body class="space-l">
     <nav class="breadcrumbs" aria-label="Breadcrumb">
         <ul>
             <li><a href="index.html">Home</a></li>
             <li aria-current="page">BruHealth Redesign</li>
         </ul>
     </nav>
+    <h1>Transforming a National Health App</h1>
+    <p class="space-layout-r">BruHealth will evolve from a pandemic-focused app into a comprehensive health management platform. 
+        The redesign will introduce features for tracking overall well-being, including fitness, 
+        mental health, chronic conditions, and access to healthcare services. 
+        With a user-centered approach, the app offers personalized health insights, integration with 
+        healthcare providers and fitness devices, 
+        empowering users to manage their health more effectively and holistically.</p>
     
-    <div class="figma-presentation space-m">
-        <iframe
-            src="https://embed.figma.com/deck/mFN4eqotuFBJQ86pyb5orH/Bruhealth-Redesign?node-id=1-51&node-type=canvas&viewport=405%2C25%2C0.04&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&embed-host=share"
-            allowfullscreen
-        ></iframe>
+    <!-- Image code start -->
+    <div class="image-style">
+        <img src="assets/img-bh/bh-cover.jpg" alt="Design System cover" class="img-style" onclick="openModal(this)">
     </div>
+    <div class="modal">
+        <span class="close-button" onclick="closeModal()">&times;</span>
+        <img class="modal-content" alt="Full-screen Image">
+    </div>    
+    <!-- Image code end -->
+     
+
+    <div class="card-grid">
+        <div class="card-small">
+            <h2 class="card-title">Tools</h2>
+            <p class="card-text">
+                <ul>
+                    <li>Figma</li>
+                    <li>JIRA Suite</li>
+                </ul>
+            </p>
+        </div>
+        <div class="card-small">
+            <h2 class="card-title">Role</h2>
+            <p class="card-text">
+                <ul>
+                    <li>Lead redesign efforts</li>
+                    <li>Manage team resources</li>
+                    <li>Stakeholder Management</li>
+                </ul>    
+            </p>
+        </div>
+        <div class="card-small">
+            <h2 class="card-title">Team</h2>
+            <p class="card-text">
+                <ul>
+                    <li>3 Designers</li>
+                    <li>10 Product Managers</li>
+                    <li>30 Developers</li>
+                </ul>    
+            </p>
+        </div>
+    </div>
+    
+
 </body>
 
 </html>

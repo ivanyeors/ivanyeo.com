@@ -26,6 +26,9 @@
     --spacing-s: 1rem;
     --spacing-m: 1.5rem;
     --spacing-l: 2rem;
+    --spacing-xl: 4rem;
+    --spacing-2xl: 8rem;
+    --spacing-3xl: 16rem;
 
     /* Tokens - Radius */ 
     --radius-xs: 8px;
@@ -34,7 +37,6 @@
     --radius-l: 64px;
 
     /* Typography */
-    /* <weight>: Use a value from 100 to 900*/
     --font-family: "Lexend", sans-serif;
 
     --font-size-s: 0.875rem; /* 14px */
@@ -42,7 +44,8 @@
     --font-size-l: 1.5rem;   /* 24px */
     --font-size-xl: 2rem;   /* 32px */
     --font-size-2xl: 4rem;   /* 64px */
-
+    
+    /* <weight>: Use a value from 100 to 900*/
     --font-weight-light: 300;
     --font-weight-regular: 400;
     --font-weight-bold: 700;
@@ -71,6 +74,10 @@
 .space-l {
     padding: 0 var(--spacing-l) 0;
 }
+.space-layout-r {
+    padding-right: 20%;
+}
+
 
 /* Reset CSS */
 * {
@@ -123,4 +130,10 @@ p {
     border: 1px solid var(--border-color);
     border-radius: var(--radius-m);
     
+}
+
+@media (max-width: 768px) {
+    .space-layout-r {
+        padding-right: 0%;
+    }
 }

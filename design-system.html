@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">    
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -11,10 +12,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
 
     <!-- Link to the CSS file -->
-    <link rel="stylesheet" href="styles/main.css?v=1.0">
-    <link rel="stylesheet" href="styles/breadcrumbs.css?v=1.0">
-    <link rel="stylesheet" href="styles/button.css?v=1.0">
-    <link rel="stylesheet" href="styles/card.css?v=1.0">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/breadcrumbs.css">
+    <link rel="stylesheet" href="styles/button.css">
+    <link rel="stylesheet" href="styles/card.css">
+    <link rel="stylesheet" href="styles/images.css">
+
+    <script src="script.js"></script>
 
 </head>
 
@@ -31,15 +35,62 @@
     </div>
 </header>
 
-<body>
-    <h1 class="space-l">Design System</h1>
-    <p class="space-l"> Streamlining designing consistency, speed and collaborative experience in cross-functional teams.</p>
+<body class="space-l">
         <nav class="breadcrumbs" aria-label="Breadcrumb">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li aria-current="page">Design System</li>
             </ul>
         </nav>
+    
+    <h1>Project Context</h1>
+    <p class="space-layout-r">Led the structuring and planning the design systems, 
+        Using a design thinking approach,
+         I managed a lean team to build and maintain the system, 
+         collaborating closely with developers to bring designs from concept to code.</p>
+    
+    <!-- Image code start -->
+    <div class="image-style">
+        <img src="assets/img-ds/test-ds-image.png" alt="Design System cover" class="img-style" onclick="openModal(this)">
+    </div>
+    <div class="modal">
+        <span class="close-button" onclick="closeModal()">&times;</span>
+        <img class="modal-content" alt="Full-screen Image">
+    </div>    
+    <!-- Image code end -->
+
+    <div class="card-grid">
+        <div class="card-small">
+            <h2 class="card-title">Tools</h2>
+            <p class="card-text">
+                <ul>
+                    <li>Figma</li>
+                    <li>JIRA Suite</li>
+                </ul>
+            </p>
+        </div>
+        <div class="card-small">
+            <h2 class="card-title">Role</h2>
+            <p class="card-text">
+                <ul>
+                    <li>Lead redesign efforts</li>
+                    <li>Manage team resources</li>
+                    <li>Stakeholder Management</li>
+                </ul>    
+            </p>
+        </div>
+        <div class="card-small">
+            <h2 class="card-title">Team</h2>
+            <p class="card-text">
+                <ul>
+                    <li>5 Designers</li>
+                    <li>3 Product Managers</li>
+                    <li>10 Developers</li>
+                </ul>    
+            </p>
+        </div>
+    </div>
+    
 </body>
 
 </html>
