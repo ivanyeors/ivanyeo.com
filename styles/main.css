@@ -74,10 +74,10 @@
 .space-l {
     padding: 0 var(--spacing-l) 0;
 }
+
 .space-layout-r {
     padding-right: 20%;
 }
-
 
 /* Reset CSS */
 * {
@@ -91,7 +91,7 @@ body {
     font-family: var(--font-family);
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: var(--spacing-xl);
     background-color: var(--bg-color);
     overflow: auto;
     height: 100%;
@@ -101,11 +101,17 @@ body {
 h1, h2, h3 {
     font-family: var(--font-family);
     font-weight: var(--font-weight-light);
+    margin-bottom: var(--spacing-xs);
+}
+
+.content {
+    padding: var(--spacing-m);
 }
 
 p {
     font-family: var(--font-family);
     font-weight: var(--font-weight-light);
+    margin-bottom: var(--spacing-xs);
 }
 
 /* Style the logo container */
@@ -137,3 +143,24 @@ p {
         padding-right: 0%;
     }
 }
+
+/* Center align for screens wider than 1440px */
+@media (min-width: 1440px) {
+    body {
+        display: flex; /* Enable Flexbox */
+        align-items: center; /* Center vertically */
+        height: 100vh; /* Full viewport height */
+        margin: 0; /* Remove default margin */
+    }
+
+    .content {
+        text-align: left; /* Ensure content inside is left-aligned */
+        width: 100%; /* Take full width of the parent */
+        max-width: 1400px; /* Optional: Set a max width for the content */
+    }
+    .space-layout-r {
+        padding-right: 0%;
+    }
+}
+
+
