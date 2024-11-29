@@ -26,3 +26,25 @@ document.querySelector(".modal").addEventListener("click", (event) => {
         closeModal();
     }
 });
+
+
+// Open the video modal
+function openVideoModal(videoElement) {
+    const modal = document.querySelector(".video-modal");
+    const modalVideo = modal.querySelector(".modal-video-content");
+
+    // Set the modal video source to the clicked video's source
+    modalVideo.querySelector("source").src = videoElement.querySelector("source").src;
+    modalVideo.load(); // Reload the video to apply the new source
+    modal.style.display = "flex"; // Show the modal
+}
+
+// Close the video modal
+function closeVideoModal() {
+    const modal = document.querySelector(".video-modal");
+    const modalVideo = modal.querySelector(".modal-video-content");
+
+    modal.style.display = "none"; // Hide the modal
+    modalVideo.pause(); // Stop the video when closing
+    modalVideo.querySelector("source").src = ""; // Reset video source
+}

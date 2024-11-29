@@ -98,9 +98,17 @@ body {
     color: var(--white);
 }
 
-h1, h2, h3 {
+h1 {
     font-family: var(--font-family);
     font-weight: var(--font-weight-light);
+    margin-top: var(--spacing-l);
+    margin-bottom: var(--spacing-xs);
+}
+
+h2, h3 {
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-light);
+    margin-top: var(--spacing-xs);
     margin-bottom: var(--spacing-xs);
 }
 
@@ -111,7 +119,12 @@ h1, h2, h3 {
 p {
     font-family: var(--font-family);
     font-weight: var(--font-weight-light);
-    margin-bottom: var(--spacing-xs);
+    line-height: 1.5; /* Adds more vertical space between lines */
+    margin-bottom: var(--spacing-s);
+}
+
+ul {
+    padding: 0 var(--spacing-m) 0;
 }
 
 /* Style the logo container */
