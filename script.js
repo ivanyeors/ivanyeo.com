@@ -28,23 +28,49 @@ document.querySelector(".modal").addEventListener("click", (event) => {
 });
 
 
-// Open the video modal
-function openVideoModal(videoElement) {
+// Open the video modal / Auto play
+document.addEventListener("DOMContentLoaded", () => {
+    // Select all videos with the 'auto-play-video' class
+    const videos = document.querySelectorAll(".auto-play-video");
+
+    // Create an Intersection Observer for autoplay
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            const video = entry.target;
+
+            if (entry.isIntersecting) {
+                // Video is in the viewport - play it
+                video.play();
+            } else {
+                // Video is outside the viewport - pause it
+                video.pause();
+            }
+        });
+    }, {
+        threshold: 0.5 // Trigger when 50% of the video is visible
+    });
+
+    // Observe each video
+    videos.forEach((video) => {
+        observer.observe(video);
+    });
+
+    // Modal functionality
     const modal = document.querySelector(".video-modal");
     const modalVideo = modal.querySelector(".modal-video-content");
 
-    // Set the modal video source to the clicked video's source
-    modalVideo.querySelector("source").src = videoElement.querySelector("source").src;
-    modalVideo.load(); // Reload the video to apply the new source
-    modal.style.display = "flex"; // Show the modal
-}
+    // Open the video modal
+    window.openVideoModal = (videoElement) => {
+        modalVideo.querySelector("source").src = videoElement.querySelector("source").src;
+        modalVideo.load(); // Load the new video source
+        modal.style.display = "flex"; // Show the modal
+        modalVideo.play(); // Play the video in the modal
+    };
 
-// Close the video modal
-function closeVideoModal() {
-    const modal = document.querySelector(".video-modal");
-    const modalVideo = modal.querySelector(".modal-video-content");
-
-    modal.style.display = "none"; // Hide the modal
-    modalVideo.pause(); // Stop the video when closing
-    modalVideo.querySelector("source").src = ""; // Reset video source
-}
+    // Close the video modal
+    window.closeVideoModal = () => {
+        modal.style.display = "none"; // Hide the modal
+        modalVideo.pause(); // Pause the video in the modal
+        modalVideo.querySelector("source").src = ""; // Clear the video source
+    };
+});

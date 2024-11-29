@@ -72,7 +72,7 @@
 
 /* Video Styles */
 .video-thumbnail {
-    width: 100%; /* Full width of the container */
+    width: 100%;
     height: auto;
     border: 2px var(--border-color);
     border-radius: var(--radius-s);
@@ -108,7 +108,7 @@
 /* Close button styling */
 .close-button {
     position: absolute;
-    bottom: 20px; /* Positioned near the bottom */
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
     color: white;
