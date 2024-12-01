@@ -1,0 +1,49 @@
+/* Sticky Anchor Link List */
+.sticky-anchor {
+    position: sticky; /* Enables sticky behavior */
+    top: 0; /* Sticks to the top of the viewport */
+    z-index: 1000; /* Ensure it stays on top of other elements */
+    background-color: #f4f4f4; /* Background color to ensure readability */
+    padding: 10px 20px; /* Add padding for spacing */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Anchor link list container */
+.anchor-link-list ul {
+    list-style: none; /* Remove default bullet points */
+    margin: 0;
+    padding: 0;
+}
+
+/* List item styles */
+.anchor-link-list li {
+    border-bottom: 1px solid #ddd; /* Divider between items */
+}
+
+.anchor-link-list li:last-child {
+    border-bottom: none; /* Remove divider for the last item */
+}
+
+/* Link styles */
+.anchor-link-list a {
+    display: block; /* Make the entire list item clickable */
+    padding: 10px 0; /* Add padding for clickable area */
+    text-decoration: none; /* Remove underline */
+    color: #333; /* Default link color */
+    font-weight: 500; /* Slightly bold text */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover transition */
+}
+
+/* Hover effect for links */
+.anchor-link-list a:hover {
+    background-color: #007BFF; /* Blue background on hover */
+    color: white; /* White text on hover */
+}
+
+
+@media (max-width: 768px) {
+    .sticky-anchor {
+        top: 50px; /* Adjust sticky position for mobile */
+        padding: 5px 10px; /* Reduce padding for smaller screens */
+    }
+}
