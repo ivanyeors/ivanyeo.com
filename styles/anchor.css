@@ -25,43 +25,33 @@
 
 .anchor-link {
     border: 1px solid var(--border-color);
-    padding: 1rem 2rem; /* Add spacing inside the container */
+    padding: var(--spacing-2xs); /* Add spacing inside the container */
     background-color: var(--anchor-surface-color);
-    backdrop-filter: blur(24px); /* Apply the blur effect */
+    backdrop-filter: blur(16px); /* Apply the blur effect */
     display: inline-block; /* Make the entire link clickable */
-    padding: 10px 15px; /* Add padding for clickable area */
     color: var(--white); /* Default text color */
     text-decoration: none; /* Remove underline */
-    font-weight: var(--font-size-m); /* Medium text weight */
+    font-weight: var(--font-weight-light); /* Medium text weight */
     border-radius: var(--radius-xs); /* Rounded corners */
     transition: all 0.3s ease; /* Smooth transitions */
 }
 
 /* Default Link State */
 .anchor-link:hover {
-    background-color: var(--white); /* Light background on hover */
-    color: var(--anchor-text-color-active); /* Text Color on hover */
+    background-color: var(--anchor-surface-color-hover); /* Light background on hover */
+    color: var(--white); /* Text Color on hover */
 }
 
 /* Active Link State */
 .anchor-link.active {
-    background-color: #007BFF; /* Blue background for active link */
-    color: #fff; /* White text */
+    background-color: var(--stone150); /* Blue background for active link */
+    color: var(--white); /* White text */
     font-weight: bold; /* Bold text for emphasis */
-    border: 1px solid var(--border-color);
 }
 
 
 @media (max-width: 768px) {
     .anchor-link-list ul {
         flex-direction: column; /* Stack links vertically */
-    }
-
-    .anchor-link {
-        border-right: none; /* Remove horizontal borders */
-    }
-
-    .anchor-link-list li:last-child .anchor-link {
-        border-bottom: none; /* Remove bottom border for the last item */
     }
 }

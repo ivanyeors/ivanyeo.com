@@ -64,7 +64,8 @@
     --text-color-pressed: var(--stone200);
     --text-color-disabled: var(--stone600);
 
-    --anchor-surface-color: #31343869;
+    --anchor-surface-color: var(--stone800);
+    --anchor-surface-color-hover: var(--stone750);
     --anchor-text-color-active: var(--stone900);
 }
 
