@@ -74,3 +74,30 @@ document.addEventListener("DOMContentLoaded", () => {
         modalVideo.querySelector("source").src = ""; // Clear the video source
     };
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll("section");
+    const links = document.querySelectorAll(".anchor-link");
+
+    const observerOptions = {
+        root: null, // Use the viewport as the root
+        threshold: 0.5 // Trigger when 50% of the section is visible
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            const link = document.querySelector(`.anchor-link[href="#${entry.target.id}"]`);
+            
+            if (entry.isIntersecting) {
+                // Add active class when section is in view
+                links.forEach((l) => l.classList.remove("active"));
+                link.classList.add("active");
+            }
+        });
+    }, observerOptions);
+
+    // Observe each section
+    sections.forEach((section) => observer.observe(section));
+});
+
