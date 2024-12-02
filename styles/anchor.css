@@ -3,38 +3,44 @@
     position: sticky; /* Sticky positioning */
     top: 0; /* Sticks to the top of the viewport */
     z-index: 1000; /* Ensure it stays above other elements */
-    border-right: 1px solid #ddd; /* Optional: Add a separator line */
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    display: flex; /* Flexbox to align links horizontally */
+    justify-content: left; /* Center the links horizontally */
+    align-items: center; /* Align items vertically within the container */
+    padding: var(--spacing-s) 0; /* Spacing inside the container */
 }
 
 /* Anchor Link List Styles */
 .anchor-link-list ul {
+    display: flex; /* Align items horizontally */
     list-style: none; /* Remove default list styles */
     padding: 0;
     margin: 0;
+    gap: var(--spacing-2xs); /* Reset gap (we'll use borders for spacing) */
 }
 
 /* Individual Link Styles */
 .anchor-link-list li {
-    margin-bottom: 10px; /* Space between links */
+    display: inline-flex; /* Ensure links align within the flex container */
 }
 
 .anchor-link {
-    padding: 10px 20px; /* Add spacing inside the container */
+    border: 1px solid var(--border-color);
+    padding: 1rem 2rem; /* Add spacing inside the container */
+    background-color: var(--anchor-surface-color);
     backdrop-filter: blur(24px); /* Apply the blur effect */
-    display: block; /* Make the entire link clickable */
+    display: inline-block; /* Make the entire link clickable */
     padding: 10px 15px; /* Add padding for clickable area */
-    color: #333; /* Default text color */
+    color: var(--white); /* Default text color */
     text-decoration: none; /* Remove underline */
-    font-weight: 500; /* Medium text weight */
-    border-radius: 5px; /* Rounded corners */
+    font-weight: var(--font-size-m); /* Medium text weight */
+    border-radius: var(--radius-xs); /* Rounded corners */
     transition: all 0.3s ease; /* Smooth transitions */
 }
 
 /* Default Link State */
 .anchor-link:hover {
-    background-color: #f0f0f0; /* Light background on hover */
-    color: #007BFF; /* Blue text on hover */
+    background-color: var(--white); /* Light background on hover */
+    color: var(--anchor-text-color-active); /* Text Color on hover */
 }
 
 /* Active Link State */
@@ -42,5 +48,20 @@
     background-color: #007BFF; /* Blue background for active link */
     color: #fff; /* White text */
     font-weight: bold; /* Bold text for emphasis */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for the active state */
+    border: 1px solid var(--border-color);
+}
+
+
+@media (max-width: 768px) {
+    .anchor-link-list ul {
+        flex-direction: column; /* Stack links vertically */
+    }
+
+    .anchor-link {
+        border-right: none; /* Remove horizontal borders */
+    }
+
+    .anchor-link-list li:last-child .anchor-link {
+        border-bottom: none; /* Remove bottom border for the last item */
+    }
 }

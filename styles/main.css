@@ -55,6 +55,7 @@
 
     --bg-color: var(--stone950);
     --surface-color: var(--stone850);
+
     --border-color: var(--stone700);
 
     --text-color-rest: var(--stone300);
@@ -62,6 +63,9 @@
     --text-color-hover: var(--stone150);
     --text-color-pressed: var(--stone200);
     --text-color-disabled: var(--stone600);
+
+    --anchor-surface-color: #31343869;
+    --anchor-text-color-active: var(--stone900);
 }
 
 /* sementics tokens */
