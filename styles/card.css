@@ -123,7 +123,6 @@
 
 
 .card-small {
-    border: 1px solid var(--border-color); /* Border */
     border-radius: var(--radius-s); /* Rounded corners */
     padding: var(--spacing-s) var(--spacing-l); /* Space inside each card */
     background-color: var(--surface-color); /* Default card background */
