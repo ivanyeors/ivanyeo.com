@@ -40,3 +40,53 @@
     transition: height 1s ease; /* Smoothly shrink the logo */
 }
 
+
+/* FOR BOTTOM APP BAR */
+/* Default (hidden for larger screens) */
+.bottom-app-bar {
+    display: none; /* Hidden by default */
+}
+
+/* Mobile-specific styling */
+@media (max-width: 768px) {
+    .bottom-app-bar {
+        display: flex; /* Flex container for items */
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%; /* Full width of the screen */
+        background-color: transparent; /* Background color */
+        padding: 10px 0; /* Padding for spacing */
+        z-index: 1000; /* Ensure it stays above other content */
+    }
+
+    /* App bar items */
+    .app-bar-item {
+        flex: 1; /* Equal width for each item */
+        font-size: 14px; /* Font size */
+        transition: all 0.3s ease; /* Smooth hover effect */
+        text-align: center;
+        padding: var(--spacing-s);
+        margin: 0 var(--spacing-3xs);
+    }
+
+    /* Optional: Style spans or icons inside the app bar items */
+    .app-bar-item span {
+        display: block; /* Ensure text is on its own line */
+    }
+
+    .main-header {    
+        display: none;
+    }
+
+
+}
+
+/* Mobile-smaller screens styling */
+@media (max-width: 480px) {
+    .bottom-app-bar {
+        font-size: var(--font-size-xs); /* Smaller font for smaller screens */
+    }
+}
+
+

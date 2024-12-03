@@ -21,6 +21,7 @@
     --black: #000000;
 
     /* Tokens - Spacing */ 
+    --spacing-3xs: 0.25rem;
     --spacing-2xs: 0.5rem;
     --spacing-xs: 0.875rem;
     --spacing-s: 1rem;

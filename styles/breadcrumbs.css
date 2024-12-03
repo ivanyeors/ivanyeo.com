@@ -40,3 +40,9 @@
     color: var(--text-color-active);
 }
 
+
+@media (max-width: 768px) {
+    .breadcrumbs {
+        font-size: var(--font-size-xs); /* Smaller font for smaller screens */
+    }
+}
