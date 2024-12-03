@@ -27,14 +27,14 @@
 .logo-container {
     margin-top: var(--spacing-2xs); /* Adjust as needed */
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
 }
 
 /* Adjust the logo size */
 .logo {
-    width: 250px; /* Adjust width */
+    width: 150px; /* Adjust width */
     height: auto; /* Maintain aspect ratio */
     max-width: 100%; /* Prevent overflow on small screens */
     transition: height 1s ease; /* Smoothly shrink the logo */
@@ -55,19 +55,33 @@
         bottom: 0;
         left: 0;
         width: 100%; /* Full width of the screen */
-        background-color: transparent; /* Background color */
-        padding: 10px 0; /* Padding for spacing */
+        background-color: var(--bg-color); /* Background color */
+        border-radius: var(--radius-s) var(--radius-s) 0 0;
+        border-top: 1px solid var(--border-color) ;
+        padding: var(--spacing-m) 0; /* Padding for spacing */
         z-index: 1000; /* Ensure it stays above other content */
     }
 
     /* App bar items */
     .app-bar-item {
         flex: 1; /* Equal width for each item */
-        font-size: 14px; /* Font size */
         transition: all 0.3s ease; /* Smooth hover effect */
         text-align: center;
-        padding: var(--spacing-s);
-        margin: 0 var(--spacing-3xs);
+        font-family: var(--font-family);
+        font-size: var(--button-text-size);
+        font-weight: var(--font-weight-light);
+        text-decoration: none;
+        border-right: 1px solid var(--border-color);
+        outline: none;
+        background-color: none;
+        color: var(--white);
+        cursor: pointer;
+        position: relative;
+        z-index: 0;
+    }
+    /* Remove border-right from the last item */
+    .app-bar-item:last-child {
+    border-right: none;
     }
 
     /* Optional: Style spans or icons inside the app bar items */
