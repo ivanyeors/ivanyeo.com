@@ -37,6 +37,7 @@
     width: 250px; /* Adjust width */
     height: auto; /* Maintain aspect ratio */
     max-width: 100%; /* Prevent overflow on small screens */
-    transition: height 0.3s ease; /* Smoothly shrink the logo */
+    transition: height 1s ease; /* Smoothly shrink the logo */
+    transition-delay: 1s; /* Delay the transition by 1 second */
 }
 
