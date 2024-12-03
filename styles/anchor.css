@@ -45,8 +45,9 @@
 /* Active Link State */
 .anchor-link.active {
     background-color: var(--stone150); /* Blue background for active link */
-    color: var(--white); /* White text */
+    color: var(--anchor-text-color-active); /* White text */
     font-weight: bold; /* Bold text for emphasis */
+    border: transparent;
 }
 
 

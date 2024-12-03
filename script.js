@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 });
 
-
+// for Anchor links
 document.addEventListener("DOMContentLoaded", () => {
     const sections = document.querySelectorAll("section");
     const links = document.querySelectorAll(".anchor-link");
