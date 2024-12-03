@@ -1,0 +1,43 @@
+/* Main Header */
+.main-header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: transparent;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    z-index: 1000;
+}
+
+/* Scrolled State */
+.main-header.scrolled {
+    background-color: transparent; /* Smaller header background */
+    filter: blur(12px);
+    color: white; /* Text color for smaller header */
+    padding: 10px 0; /* Reduced padding for smaller header */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add shadow when scrolled */
+}
+
+
+.main-header.scrolled .logo {
+    height: 40px; /* Smaller logo when scrolled */
+}
+
+/* Style the logo container */
+.logo-container {
+    margin-top: var(--spacing-2xs); /* Adjust as needed */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Adjust the logo size */
+.logo {
+    width: 250px; /* Adjust width */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 100%; /* Prevent overflow on small screens */
+    transition: height 0.3s ease; /* Smoothly shrink the logo */
+}
+

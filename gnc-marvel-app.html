@@ -14,8 +14,10 @@
     <!-- Link to the CSS file -->
     <link rel="stylesheet" href="styles/main.css?v=1.0">
     <link rel="stylesheet" href="styles/breadcrumbs.css?v=1.0">
-    <link rel="stylesheet" href="styles/button.css?v=1.0">
+    <link rel="stylesheet" href="styles/button.css">
+    <link rel="stylesheet" href="styles/card.css">
     <link rel="stylesheet" href="styles/images.css">
+    <link rel="stylesheet" href="styles/anchor.css">
 
     <script src="script.js"></script>
 
@@ -35,19 +37,271 @@
 </header>
 
 <body>
+    <div class="parent-container">
     <div class="content space-l">
         <nav class="breadcrumbs" aria-label="Breadcrumb">
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li aria-current="page">GNC x Marvel</li>
+            <li><a href="index.html">Home</a></li>
+            <li aria-current="page">GNC x Marvel</li>
             </ul>
         </nav>
-    <h1> GNC x Marvel </h1>
-    <p> Creating healthy habits within the GNC App  - Designing routines for creating healthy habits</p>
-    <h1>Project use case coming soon </h1>
+
+        <!-- Anchor Component -->
+        <div class="anchor-link-list">
+            <ul>
+                <li><a href="#context" class="anchor-link">Project Context</a></li>
+                <li><a href="#routine" class="anchor-link">Creating a Routine</a></li>
+                <li><a href="#challenge" class="anchor-link">Take on Challenges</a></li>
+                <li><a href="#marvel" class="anchor-link">Marvel Challenge</a></li>
+                <li><a href="#retro" class="anchor-link">Retrospective</a></li>
+            </ul>
+        </div>
+
+        <h1>Creating healthy habits within the GNC App</h1>
+        <p class="space-layout-r">How might we create a never ending habit loop to help users create their health with GNC’s consumer products? </p>
+    
+        <!-- Image code start -->
+        <div class="image-style">
+            <img src="assets/img-gnc/gnc-cover.jpg" alt="BruHealth app product UXUI use case" class="img-style" onclick="openModal(this)">
+        </div>
+        <div class="modal">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <img class="modal-content" alt="Full-screen Image">
+        </div>    
+        <!-- Image code end -->
+     
+
+        <div class="card-grid">
+            <div class="card-small">
+            <h2 class="card-title">Tools</h2>
+            <p class="card-text">
+                <ul>
+                    <li>Figma</li>
+                    <li>JIRA Suite</li>
+                    <li>Notion</li>
+                </ul>
+            </p>
+            </div>
+            <div class="card-small">
+            <h2 class="card-title">Role</h2>
+            <p class="card-text">
+                <ul>
+                    <li>Design Language</li>
+                    <li>Design Systems</li>
+                    <li>Product Design enhancement</li>
+                    <li>Client Management</li>
+                </ul>    
+            </p>
+            </div>
+            <div class="card-small">
+            <h2 class="card-title">Team</h2>
+            <p class="card-text">
+                <ul>
+                    <li>2 Designers</li>
+                    <li>4 Product Managers</li>
+                    <li>10 Developers</li>
+                </ul>    
+            </p>
+            </div>
+        </div>
+        
+    <section id="context">
+        <h1>Feature Introduced and Improved in Bruhealth 4.0 Redesign</h1>
+        <p class="space-layout-r">The redesign will introduce 3 main feature of the bruhealth app.</p>
+        <p class="card-text">
+            <ul>
+                <li>Health Index</li>
+                <li>Medical Management</li>
+                <li>Routines & Challenges</li>
+                <li>+ many more</li>
+            </ul>    
+        </p>
+        <!-- Image code start -->
+        <div class="image-style">
+            <img src="assets/img-bh/bh-before-after.jpg" alt="BruHealth app product screen of an app before the redesigns" class="img-style" onclick="openModal(this)">
+        </div>
+        <div class="modal">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <img class="modal-content" alt="Full-screen Image">
+        </div>    
+        <!-- Image code end -->
+    </section>
+
+        <h1>Resources management for redesign</h1>
+        <p class="space-layout-r">Leading the redesign efforts requires a transformation and a 
+            shift in perspective within the current design team. 
+            To kickstart the redesign, 3 principles was introduced to the management
+        </p>
+        
+        <div class="card-grid">
+            <div class="card-small">
+            <h2 class="card-title">1</h2>
+            <h2 class="card-title">Declutter the chaos</h2>
+            </div>
+            <div class="card-small">
+            <h2 class="card-title">2</h2>
+            <h2 class="card-title">Big change, small steps</h2>
+            </div>
+            <div class="card-small">
+            <h2 class="card-title">3</h2>
+            <h2 class="card-title">Systems driven design</h2>
+            </div>
+        </div>
+
+        <!-- Image code start -->
+        <div class="image-style">
+            <img src="assets/img-bh/ds-work-flow.jpg" alt="a flowchart of a design system process planning" class="img-style" onclick="openModal(this)">
+        </div>
+        <div class="modal">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <img class="modal-content" alt="Full-screen Image">
+        </div>    
+        <!-- Image code end -->
+        <p class="space-layout-r">A initial flow of implementing a design system within the organisaiton.
+        </p>
+
+    <section id="work">
+        <h1>Brunei's Demographics</h1>
+        <p class="space-layout-r">Leading the redesign efforts requires a transformation and a 
+            shift in perspective within the current design team. 
+            To kickstart the redesign, 3 principles was introduced to the management
+        </p>
+        <!-- Image code start -->
+        <div class="image-style">
+            <img src="assets/img-bh/bn-demograph.jpg" alt="donut chart of brunei's demographics" class="img-style" onclick="openModal(this)">
+        </div>
+        <div class="modal">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <img class="modal-content" alt="Full-screen Image">
+        </div>    
+        <!-- Image code end -->
+        <p class="space-layout-r">Breaking down Brunei’s population into a few groups to identify who we should prioritise our designs for.
+        </p>
+        
+        <h1>New app, New sitemap</h1>
+        <p class="space-layout-r">After mapping out the sitemap from the current app, many discussions 
+            and iterations went through across different teams and aligned with their KPIs to redesign for the new BruHealth.
+        </p>
+        <!-- Image code start -->
+        <div class="image-style">
+            <img src="assets/img-bh/bh-sitemap.jpg" alt="donut chart of brunei's demographics" class="img-style" onclick="openModal(this)">
+        </div>
+        <div class="modal">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <img class="modal-content" alt="Full-screen Image">
+        </div>    
+        <!-- Image code end -->
+        <!-- Image code start -->
+        <div class="image-style">
+            <img src="assets/img-bh/bh-sitemap-after.jpg" alt="donut chart of brunei's demographics" class="img-style" onclick="openModal(this)">
+        </div>
+        <div class="modal">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <img class="modal-content" alt="Full-screen Image">
+        </div>    
+        <!-- Image code end -->
+
+        
+        <h1>Showing the prototype & validation</h1>
+        <p class="space-layout-r">Interviews with different audiences were planned over 
+            a few sessions to gather understanding from both quantitative and qualitative answers.
+        </p>
+                <!-- Image code start -->
+                <div class="image-style">
+                    <img src="assets/img-bh/proto-feedback-gather-1.jpg" alt="donut chart of brunei's demographics" class="img-style" onclick="openModal(this)">
+                </div>
+                <div class="modal">
+                    <span class="close-button" onclick="closeModal()">&times;</span>
+                    <img class="modal-content" alt="Full-screen Image">
+                </div>    
+                <!-- Image code end -->
+
+        
+        <h1>Feedbacks, iterations & prioritisation</h1>
+        <p class="space-layout-r">As there were two options shown to the client, 
+            we went through a framework to guide, prioritise and algin client’s expectations.
+        </p>
+                <!-- Image code start -->
+                <div class="image-style">
+                    <img src="assets/img-bh/proto-feedback-gather-2.jpg" alt="donut chart of brunei's demographics" class="img-style" onclick="openModal(this)">
+                </div>
+                <div class="modal">
+                    <span class="close-button" onclick="closeModal()">&times;</span>
+                    <img class="modal-content" alt="Full-screen Image">
+                </div>    
+                <!-- Image code end -->
+    </section>
+
+        <h1>BruHealth Main pages</h1>
+        <p class="space-layout-r">Key screens in the redesign show are based on features that have been validated
+             with user feedbacks and some are created for client's requests.
+        </p>
+        <!-- Video code start -->
+        <div class="video-style">
+            <video class="video-thumbnail auto-play-video" muted playsinline onclick="openVideoModal(this)">
+                <source src="assets/img-bh/bh-mainpage-nav.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <div class="video-modal">
+            <span class="close-button" onclick="closeVideoModal()">&times;</span>
+                <video class="modal-video-content" controls>
+                    <source src="" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+        </div>
+        <!-- Video code end -->
+
+        <h1>Try the prototype here</h1>
+        <!-- Image code start -->
+        <div class="image-style figma-presentation">
+            <iframe width="100%" height="800" src="https://embed.figma.com/proto/rgrcH25T8uPcy0CoV1q5AO/%5BPub%5D-Prototype?page-id=108%3A8165&node-id=108-11800&node-type=symbol&viewport=586%2C1422%2C0.29&scaling=scale-down&content-scaling=fixed&starting-point-node-id=108%3A11800&embed-host=share" &hide-ui=1 ></iframe>
+        </div>
+
+
+    <section id="retro">      
+        <h1>Project Retrospective</h1>
+        <p class="space-layout-r">As a startup, wearing multiple hats is part of the grind. 
+            I embraced opportunity to take on roles below.
+        </p>
+        <div class="card-grid">
+            <div class="card-small">
+            <h2 class="card-title">Leadership & Resource Planning</h2>
+            <p class="card-text">
+                <ul>
+                    <li>Planned redesign approach, considering timeline, resources, and budget constraints.</li>
+                    <li>Managed timeline and resources through effective delegation and workload pacing.</li>
+                    <li>Nurtured junior designers by sharing technical and design knowledge.</li>
+                </ul>    
+            </p>
+            </div>
+            <div class="card-small">
+            <h2 class="card-title">Stakeholder Management Takeaways</h2>
+            <p class="card-text">
+                <ul>
+                    <li>Broke down redesign into clear phases and steps for successful completion.</li>
+                    <li>Shared regular progress updates to keep stakeholders aligned.</li>
+                    <li>Managed requests and requirements using prioritization frameworks to maintain focus.</li>
+                </ul>    
+            </p>
+            </div>
+            <div class="card-small">
+            <h2 class="card-title">Working with multiple departments</h2>
+            <p class="card-text">
+                <ul>
+                    <li>Improved cross-departmental collaboration for design consistency.</li>
+                    <li>Optimized onboarding processes for departments to the design system.</li>
+                    <li>Bridged design and development constraints to streamline workflows.</li>
+                </ul>    
+            </p>
+        </div>
+    
+    </div>
+    </section>
 
     </div>
-    
 </body>
+
 
 </html> 

@@ -101,3 +101,17 @@ document.addEventListener("DOMContentLoaded", () => {
     sections.forEach((section) => observer.observe(section));
 });
 
+
+// for Bottom Header scrolling events
+document.addEventListener("DOMContentLoaded", () => {
+    const header = document.querySelector(".main-header");
+    const headerHeight = header.offsetHeight;
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > headerHeight) {
+            header.classList.add("scrolled");
+        } else {
+            header.classList.remove("scrolled");
+        }
+    });
+});

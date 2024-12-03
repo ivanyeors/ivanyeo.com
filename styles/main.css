@@ -137,21 +137,7 @@ ul {
     padding: 0 var(--spacing-m) 0;
 }
 
-/* Style the logo container */
-.logo-container {
-    margin-top: var(--spacing-2xs); /* Adjust as needed */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
 
-/* Adjust the logo size */
-.logo {
-    width: 250px; /* Adjust width */
-    height: auto; /* Maintain aspect ratio */
-    max-width: 100%; /* Prevent overflow on small screens */
-}
 
   .figma-presentation iframe {
     width: 100%;
@@ -160,6 +146,12 @@ ul {
     border-radius: var(--radius-m);
     
 }
+
+/* Parent container styles */
+.parent-container {
+    overflow: visible; /* Ensure sticky works */
+}
+
 
 @media (max-width: 768px) {
     .space-layout-r {
@@ -186,9 +178,5 @@ ul {
     }
 }
 
-/* Parent container styles */
-.parent-container {
-    overflow: visible; /* Ensure sticky works */
-}
 
 
