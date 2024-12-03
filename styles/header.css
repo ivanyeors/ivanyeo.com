@@ -1,6 +1,6 @@
 /* Main Header */
 .main-header {
-    position: sticky;
+    position: null;
     top: 0;
     width: 100%;
     background-color: transparent;
