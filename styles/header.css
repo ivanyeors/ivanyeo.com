@@ -16,7 +16,6 @@
     color: white; /* Text color for smaller header */
     padding: 10px 0; /* Reduced padding for smaller header */
     transition: height 1s ease; /* Smoothly shrink the logo */
-    transition-delay: 1s; /* Delay the transition by 1 second */
 }
 
 
@@ -39,6 +38,5 @@
     height: auto; /* Maintain aspect ratio */
     max-width: 100%; /* Prevent overflow on small screens */
     transition: height 1s ease; /* Smoothly shrink the logo */
-
 }
 

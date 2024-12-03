@@ -102,15 +102,22 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// for Bottom Header scrolling events
 document.addEventListener("DOMContentLoaded", () => {
     const header = document.querySelector(".main-header");
     const headerHeight = header.offsetHeight;
 
+    let isScrolled = false;
+    let timeoutId = null;
+
     window.addEventListener("scroll", () => {
-        if (window.scrollY > headerHeight) {
-            header.classList.add("scrolled");
-        } else {
+        if (window.scrollY > headerHeight && !isScrolled) {
+            isScrolled = true;
+            timeoutId = setTimeout(() => {
+                header.classList.add("scrolled");
+            }, 1000); // 1-second delay
+        } else if (window.scrollY <= headerHeight && isScrolled) {
+            isScrolled = false;
+            clearTimeout(timeoutId); // Cancel the delay if scrolling back up
             header.classList.remove("scrolled");
         }
     });
