@@ -85,6 +85,20 @@
     padding-right: 20%;
 }
 
+.div-hori {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.div-vert {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+}
+
+
 /* Reset CSS */
 * {
     margin: 0;

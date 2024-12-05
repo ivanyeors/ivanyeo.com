@@ -101,7 +101,18 @@ document.addEventListener("DOMContentLoaded", () => {
     sections.forEach((section) => observer.observe(section));
 });
 
+// Anchor link in mobile for expand and collapse view
+document.addEventListener("DOMContentLoaded", () => {
+    const burgerMenu = document.querySelector(".burger-menu");
+    const anchorLinks = document.querySelector(".anchor-links");
 
+    burgerMenu.addEventListener("click", () => {
+        anchorLinks.classList.toggle("open"); // Toggle the "open" class
+    });
+});
+
+
+// Header menu 
 document.addEventListener("DOMContentLoaded", () => {
     const header = document.querySelector(".main-header");
     const headerHeight = header.offsetHeight;
@@ -122,3 +133,4 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+

@@ -51,8 +51,29 @@
 }
 
 
+/* Burger Menu Button(mobile) */
+.burger-menu {
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--white);
+    z-index: 1001; /* Ensure it's above other elements */
+    padding: var(--spacing-2xs);
+    transition: transform 0.3s ease;
+}
+
+.burger-menu:focus {
+    outline: 2px solid var(--border-color); /* Accessibility focus outline */
+}
+
+
 @media (max-width: 768px) {
     .anchor-link-list ul {
         flex-direction: column; /* Stack links vertically */
     }
+    .burger-menu {
+        display: none; /* Hide burger menu */
+    }
 }
+
