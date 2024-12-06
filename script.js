@@ -1,3 +1,6 @@
+
+console.log("hello test")
+
 // Open the modal
 function openModal(imageElement) {
     const modal = document.querySelector(".modal");
