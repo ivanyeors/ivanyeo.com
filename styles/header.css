@@ -34,10 +34,11 @@
 
 /* Adjust the logo size */
 .logo {
-    width: 150px; /* Adjust width */
-    height: auto; /* Maintain aspect ratio */
+    width: auto; /* Adjust width */
+    height: 55px; /* Maintain aspect ratio */
     max-width: 100%; /* Prevent overflow on small screens */
     transition: height 1s ease; /* Smoothly shrink the logo */
+    padding-right: var(--spacing-m); /* Adjust as needed */
 }
 
 
@@ -99,7 +100,24 @@
 /* Mobile-smaller screens styling */
 @media (max-width: 480px) {
     .bottom-app-bar {
-        font-size: var(--font-size-xs); /* Smaller font for smaller screens */
+        font-size: var(--font-size-s); /* Smaller font for smaller screens */
+        padding: var(--spacing-2xs) 0; /* Padding for spacing */
+        justify-content: center;
+        align-items: center;
+    }
+    .logo-container {
+        padding-left: var(--spacing-m); /* Adjust as needed */
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .logo {
+        width: auto; /* Adjust width */
+        height: 40px; /* Maintain aspect ratio */
+        max-width: 100%; /* Prevent overflow on small screens */
+        transition: height 1s ease; /* Smoothly shrink the logo */
+        padding-right: 0; /* Adjust as needed */
     }
 }
 
