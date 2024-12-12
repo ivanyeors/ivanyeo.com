@@ -162,6 +162,7 @@
 
     .social-links {
         gap: var(--spacing-s);
+        padding-bottom: var(--spacing-m);
     }
 
     .social-icon {
