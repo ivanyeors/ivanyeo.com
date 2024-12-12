@@ -181,6 +181,11 @@ ul {
     .space-layout-r {
         padding-right: 0%;
     }
+    h1 {
+        font-family: var(--font-family);
+        font-weight: var(--font-weight-light);
+        font-size: var(--font-size-l);
+    }
 }
 
 /* Center align for screens wider than 1440px */
