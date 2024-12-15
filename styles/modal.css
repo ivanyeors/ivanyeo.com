@@ -56,3 +56,49 @@
 .close-button-modal:hover {
     color: var(--stone150);
 }
+
+
+
+/* Clickable Card for Modal Popup */
+.card-modal {
+    aspect-ratio: 1 / 1; /* Maintains a 1:1 aspect ratio for squares */
+    cursor: pointer;
+    border: 1px solid var(--border-color); /* Border */
+    border-radius: var(--radius-s); /* Rounded corners */
+    padding: var(--spacing-m); /* Space inside each card */
+    background-color: var(--surface-color); /* Default card background */
+    text-decoration: none; /* Remove underline from links */
+    color: var(--white); /* Default text color */
+    display: flex; /* Use Flexbox */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: flex-end; /* Push content to the bottom */
+    align-items: flex-start; /* Align content to the left */
+    position: relative; /* Ensure pseudo-element positioning works */
+    overflow: hidden; /* Prevent pseudo-element from overflowing */
+    z-index: 1; /* Set proper stacking context */
+    transition: border 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+
+.arrow-logo {
+    max-width: 32px;
+    height: auto;
+}
+
+.card-modal:hover {
+    box-shadow: 0 1px 16px rgba(224, 227, 230, 0.274), 0 0 var(--spacing-m) rgba(0, 0, 0, 0.2);
+}
+
+/* Diagonal Arrow Icon on Top Right */
+.card-modal .icon-diagonal-arrow {
+    position: absolute;
+    top: var(--spacing-s);
+    right: var(--spacing-s);
+    font-size: 16px;
+    color: var(--icon-color);
+    transition: color 0.3s ease;
+}
+
+.card-modal:hover .icon-diagonal-arrow {
+    color: var(--icon-hover-color);
+}
