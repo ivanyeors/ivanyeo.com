@@ -152,5 +152,19 @@ document.querySelector('.close-button-modal').addEventListener('click', closeMod
         });
     }
 
+    // Hide anchor links when user is not scrolling, show when user is scrolling
+    let isScrolling;
+
+    window.addEventListener('scroll', () => {
+        anchorLinkList.classList.remove('hidden'); // Show anchor links
+
+        // Clear our timeout throughout the scroll
+        window.clearTimeout(isScrolling);
+
+        // Set a timeout to run after scrolling ends
+        isScrolling = setTimeout(() => {
+            anchorLinkList.classList.add('hidden'); // Hide anchor links after 2 seconds of no scrolling
+        }, 2000);
+    });
 
 });
