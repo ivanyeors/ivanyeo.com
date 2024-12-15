@@ -104,4 +104,21 @@ document.addEventListener('DOMContentLoaded', () => {
     videos.forEach((video) => {
         observer.observe(video);
     });
+
+    // Show/hide anchor links on scroll
+    const anchorLinkList = document.querySelector('.anchor-link-list');
+    let scrollTimeout;
+
+    if (anchorLinkList) {
+        window.addEventListener('scroll', () => {
+            anchorLinkList.classList.remove('hidden'); // Show anchor links
+
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+                anchorLinkList.classList.add('hidden'); // Hide anchor links after 2 seconds of no scrolling
+            }, 2000);
+        });
+    }
+
+
 });

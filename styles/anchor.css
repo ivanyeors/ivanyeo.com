@@ -50,6 +50,11 @@
     border: transparent;
 }
 
+.anchor-link-list.hidden {
+    display: none; /* Hide the anchor links */
+}
+
+
 
 /* Burger Menu Button(mobile) */
 .burger-menu {
