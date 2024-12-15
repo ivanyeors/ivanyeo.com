@@ -24,6 +24,7 @@
   /* Card styling */
   .card {
     aspect-ratio: 1 / 1; /* Maintains a 1:1 aspect ratio for squares */
+    cursor: pointer;
     border: 1px solid var(--border-color); /* Border */
     border-radius: var(--radius-s); /* Rounded corners */
     padding: var(--spacing-m); /* Space inside each card */

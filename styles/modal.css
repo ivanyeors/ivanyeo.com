@@ -13,6 +13,7 @@
     backdrop-filter: blur(24px); /* Blurred background */
     background-color: rgba(0,0,0,0.5); /* Semi-transparent dark overlay */
     padding: var(--spacing-s);
+
 }
 
 /* Show modal when .open is added */
@@ -25,7 +26,7 @@
     background: var(--anchor-surface-color);
     backdrop-filter: blur(16px);
     border-radius: var(--radius-xs);
-    max-width: 600px;
+    max-width: 100%;
     width: 100%;
     position: relative;
     padding: var(--spacing-s);
