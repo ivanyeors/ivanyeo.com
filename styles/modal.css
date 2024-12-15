@@ -1,5 +1,5 @@
 /* Modal Overlay */
-.modal {
+.modalp {
     position: fixed;
     top: 0;
     left: 0;
@@ -17,12 +17,12 @@
 }
 
 /* Show modal when .open is added */
-.modal.open {
+.modalp.open {
     display: flex;
 }
 
 /* Modal Content */
-.modal-content {
+.modalp-content {
     background: var(--anchor-surface-color);
     backdrop-filter: blur(16px);
     border-radius: var(--radius-xs);
@@ -34,7 +34,7 @@
 }
 
 /* Scrollable Body inside Modal */
-.modal-body {
+.modalp-body {
     max-height: 80vh; /* Limit the height so it can scroll */
     overflow-y: auto;
     padding-right: var(--spacing-s);
