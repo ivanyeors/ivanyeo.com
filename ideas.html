@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="styles/images.css">
     <link rel="stylesheet" href="styles/anchor.css">
     <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/footer.css">
 
     <!-- Link to the Javascript File -->
     <script src="script.js"></script>
@@ -38,14 +39,97 @@
     </header>
 
     <body id="top">
-    <h1 class="space-l">Ideas</h1>
-        <nav class="breadcrumbs" aria-label="Breadcrumb">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li aria-current="page">Ideas</li>
-            </ul>
-        </nav>
+        <div class="parent-container">
+            <div class="content space-l">
+                <nav class="breadcrumbs" aria-label="Breadcrumb">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li aria-current="page">Ideas</li>
+                    </ul>
+                </nav>
+
+                <h1>Ideas</h1>
+                <p>Good artist copy, great artists steal, amazing designers innovate. 
+                <br/> Don't forget me when you become famous using ideas created here!</p>
+
+
+                <!-- Example Card Trigger -->
+                <div class="card-container">
+            <div class="card" id="open-modal-button">
+                <h2>Open Modal</h2>
+                <p>Click to view more details...</p>
+            </div>
+                </div>
+                <!-- Modal Overlay and Content -->
+                <div class="modal" id="modal">
+            <div class="modal-content">
+                <button class="close-button-modal" id="close-modal-button" aria-label="Close Modal">&times;</button>
+                <div class="modal-body">
+                    <h1>Modal Title</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti. Mauris non feugiat mi. Donec id nibh nec risus convallis efficitur. Cras facilisis, est id varius tempor, erat leo varius sapien, vitae ornare ex neque non nulla.</p>
+                    <p>More scrollable content goes here... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris quis tristique arcu. Integer vitae eros a justo placerat bibendum a vitae ipsum. Donec a vulputate quam.</p>
+                    <p>Scroll further down for more content. Curabitur pharetra sem sit amet mauris accumsan, ac faucibus lorem cursus. Aliquam erat volutpat.</p>
+                </div>
+            </div>
+                </div>
+            </div> 
+        </div>   
     </body>
+
+<footer class="site-footer content space-l">
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-branding">
+                    <img src="assets/Ivan-logo.svg" alt="Ivan Yeo Logo" class="footer-logo">
+                    <h1>Ivan Yeo</h1>
+                </div>
+                
+                <div class="footer-social">
+                    <ul class="social-links">
+                        <li>
+                            <a href="mailto:ivanyeoart@gmail.com" class="social-icon" aria-label="Email">
+                                <img src="assets/email-icon.svg" alt=" ">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://wa.me/6596374631" class="social-icon" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
+                                <img src="assets/whatsapp-icon.svg" alt=" ">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/ivanyeors/" class="social-icon" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                                <img src="assets/linkedin-icon.svg" alt=" ">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.behance.net/ivanyeors" class="social-icon" aria-label="Behance" target="_blank" rel="noopener noreferrer">
+                                <img src="assets/behance-icon.svg" alt=" ">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <a href="#top" class="back-to-top">Back to top</a>
+            </div>
+        </div>
+</footer>
+    
+    
+<!-- Bottom App Bar -->
+    <nav class="bottom-app-bar">
+    <a href="https://ivanyeo.com" class="app-bar-item" rel="noopener noreferrer">
+        <span>Home</span>
+    </a>
+    <a href="assets/IvanYeo - 96374631.pdf" class="app-bar-item" target="_blank" rel="noopener noreferrer">
+        <span>Resume</span>
+    </a>
+    <a href="https://www.linkedin.com/in/ivanyeors/" class="app-bar-item" target="_blank" rel="noopener noreferrer">
+        <span>LinkedIn</span>
+    </a>
+  </nav>
+
 
 </html>
 

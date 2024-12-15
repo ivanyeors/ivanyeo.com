@@ -68,6 +68,10 @@
     --anchor-surface-color: var(--stone800);
     --anchor-surface-color-hover: var(--stone750);
     --anchor-text-color-active: var(--stone900);
+
+    /* For blurred background */
+    --blur-color-start: var(--stone50);
+    --blur-color-end: var(--stone150);
 }
 
 /* sementics tokens */
@@ -160,9 +164,6 @@ p {
 ul {
     padding: 0 var(--spacing-m) 0;
 }
-
-
-
   .figma-presentation iframe {
     width: 100%;
     height: 70vh; /* Occupies 70% of the viewport height */
@@ -206,6 +207,5 @@ ul {
         padding-right: 0%;
     }
 }
-
 
 

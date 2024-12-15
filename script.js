@@ -139,3 +139,23 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+
+// Example JavaScript to handle modal toggle
+const openBtn = document.getElementById('open-modal-button');
+const closeBtn = document.getElementById('close-modal-button');
+const modal = document.getElementById('modal');
+
+openBtn.addEventListener('click', () => {
+    modal.classList.add('open');
+});
+
+closeBtn.addEventListener('click', () => {
+    modal.classList.remove('open');
+});
+
+// Close modal when clicking outside modal-content
+modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        modal.classList.remove('open');
+    }
+});
