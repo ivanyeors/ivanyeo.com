@@ -33,6 +33,12 @@
     box-shadow: 0 2px 6px rgba(0,0,0,0.3);
 }
 
+/* Expanded state for modal content */
+.modalp.open .modalp-content {
+    height: 90vh; /* Expand to 90% of viewport height */
+    padding: var(--spacing-s); /* Add padding when expanded */
+}
+
 /* Scrollable Body inside Modal */
 .modalp-body {
     max-height: 80vh; /* Limit the height so it can scroll */

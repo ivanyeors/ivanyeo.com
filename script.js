@@ -55,33 +55,37 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    // Function to open the modal
-    function openModal() {
-        const modal = document.getElementById('modalp');
-        modal.style.display = 'block';
+// Function to open the modal
+function openModal() {
+    const modal = document.getElementById('modalp');
+    modal.classList.add('open');
+}
+
+// Function to close the modal
+function closeModal() {
+    const modal = document.getElementById('modalp');
+    modal.classList.remove('open');
+}
+
+// Event listener to open the modal
+document.getElementById('openModalButton').addEventListener('click', openModal);
+
+// Event listener to close the modal when clicking outside of it
+window.addEventListener('click', function(event) {
+    const modal = document.getElementById('modalp');
+    if (event.target == modal) {
+        closeModal();
     }
+});
 
-    // Function to close the modal
-    function closeModal() {
-        const modal = document.getElementById('modalp');
-        modal.style.display = 'none';
-    }
+// Ensure the modal can be reopened
+document.getElementById('modalp').addEventListener('click', function(event) {
+    event.stopPropagation();
+});
 
-    // Event listener to open the modal
-    document.getElementById('openModalButton').addEventListener('click', openModal);
+// Event listener for the close button inside the modal
+document.querySelector('.close-button-modal').addEventListener('click', closeModal);
 
-    // Event listener to close the modal when clicking outside of it
-    window.addEventListener('click', function(event) {
-        const modal = document.getElementById('modalp');
-        if (event.target == modal) {
-            closeModal();
-        }
-    });
-
-    // Ensure the iamge can be reopened
-    document.getElementById('modalp').addEventListener('click', function(event) {
-        event.stopPropagation();
-    });
 
     // Image modal functionality
     function openModal(imageElement) {
