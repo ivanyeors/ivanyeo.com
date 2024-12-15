@@ -147,15 +147,18 @@ const modal = document.getElementById('modal');
 
 openBtn.addEventListener('click', () => {
     modal.classList.add('open');
+    modal.style.display = 'block'; // Ensure the modal is displayed
 });
 
 closeBtn.addEventListener('click', () => {
     modal.classList.remove('open');
+    modal.style.display = 'none'; // Ensure the modal is hidden
 });
 
 // Close modal when clicking outside modal-content
 modal.addEventListener('click', (e) => {
     if (e.target === modal) {
         modal.classList.remove('open');
+        modal.style.display = 'none'; // Ensure the modal is hidden
     }
 });
