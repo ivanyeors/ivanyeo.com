@@ -126,7 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         isScrolling = setTimeout(() => {
             anchorLinks.classList.remove("visible");
-        }, 2000); // Hide after 2 seconds of no scrolling
+        }, 1000); // Hide after 1 second of no scrolling
     });
 });
 
