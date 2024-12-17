@@ -113,6 +113,23 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+// Anchor link show / hide state
+document.addEventListener("DOMContentLoaded", () => {
+    const anchorLinks = document.querySelector(".anchor-links");
+
+    let isScrolling;
+    
+    window.addEventListener("scroll", () => {
+        anchorLinks.classList.add("visible");
+
+        window.clearTimeout(isScrolling);
+
+        isScrolling = setTimeout(() => {
+            anchorLinks.classList.remove("visible");
+        }, 1000); // Hide after 1 second of no scrolling
+    });
+});
+
 
 // Header menu 
 document.addEventListener("DOMContentLoaded", () => {
