@@ -120,12 +120,12 @@ document.addEventListener("DOMContentLoaded", () => {
     let isScrolling;
 
     function handleScroll() {
-        anchorLinks.classList.add("visible");
+        anchorLinks.classList.remove("hidden");
 
         window.clearTimeout(isScrolling);
 
         isScrolling = setTimeout(() => {
-            anchorLinks.classList.remove("visible");
+            anchorLinks.classList.add("hidden");
         }, 1000); // Hide after 1 second of no scrolling
     }
 
@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
             window.addEventListener("scroll", handleScroll);
         } else {
             window.removeEventListener("scroll", handleScroll);
-            anchorLinks.classList.remove("visible");
+            anchorLinks.classList.remove("hidden");
         }
     }
 
