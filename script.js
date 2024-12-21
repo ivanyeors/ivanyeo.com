@@ -106,20 +106,20 @@ document.addEventListener("DOMContentLoaded", () => {
 // Anchor link in mobile for expand and collapse view
 document.addEventListener("DOMContentLoaded", () => {
     const burgerMenu = document.querySelector(".burger-menu");
-    const anchorLinks = document.querySelector(".anchor-links");
+    const anchorLinks = document.querySelector(".anchor-link");
 
     burgerMenu.addEventListener("click", () => {
         anchorLinks.classList.toggle("open"); // Toggle the "open" class
     });
 });
 
-// Anchor link show / hide state
+// Anchor link show / hide state only in mobile view
 document.addEventListener("DOMContentLoaded", () => {
-    const anchorLinks = document.querySelector(".anchor-link");
+    const anchorLinks = document.querySelector(".anchor-link-list");
 
     let isScrolling;
-    
-    window.addEventListener("scroll", () => {
+
+    function handleScroll() {
         anchorLinks.classList.add("visible");
 
         window.clearTimeout(isScrolling);
@@ -127,9 +127,20 @@ document.addEventListener("DOMContentLoaded", () => {
         isScrolling = setTimeout(() => {
             anchorLinks.classList.remove("visible");
         }, 1000); // Hide after 1 second of no scrolling
-    });
-});
+    }
 
+    function checkViewport() {
+        if (window.innerWidth <= 768) { // Mobile view
+            window.addEventListener("scroll", handleScroll);
+        } else {
+            window.removeEventListener("scroll", handleScroll);
+            anchorLinks.classList.remove("visible");
+        }
+    }
+
+    window.addEventListener("resize", checkViewport);
+    checkViewport(); // Initial check
+});
 
 // Header menu 
 document.addEventListener("DOMContentLoaded", () => {
