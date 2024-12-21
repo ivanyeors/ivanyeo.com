@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Anchor link show / hide state
 document.addEventListener("DOMContentLoaded", () => {
-    const anchorLinks = document.querySelector(".anchor-links");
+    const anchorLinks = document.querySelector(".anchor-link");
 
     let isScrolling;
     
