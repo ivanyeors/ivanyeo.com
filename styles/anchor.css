@@ -7,6 +7,9 @@
     justify-content: left; /* Center the links horizontally */
     align-items: center; /* Align items vertically within the container */
     padding: var(--spacing-s) 0; /* Spacing inside the container */
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    opacity: 1;
+    visibility: visible;
 }
 
 /* Anchor Link List Styles */
@@ -51,7 +54,8 @@
 }
 
 .anchor-link-list.hidden {
-    display: none; /* Hide the anchor links */
+    opacity: 0;
+    visibility: hidden;
 }
 
 
