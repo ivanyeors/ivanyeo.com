@@ -53,13 +53,15 @@
     .bottom-app-bar {
         display: flex; /* Flex container for items */
         position: fixed;
+        justify-content: center;
+        align-items: center;
         bottom: 0;
         left: 0;
         width: 100%; /* Full width of the screen */
         background-color: var(--bg-color); /* Background color */
         border-radius: var(--radius-s) var(--radius-s) 0 0;
         border-top: 1px solid var(--border-color) ;
-        padding: var(--spacing-m) 0; /* Padding for spacing */
+        padding: var(--spacing-m); /* Padding for spacing */
         z-index: 1000; /* Ensure it stays above other content */
     }
 
@@ -68,6 +70,7 @@
         flex: 1; /* Equal width for each item */
         transition: all 0.3s ease; /* Smooth hover effect */
         text-align: center;
+
         font-family: var(--font-family);
         font-size: var(--button-text-size);
         font-weight: var(--font-weight-light);
@@ -92,6 +95,13 @@
 
     .main-header {    
         display: none;
+    }
+    
+    .logo {
+        width: auto; /* Adjust width */
+        height: 40px; /* Maintain aspect ratio */
+        max-width: 100%; /* Prevent overflow on small screens */
+        transition: height 1s ease; /* Smoothly shrink the logo */
     }
 
 
