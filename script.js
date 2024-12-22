@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// Anchor link show / hide state
+// Anchor link show / hide state only in mobile view
 document.addEventListener("DOMContentLoaded", () => {
   const anchorLinks = document.querySelector(".anchor-links");
 
