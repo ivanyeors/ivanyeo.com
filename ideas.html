@@ -1,16 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">    
-
-    <head>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>IYRS</title>
-
-    <!-- Fonts Import -->    
+    <!-- Fonts Import -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
-
     <!-- Link to the CSS file -->
     <link rel="stylesheet" href="styles/main.css?v=1.0">
     <link rel="stylesheet" href="styles/breadcrumbs.css?v=1.0">
@@ -21,117 +18,86 @@
     <link rel="stylesheet" href="styles/header.css">
     <link rel="stylesheet" href="styles/footer.css">
     <link rel="stylesheet" href="styles/modal.css">
-
-
     <!-- Link to the Javascript File -->
     <script src="script.js" defer></script>
+</head>
 
-    </head>
-
+<body id="top">
     <header class="main-header">
-    <div class="logo-container">
-        <a href="index.html">
-            <img src="assets/Ivan-logo.svg" alt="Company Logo" class="logo">
-        </a>
-        <div class="btn-menu">
-            <a href="https://ivanyeo.com" class="btn" rel="noopener noreferrer">Home</a>
-            <a href="assets/IvanYeo - 96374631.pdf" class="btn" target="_blank" rel="noopener noreferrer">Resume</a>
-            <a href="https://www.linkedin.com/in/ivanyeors/" class="btn" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="assets/Ivan-logo.svg" alt="Company Logo" class="logo">
+            </a>
+            <div class="btn-menu">
+                <a href="https://ivanyeo.com" class="btn" rel="noopener noreferrer">Home</a>
+                <a href="assets/IvanYeo - 96374631.pdf" class="btn" target="_blank" rel="noopener noreferrer">Resume</a>
+                <a href="https://www.linkedin.com/in/ivanyeors/" class="btn" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
+        </div>
+    </header>
+    <div class="parent-container">
+        <div class="content space-l">
+            <nav class="breadcrumbs" aria-label="Breadcrumb">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li aria-current="page">Ideas</li>
+                </ul>
+            </nav>
+            <h1>Thoughts & Ideas</h1>
+            <p>A space for ideas and exploration on anything with design and innovation. 
+                <br><br> If anything below resonates with you to kickstart a passion project, feel free to reach out to me for a chat!</p>
+
+            <!-- Example Card Trigger -->
+            <div class="card-modal" id="fitspo-card" data-url="fitspo-app.html" onclick="location.href='fitspo-app.html';">
+                <i class="icon-diagonal-arrow">
+                    <img src="assets/arrow-icon.svg" class="arrow-logo">
+                </i>
+                <h2>Fitspo App</h2>
+                <p>Brainless Routines . AI Voice Coach . Vision Injury Prevention </p>
+            </div>
+
         </div>
     </div>
-    </header>
-
-    <body id="top">
-        <div class="parent-container">
-            <div class="content space-l">
-                <nav class="breadcrumbs" aria-label="Breadcrumb">
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li aria-current="page">Ideas</li>
-                    </ul>
-                </nav>
-
-                <h1>Thoughts & Ideas</h1>
-                <p>A space for me to document my ideas, thoughts on anything with design and innovation. 
-                    If anything below resonates with you to kickstart a passion project, feel free to reach out to me for a chat!</p>
-
-                <!-- Example Card Trigger -->
-                <div class="card-container">
-                    <div class="card-modal" id="open-modal-button">
-                        <i class="icon-diagonal-arrow">
-                            <img src="assets/arrow-icon.svg" class="arrow-logo"></i>
-                            <h2>Open Modal</h2>
-                            <p>Click to view more details...</p>
-                    </div>
-                </div>
-                <!-- Modal Overlay and Content -->
-                <div class="modal" id="modal">
-                    <div class="modal-content">
-                    <button class="close-button-modal" id="close-modal-button" aria-label="Close Modal">&times;</button>
-                <div class="modal-body">
-                    <h1>Modal Title</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti. Mauris non feugiat mi. Donec id nibh nec risus convallis efficitur. Cras facilisis, est id varius tempor, erat leo varius sapien, vitae ornare ex neque non nulla.</p>
-                    <!-- Image code start -->
-                        <div class="image-style">
-                        <img src="assets/img-gnc/gnc-routine-cards-5.jpg" alt="donut chart of brunei's demographics" class="img-style" onclick="openModal(this)">
-                        </div>
-                        <div class="modal">
-                        <span class="close-button" onclick="closeModal()">&times;</span>
-                        <img class="modal-content" alt="Full-screen Image">
-                        </div>    
-                    <!-- Image code end -->
-                    <p>More scrollable content goes here... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris quis tristique arcu. Integer vitae eros a justo placerat bibendum a vitae ipsum. Donec a vulputate quam.</p>
-                    <p>Scroll further down for more content. Curabitur pharetra sem sit amet mauris accumsan, ac faucibus lorem cursus. Aliquam erat volutpat.</p>
-                </div>
-            </div>
-                </div>
-            </div> 
-        </div>   
-    </body>
+</body>
 
 <footer class="site-footer content space-l">
-        <div class="footer-inner">
-            <div class="footer-top">
-                <div class="footer-branding">
-                    <img src="assets/Ivan-logo.svg" alt="Ivan Yeo Logo" class="footer-logo">
-                    <h1>Ivan Yeo</h1>
-                </div>
-                
-                <div class="footer-social">
-                    <ul class="social-links">
-                        <li>
-                            <a href="mailto:ivanyeoart@gmail.com" class="social-icon" aria-label="Email">
-                                <img src="assets/email-icon.svg" alt=" ">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://wa.me/6596374631" class="social-icon" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
-                                <img src="assets/whatsapp-icon.svg" alt=" ">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.linkedin.com/in/ivanyeors/" class="social-icon" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
-                                <img src="assets/linkedin-icon.svg" alt=" ">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.behance.net/ivanyeors" class="social-icon" aria-label="Behance" target="_blank" rel="noopener noreferrer">
-                                <img src="assets/behance-icon.svg" alt=" ">
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+    <div class="footer-inner">
+        <div class="footer-top">
+            <div class="footer-branding">
+                <img src="assets/Ivan-logo.svg" alt="Ivan Yeo Logo" class="footer-logo">
+                <h1>Ivan Yeo</h1>
             </div>
-            
-            <div class="footer-bottom">
-                <a href="#top" class="back-to-top">Back to top</a>
+            <div class="footer-social">
+                <ul class="social-links">
+                    <li>
+                        <a href="mailto:ivanyeoart@gmail.com" class="social-icon" aria-label="Email">
+                            <img src="assets/email-icon.svg" alt=" ">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://wa.me/6596374631" class="social-icon" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
+                            <img src="assets/whatsapp-icon.svg" alt=" ">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/ivanyeors/" class="social-icon" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                            <img src="assets/linkedin-icon.svg" alt=" ">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.behance.net/ivanyeors" class="social-icon" aria-label="Behance" target="_blank" rel="noopener noreferrer">
+                            <img src="assets/behance-icon.svg" alt=" ">
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
+        <div class="footer-bottom">
+            <a href="#top" class="back-to-top">Back to top</a>
+        </div>
+    </div>
 </footer>
-    
-    
-<!-- Bottom App Bar -->
-    <nav class="bottom-app-bar">
+<nav class="bottom-app-bar">
     <a href="https://ivanyeo.com" class="app-bar-item" rel="noopener noreferrer">
         <span>Home</span>
     </a>
@@ -141,8 +107,5 @@
     <a href="https://www.linkedin.com/in/ivanyeors/" class="app-bar-item" target="_blank" rel="noopener noreferrer">
         <span>LinkedIn</span>
     </a>
-  </nav>
-
-
+</nav>
 </html>
-

@@ -1,5 +1,5 @@
 /* Modal Overlay */
-.modalp {
+.modal-card {
     position: fixed;
     top: 0;
     left: 0;
@@ -13,16 +13,15 @@
     backdrop-filter: blur(24px); /* Blurred background */
     background-color: rgba(0,0,0,0.5); /* Semi-transparent dark overlay */
     padding: var(--spacing-s);
-
 }
 
 /* Show modal when .open is added */
-.modalp.open {
+.modal.open {
     display: flex;
 }
 
 /* Modal Content */
-.modalp-content {
+.modal-content {
     background: var(--anchor-surface-color);
     backdrop-filter: blur(16px);
     border-radius: var(--radius-xs);
@@ -34,13 +33,13 @@
 }
 
 /* Expanded state for modal content */
-.modalp.open .modalp-content {
+.modal.open .modal-content {
     height: 90vh; /* Expand to 90% of viewport height */
     padding: var(--spacing-s); /* Add padding when expanded */
 }
 
 /* Scrollable Body inside Modal */
-.modalp-body {
+.modal-body {
     max-height: 80vh; /* Limit the height so it can scroll */
     overflow-y: auto;
     padding-right: var(--spacing-s);

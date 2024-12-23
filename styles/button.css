@@ -78,7 +78,7 @@
 }
 
 /* breakpoints */  
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
     .btn-menu {
         flex-direction: row;
     }
