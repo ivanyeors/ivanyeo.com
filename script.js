@@ -1,3 +1,28 @@
+console.log('Script loaded');
+
+// Add this at the start of your file
+document.addEventListener('DOMContentLoaded', () => {
+    // Add a visible indicator that JS is running
+    const body = document.body;
+    body.style.position = 'relative';
+    const indicator = document.createElement('div');
+    indicator.style.cssText = `
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        background: green;
+        padding: 5px;
+        color: white;
+        border-radius: 4px;
+        z-index: 99999;
+    `;
+    indicator.textContent = 'JS Running';
+    body.appendChild(indicator);
+    
+    // Remove after 3 seconds
+    setTimeout(() => indicator.remove(), 3000);
+});
+
 // Open the modal
 function openModal(imageElement) {
   const modal = document.querySelector(".modal");
@@ -29,6 +54,7 @@ document.querySelector(".modal").addEventListener("click", (event) => {
 
 // Open the video modal / Auto play
 document.addEventListener("DOMContentLoaded", () => {
+  console.log('DOM fully loaded');
   // Select all videos with the 'auto-play-video' class
   const videos = document.querySelectorAll(".auto-play-video");
 
@@ -185,3 +211,95 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+function initializeModalSheet() {
+    console.log('Initializing modal sheet...');
+    
+    // Create modal sheet elements
+    const modalSheet = document.createElement('div');
+    modalSheet.className = 'modal-sheet';
+    console.log('Modal sheet element created');
+    
+    const modalOverlay = document.createElement('div');
+    modalOverlay.className = 'modal-sheet-overlay';
+    
+    const modalContent = document.createElement('div');
+    modalContent.className = 'modal-sheet-content';
+    
+    const closeButton = document.createElement('button');
+    closeButton.className = 'modal-sheet-close';
+    closeButton.innerHTML = `
+        <img src="assets/close-icon.svg" alt="Close">
+    `;
+    
+    modalSheet.appendChild(closeButton);
+    modalSheet.appendChild(modalContent);
+    document.body.appendChild(modalOverlay);
+    document.body.appendChild(modalSheet);
+    
+    // Handle card clicks
+    const cards = document.querySelectorAll('.card-modal');
+    console.log('Found cards:', cards.length);
+    
+    cards.forEach(card => {
+        // Add a click indicator
+        card.style.cursor = 'pointer';
+        card.addEventListener('click', async (e) => {
+            console.log('Card clicked:', card.id);
+            card.style.opacity = '0.7'; // Visual feedback
+            setTimeout(() => card.style.opacity = '1', 200);
+            
+            e.preventDefault();
+            e.stopPropagation();
+            const url = card.dataset.url;
+            console.log('Loading URL:', url);
+            try {
+                const response = await fetch(url);
+                if (!response.ok) throw new Error('Network response was not ok');
+                const html = await response.text();
+                
+                // Extract the content we want to display
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                const content = doc.querySelector('.project-content');
+                
+                if (content) {
+                    modalContent.innerHTML = content.outerHTML;
+                    requestAnimationFrame(() => {
+                        modalOverlay.classList.add('open');
+                        modalSheet.classList.add('open');
+                        document.body.style.overflow = 'hidden';
+                    });
+                } else {
+                    console.error('Could not find .project-content in loaded HTML');
+                }
+            } catch (error) {
+                console.error('Error loading content:', error);
+            }
+        });
+    });
+    
+    // Close sheet functionality
+    const closeSheet = () => {
+        modalSheet.classList.remove('open');
+        modalOverlay.classList.remove('open');
+        setTimeout(() => {
+            document.body.style.overflow = '';
+        }, 300); // Match transition duration
+    };
+    
+    closeButton.addEventListener('click', closeSheet);
+    modalOverlay.addEventListener('click', closeSheet);
+    
+    // Close on escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeSheet();
+    });
+}
+
+// Initialize modal sheet after DOM is loaded
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeModalSheet);
+} else {
+    initializeModalSheet();
+}

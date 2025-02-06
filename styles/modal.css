@@ -1,4 +1,91 @@
 /* Modal Overlay */
+.modal-sheet {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: var(--surface-color);
+    z-index: 9999;
+    transition: all 0.3s ease-in-out;
+    border-radius: var(--radius-s) var(--radius-s) 0 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Show modal when .open is added */
+.modal-sheet.open {
+    height: 90vh;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Modal Content Container */
+.modal-sheet-content {
+    height: 100%;
+    padding: var(--spacing-m);
+    overflow-y: auto;
+    position: relative;
+    background: var(--surface-color);
+}
+
+/* Ensure the content is visible */
+.modal-sheet-content .project-content {
+    color: var(--white);
+    padding-bottom: var(--spacing-l);
+    padding-top: var(--spacing-xl); /* Add space for close button */
+}
+
+/* Close Button */
+.modal-sheet-close {
+    position: absolute;
+    top: var(--spacing-s);
+    right: var(--spacing-s);
+    background: none;
+    border: none;
+    padding: var(--spacing-xs);
+    cursor: pointer;
+    z-index: 10000;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--stone800);
+}
+
+.modal-sheet-close:hover {
+    background: var(--stone700);
+}
+
+.modal-sheet-close img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Overlay background */
+.modal-sheet-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 9998;
+}
+
+.modal-sheet-overlay.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Modal Overlay */
 .modal-card {
     position: fixed;
     top: 0;
@@ -62,28 +149,48 @@
     color: var(--stone150);
 }
 
-
-
 /* Clickable Card for Modal Popup */
 .card-modal {
-    aspect-ratio: 1 / 1; /* Maintains a 1:1 aspect ratio for squares */
+    aspect-ratio: 1 / 1; /* Default square aspect ratio for mobile */
     cursor: pointer;
-    border: 1px solid var(--border-color); /* Border */
-    border-radius: var(--radius-s); /* Rounded corners */
-    padding: var(--spacing-m); /* Space inside each card */
-    background-color: var(--surface-color); /* Default card background */
-    text-decoration: none; /* Remove underline from links */
-    color: var(--white); /* Default text color */
-    display: flex; /* Use Flexbox */
-    flex-direction: column; /* Stack children vertically */
-    justify-content: flex-end; /* Push content to the bottom */
-    align-items: flex-start; /* Align content to the left */
-    position: relative; /* Ensure pseudo-element positioning works */
-    overflow: hidden; /* Prevent pseudo-element from overflowing */
-    z-index: 1; /* Set proper stacking context */
-    transition: border 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-s);
+    padding: var(--spacing-m);
+    background-color: var(--surface-color);
+    text-decoration: none;
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+    width: 100%; /* Full width by default */
+    margin-bottom: var(--spacing-m); /* Add spacing between cards */
 }
 
+/* Remove margin from last card */
+.card-modal:last-child {
+    margin-bottom: 0;
+}
+
+/* Add media query for screens larger than 768px */
+@media screen and (min-width: 768px) {
+    .card-modal {
+        aspect-ratio: 3 / 1; /* Changes to 3:1 aspect ratio on larger screens */
+    }
+}
+
+/* Add media query for screens larger than 1440px */
+@media screen and (min-width: 768px) {
+    .card-modal {
+        max-width: 920px; /* Maximum width of 720px */
+        margin-left: auto; /* Center the card */
+        margin-right: auto; /* Center the card */
+    }
+}
 
 .arrow-logo {
     max-width: 32px;
@@ -106,4 +213,19 @@
 
 .card-modal:hover .icon-diagonal-arrow {
     color: var(--icon-hover-color);
+}
+
+/* Ensure modal is above other content */
+.modal-sheet, 
+.modal-sheet-overlay {
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal-sheet.open, 
+.modal-sheet-overlay.open {
+    pointer-events: auto;
+    opacity: 1;
+    visibility: visible;
 }
