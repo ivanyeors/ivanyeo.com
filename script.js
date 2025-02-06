@@ -303,3 +303,56 @@ if (document.readyState === 'loading') {
 } else {
     initializeModalSheet();
 }
+
+// Breadcrumb truncation functionality
+document.addEventListener('DOMContentLoaded', () => {
+    function truncateBreadcrumb() {
+        const lastBreadcrumb = document.querySelector('.breadcrumbs li[aria-current="page"]');
+        console.log('Last breadcrumb found:', lastBreadcrumb);
+        
+        if (lastBreadcrumb) {
+            const fullText = lastBreadcrumb.getAttribute('title') || lastBreadcrumb.textContent;
+            console.log('Full text:', fullText);
+            
+            // Create measuring element
+            const measureElement = document.createElement('span');
+            measureElement.style.cssText = `
+                position: absolute;
+                visibility: hidden;
+                white-space: nowrap;
+                font-size: ${window.getComputedStyle(lastBreadcrumb).fontSize};
+                font-weight: ${window.getComputedStyle(lastBreadcrumb).fontWeight};
+            `;
+            measureElement.textContent = fullText;
+            document.body.appendChild(measureElement);
+            
+            const textWidth = measureElement.offsetWidth;
+            const containerWidth = lastBreadcrumb.parentElement.offsetWidth;
+            const availableWidth = containerWidth * 0.6; // Use 60% of container width as threshold
+            
+            document.body.removeChild(measureElement);
+            console.log('Text width:', textWidth, 'Available width:', availableWidth);
+            
+            if (textWidth > availableWidth) {
+                console.log('Truncating text...');
+                const truncatedText = `${fullText.slice(0, 10)}...`;
+                lastBreadcrumb.textContent = truncatedText;
+                lastBreadcrumb.classList.add('truncate');
+            } else {
+                console.log('Showing full text...');
+                lastBreadcrumb.textContent = fullText;
+                lastBreadcrumb.classList.remove('truncate');
+            }
+        }
+    }
+
+    // Run on load
+    truncateBreadcrumb();
+    
+    // Run on resize with debounce
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(truncateBreadcrumb, 250);
+    });
+});

@@ -3,7 +3,7 @@
     font-family: var(font-family);
     font-size: var(--font-size-l);
     margin-bottom: var(--spacing-m);
-
+    width: 100%;
 }
 
 .breadcrumbs ul {
@@ -13,10 +13,25 @@
     gap: var(--spacing-2xs);
     padding: 0;
     margin: 0;
+    width: 100%;
 }
 
 .breadcrumbs li {
-    display: inline;
+    display: inline-block;
+    position: relative;
+}
+
+.breadcrumbs li[aria-current="page"] {
+    font-weight: bold;
+    color: var(--text-color-active);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 60%; /* Allow up to 60% of container width */
+}
+
+.breadcrumbs li[aria-current="page"].truncate {
+    cursor: help; /* Indicates there's a tooltip */
 }
 
 .breadcrumbs a {
@@ -32,17 +47,15 @@
 .breadcrumbs li + li::before {
     content: "/";
     color: var(--text-color-pressed);
-    margin: 1rem;
+    margin: 0 var(--spacing-xs);
 }
-
-.breadcrumbs li[aria-current="page"] {
-    font-weight: bold;
-    color: var(--text-color-active);
-}
-
 
 @media (max-width: 768px) {
     .breadcrumbs {
-        font-size: var(--font-size-xs); /* Smaller font for smaller screens */
+        font-size: var(--font-size-xs);
+    }
+    
+    .breadcrumbs li[aria-current="page"] {
+        max-width: 200px;
     }
 }
