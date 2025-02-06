@@ -189,6 +189,8 @@
 .arrow-logo {
     max-width: 32px;
     height: auto;
+    transform: rotate(0deg); /* Start position */
+    transition: transform 0.3s ease; /* Add transition for smooth animation */
 }
 
 .card-modal:hover {
@@ -202,11 +204,16 @@
     right: var(--spacing-s);
     font-size: 16px;
     color: var(--icon-color);
-    transition: color 0.3s ease;
+    transition: transform 0.3s ease; /* Add transition for smooth animation */
 }
 
 .card-modal:hover .icon-diagonal-arrow {
     color: var(--icon-hover-color);
+}
+
+/* Hover effect for the arrow */
+.card-modal:hover .arrow-logo {
+    transform: rotate(45deg); /* Only rotate 45 degrees, no scaling */
 }
 
 /* Ensure modal is above other content */
