@@ -356,3 +356,54 @@ document.addEventListener('DOMContentLoaded', () => {
         resizeTimer = setTimeout(truncateBreadcrumb, 250);
     });
 });
+
+// Filter functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.card-modal');
+
+    function filterCards(filterValue) {
+        cards.forEach(card => {
+            const cardCategory = card.getAttribute('data-category');
+            
+            if (filterValue === 'all') {
+                card.style.display = 'flex';
+                card.style.opacity = '1';
+                card.style.visibility = 'visible';
+                card.style.height = 'auto';
+                card.style.margin = null; // Reset to CSS default
+                card.style.padding = null; // Reset to CSS default
+            } else if (cardCategory === filterValue) {
+                card.style.display = 'flex';
+                card.style.opacity = '1';
+                card.style.visibility = 'visible';
+                card.style.height = 'auto';
+                card.style.margin = null; // Reset to CSS default
+                card.style.padding = null; // Reset to CSS default
+            } else {
+                card.style.display = 'none';
+                card.style.opacity = '0';
+                card.style.visibility = 'hidden';
+                card.style.height = '0';
+                card.style.margin = '0';
+                card.style.padding = '0';
+            }
+        });
+    }
+
+    // Initial state - show all cards
+    filterCards('all');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const filterValue = button.getAttribute('data-filter');
+            
+            // Update active state of buttons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            
+            // Apply filtering
+            filterCards(filterValue);
+        });
+    });
+});

@@ -72,6 +72,12 @@
     /* For blurred background */
     --blur-color-start: var(--stone50);
     --blur-color-end: var(--stone150);
+
+    /* Label Colors */
+    --label-idea-bg: var(--stone800);
+    --label-idea-text: #4ADE80; /* Green */
+    --label-thought-bg: var(--stone800);
+    --label-thought-text: #60A5FA; /* Blue */
 }
 
 /* sementics tokens */

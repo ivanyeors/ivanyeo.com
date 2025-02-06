@@ -47,8 +47,18 @@
             <p>A space for ideas and exploration on anything with design and innovation. 
                 <br><br> If anything below resonates with you to kickstart a passion project, feel free to reach out to me for a chat!</p>
 
-            <!-- Example Card Trigger -->
-            <div class="card-modal" onclick="location.href='fitspo-app.html';">
+            <!-- Filter buttons -->
+            <div class="filter-container">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="idea">Idea</button>
+                    <button class="filter-btn" data-filter="thought">Thought</button>
+                </div>
+            </div>
+
+            <!-- Cards with proper data-category attributes -->
+            <div class="card-modal" onclick="location.href='fitspo-app.html';" data-category="idea">
+                <span class="card-label">Idea</span>
                 <i class="icon-diagonal-arrow">
                     <img src="assets/arrow-icon.svg" class="arrow-logo">
                 </i>
@@ -56,13 +66,13 @@
                 <p>Brainless Routines . AI Voice Coach . Vision Injury Prevention </p>
             </div>
 
-            <!-- TimeLife Card -->
-            <div class="card-modal" onclick="location.href='timelife-app.html';">
+            <div class="card-modal" onclick="location.href='timelife-app.html';" data-category="thought">
+                <span class="card-label">Thought</span>
                 <i class="icon-diagonal-arrow">
                     <img src="assets/arrow-icon.svg" class="arrow-logo">
                 </i>
                 <h2>Improving Pipeline from Design to Development</h2>
-                <p>Time Management . Life Goals Tracking . Habit Formation</p>
+                <p>Design System . Component Library . Automated Workflow</p>
             </div>
 
         </div>

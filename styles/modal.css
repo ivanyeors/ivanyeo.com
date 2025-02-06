@@ -166,9 +166,13 @@
     position: relative;
     overflow: hidden;
     z-index: 1;
-    transition: border 0.3s ease, box-shadow 0.3s ease;
+    transition: border 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
     width: 100%; /* Full width by default */
     margin-bottom: var(--spacing-m); /* Add spacing between cards */
+    transition: opacity 0.3s ease, visibility 0.3s ease, height 0.3s ease, margin 0.3s ease, padding 0.3s ease;
+    opacity: 1;
+    visibility: visible;
+    height: auto;
 }
 
 /* Remove margin from last card */
@@ -229,4 +233,61 @@
     pointer-events: auto;
     opacity: 1;
     visibility: visible;
+}
+
+/* Filter Styles */
+.filter-container {
+    margin-bottom: var(--spacing-l);
+}
+
+.filter-buttons {
+    display: flex;
+    gap: var(--spacing-xs);
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: var(--spacing-2xs) var(--spacing-s);
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xs);
+    color: var(--text-color-rest);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    background: var(--stone800);
+    color: var(--text-color-hover);
+}
+
+.filter-btn.active {
+    background: var(--stone700);
+    color: var(--white);
+    border-color: var(--stone600);
+}
+
+/* Card Label Styles */
+.card-label {
+    position: absolute;
+    top: var(--spacing-s);
+    left: var(--spacing-s);
+    padding: var(--spacing-3xs) var(--spacing-xs);
+    background: var(--stone800);
+    border-radius: var(--radius-xs);
+    font-size: var(--font-size-s);
+}
+
+/* Specific label colors */
+.card-modal[data-category="idea"] .card-label {
+    color: var(--label-idea-text);
+}
+
+.card-modal[data-category="thought"] .card-label {
+    color: var(--label-thought-text);
+}
+
+/* Remove the .hidden class styles since we're handling display states in JS */
+.card-modal.hidden {
+    display: none;
 }
