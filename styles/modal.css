@@ -109,7 +109,7 @@
 
 /* Modal Content */
 .modal-content {
-    background: var(--anchor-surface-color);
+    background: var(--surface-color);
     backdrop-filter: blur(16px);
     border-radius: var(--radius-xs);
     max-width: 100%;
@@ -140,7 +140,7 @@
     background: none;
     border: none;
     font-size: 24px;
-    color: var(--white);
+    color: var(--text-color-active);
     cursor: pointer;
     transition: color 0.3s ease;
 }
@@ -158,7 +158,7 @@
     padding: var(--spacing-m);
     background-color: var(--surface-color);
     text-decoration: none;
-    color: var(--white);
+    color: var(--text-color-active);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -263,7 +263,7 @@
 
 .filter-btn.active {
     background: var(--stone700);
-    color: var(--white);
+    color: var(--text-color-active);
     border-color: var(--stone600);
 }
 

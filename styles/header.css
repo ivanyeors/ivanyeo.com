@@ -4,7 +4,7 @@
     top: 0;
     width: 100%;
     background-color: transparent;
-    color: white;
+    color: var(--text-color-active);
     padding: 20px;
     text-align: center;
     z-index: 1000;
@@ -13,7 +13,7 @@
 /* Scrolled State */
 .main-header.scrolled {
     background-color: transparent; /* Smaller header background */
-    color: white; /* Text color for smaller header */
+    color: var(--text-color-active); /* Text color for smaller header */
     padding: 10px 0; /* Reduced padding for smaller header */
     transition: height 1s ease; /* Smoothly shrink the logo */
 }
@@ -78,7 +78,7 @@
         border-right: 1px solid var(--border-color);
         outline: none;
         background-color: none;
-        color: var(--white);
+        color: var(--text-color-active);
         cursor: pointer;
         position: relative;
         z-index: 0;

@@ -129,7 +129,7 @@
 }
 
 .back-to-top {
-    color: var(--white);
+    color: var(--text-color-active);
     text-decoration: none;
     background: rgba(255, 255, 255, 0.1);
     padding: var(--spacing-s) var(--spacing-m);
