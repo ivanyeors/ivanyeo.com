@@ -2,6 +2,8 @@ console.log('Script loaded');
 
 // Add this at the start of your file
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM Content Loaded - Initializing all features');
+
     // Add a visible indicator that JS is running
     const body = document.body;
     body.style.position = 'relative';
@@ -21,6 +23,14 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Remove after 3 seconds
     setTimeout(() => indicator.remove(), 3000);
+
+    // Initialize breadcrumb functionality
+    initializeBreadcrumbs();
+    
+    // Initialize filter functionality
+    initializeFilters();
+    
+    // Initialize other features...
 });
 
 // Open the modal
@@ -304,13 +314,11 @@ if (document.readyState === 'loading') {
     initializeModalSheet();
 }
 
-// Breadcrumb truncation functionality
-document.addEventListener('DOMContentLoaded', () => {
-    function truncateBreadcrumb() {
-        const lastBreadcrumb = document.querySelector('.breadcrumbs li[aria-current="page"]');
-        console.log('Last breadcrumb found:', lastBreadcrumb);
-        
-        if (lastBreadcrumb) {
+// Breadcrumb functionality
+function initializeBreadcrumbs() {
+    const lastBreadcrumb = document.querySelector('.breadcrumbs li[aria-current="page"]');
+    if (lastBreadcrumb) {
+        function truncateBreadcrumb() {
             const fullText = lastBreadcrumb.getAttribute('title') || lastBreadcrumb.textContent;
             console.log('Full text:', fullText);
             
@@ -344,66 +352,90 @@ document.addEventListener('DOMContentLoaded', () => {
                 lastBreadcrumb.classList.remove('truncate');
             }
         }
+        
+        // Run on load
+        truncateBreadcrumb();
+        
+        // Run on resize with debounce
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(truncateBreadcrumb, 250);
+        });
     }
-
-    // Run on load
-    truncateBreadcrumb();
-    
-    // Run on resize with debounce
-    let resizeTimer;
-    window.addEventListener('resize', () => {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(truncateBreadcrumb, 250);
-    });
-});
+}
 
 // Filter functionality
-document.addEventListener('DOMContentLoaded', () => {
+function initializeFilters() {
     const filterButtons = document.querySelectorAll('.filter-btn');
     const cards = document.querySelectorAll('.card-modal');
+    
+    // Only proceed if we have both buttons and cards
+    if (!filterButtons.length || !cards.length) {
+        console.log('Filter elements not found on this page');
+        return;
+    }
+    
+    console.log('Filter initialization started');
+    console.log('Found filter buttons:', filterButtons.length);
+    console.log('Found cards:', cards.length);
 
     function filterCards(filterValue) {
+        console.log('Filtering for:', filterValue);
+        
         cards.forEach(card => {
             const cardCategory = card.getAttribute('data-category');
+            console.log('Card category:', cardCategory);
             
-            if (filterValue === 'all') {
-                card.style.display = 'flex';
+            // Save current onclick
+            const href = card.getAttribute('onclick')?.match(/location\.href='(.+?)'/)?.[1];
+            
+            if (filterValue === 'all' || cardCategory === filterValue) {
+                // Show matching cards
+                card.style.display = '';
                 card.style.opacity = '1';
-                card.style.visibility = 'visible';
-                card.style.height = 'auto';
-                card.style.margin = null; // Reset to CSS default
-                card.style.padding = null; // Reset to CSS default
-            } else if (cardCategory === filterValue) {
-                card.style.display = 'flex';
-                card.style.opacity = '1';
-                card.style.visibility = 'visible';
-                card.style.height = 'auto';
-                card.style.margin = null; // Reset to CSS default
-                card.style.padding = null; // Reset to CSS default
+                card.style.transform = 'translateY(0)';
+                
+                // Restore click functionality
+                if (href) {
+                    card.onclick = () => location.href = href;
+                }
             } else {
-                card.style.display = 'none';
+                // Hide non-matching cards
                 card.style.opacity = '0';
-                card.style.visibility = 'hidden';
-                card.style.height = '0';
-                card.style.margin = '0';
-                card.style.padding = '0';
+                card.style.transform = 'translateY(20px)';
+                card.onclick = null; // Remove click handler
+                
+                // Hide after animation
+                setTimeout(() => {
+                    card.style.display = 'none';
+                }, 300);
             }
         });
     }
 
-    // Initial state - show all cards
-    filterCards('all');
-
+    // Handle filter button clicks
     filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            
             const filterValue = button.getAttribute('data-filter');
+            console.log('Button clicked:', filterValue);
             
-            // Update active state of buttons
-            filterButtons.forEach(btn => btn.classList.remove('active'));
+            // Update active state
+            filterButtons.forEach(btn => {
+                btn.classList.remove('active');
+                console.log('Removed active from:', btn.getAttribute('data-filter'));
+            });
             button.classList.add('active');
+            console.log('Added active to:', filterValue);
             
-            // Apply filtering
+            // Apply filter
             filterCards(filterValue);
         });
     });
-});
+
+    // Initialize with 'all' filter
+    console.log('Setting initial filter: all');
+    filterCards('all');
+}
