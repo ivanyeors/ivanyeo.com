@@ -148,6 +148,7 @@
     flex-direction: column;
     position: relative;
     margin-bottom: var(--spacing-m);
+    min-height: 200px; /* Minimum height for cards */
     
     /* Animation properties */
     transition: opacity 0.3s ease, transform 0.3s ease;
@@ -197,4 +198,43 @@
 
 .filter-btn.active::after {
     transform: scaleX(1);
+}
+
+/* Add these styles for the card container */
+.parent-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1;
+    padding-bottom: var(--spacing-l);
+}
+
+/* Adjust spacing for different screen sizes */
+@media (min-width: 768px) {
+    .content {
+        padding-bottom: var(--spacing-xl);
+    }
+}
+
+@media (min-width: 1024px) {
+    .content {
+        max-width: 1440px;
+        margin: 0 auto;
+        width: 100%;
+        padding-bottom: var(--spacing-xxl); /* Increased padding for larger screens */
+    }
+}
+
+@media (min-width: 1440px) {
+    .parent-container {
+        min-height: auto; /* Allow container to grow with content */
+        padding-bottom: var(--spacing-xl); /* Add space at bottom */
+    }
+    
+    .content {
+        padding-bottom: var(--spacing-xxxl); /* More padding for largest screens */
+    }
 }

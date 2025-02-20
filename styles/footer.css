@@ -7,7 +7,11 @@
     padding: var(--spacing-m);
     font-family: var(--font-family);
     color: var(--text-color);
-    margin-top: var(--spacing-m);
+    margin-top: auto; /* Push footer to bottom */
+    width: 100%;
+    z-index: 1;
+    /* Add bottom margin to ensure visibility */
+    padding-bottom: var(--spacing-xl);
 }
 
 /* Glowing pastel gradient background */
@@ -45,7 +49,7 @@
     display: flex;
     flex-direction: column;
     gap: var(--spacing-m);
-    padding: var(--spacing-m);
+    padding: var(--spacing-l) 0;
 }
 
 /* Footer top section */
@@ -141,7 +145,12 @@
     background: rgba(255, 255, 255, 0.2);
 }
 
+/* Adjust footer padding for different screen sizes */
 @media (max-width: 768px) {
+    .site-footer {
+        padding-bottom: calc(var(--spacing-xl) + 60px); /* Space for bottom nav */
+    }
+
     .footer-top {
         flex-direction: column;
         align-items: center;
@@ -149,7 +158,6 @@
 
     .footer-bottom {
         text-align: center;
-        padding-bottom: var(--spacing-xl);
     }
 
     .footer-branding h1 {
@@ -162,7 +170,6 @@
 
     .social-links {
         gap: var(--spacing-s);
-        padding-bottom: var(--spacing-m);
     }
 
     .social-icon {
@@ -171,9 +178,29 @@
     }
 }
 
+@media (min-width: 769px) {
+    .site-footer {
+        padding-bottom: var(--spacing-l);
+    }
+    
+    .footer-inner {
+        padding: var(--spacing-l) 0;
+    }
+    
+    /* Hide the back to top button for desktop */
+    .back-to-top {
+        display: none;
+    }
+}
+
 @media (min-width: 1440px) {
-    .footer-bottom {
+    .site-footer {
         padding-bottom: var(--spacing-xl);
     }
-
+    
+    .footer-inner {
+        padding: var(--spacing-xl) 0;
+        max-width: 1440px;
+        margin: 0 auto;
+    }
 }
