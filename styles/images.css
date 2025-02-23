@@ -57,6 +57,22 @@
     color: black;
 }
 
+/* Placeholder Image */
+.placeholder {
+    background-color: var(--stone800);
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: var(--radius-s);
+    margin: var(--spacing-l) 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.placeholder p {
+    color: var(--stone500);
+}
+
 
 /* Limit the max width when the screen size is greater than 1440px */
 @media (min-width: 1440px) {

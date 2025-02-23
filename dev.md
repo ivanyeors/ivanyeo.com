@@ -1,4 +1,8 @@
-# Website Development Documentation
+# Website Development Instructions
+- Always follow the guide before making any changes to the code.
+- Do not add any styles, classes unless it is mentioned in the guide.
+- Alwayys use existing classes and structure when making changes.
+- Always refernce the code structure when making changes.
 
 ## Site Structure
 ### Pages

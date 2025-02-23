@@ -148,7 +148,7 @@
 /* Adjust footer padding for different screen sizes */
 @media (max-width: 768px) {
     .site-footer {
-        padding-bottom: calc(var(--spacing-xl) + 60px); /* Space for bottom nav */
+        padding-bottom: calc(var(--spacing-xl) + 40px); /* Space for bottom nav */
     }
 
     .footer-top {
@@ -186,20 +186,16 @@
     .footer-inner {
         padding: var(--spacing-l) 0;
     }
-    
-    /* Hide the back to top button for desktop */
-    .back-to-top {
-        display: none;
-    }
+
 }
 
 @media (min-width: 1440px) {
     .site-footer {
-        padding-bottom: var(--spacing-xl);
+        padding-bottom: calc(var(--spacing-s) + 3%); /* Space for bottom nav */
     }
     
     .footer-inner {
-        padding: var(--spacing-xl) 0;
+        padding: var(--radius-s) var(--spacing-m) 0;
         max-width: 1440px;
         margin: 0 auto;
     }

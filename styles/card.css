@@ -196,9 +196,6 @@
     color: var(--text-color-active);
 }
 
-.filter-btn.active::after {
-    transform: scaleX(1);
-}
 
 /* Add these styles for the card container */
 .parent-container {
@@ -231,7 +228,6 @@
 @media (min-width: 1440px) {
     .parent-container {
         min-height: auto; /* Allow container to grow with content */
-        padding-bottom: var(--spacing-xl); /* Add space at bottom */
     }
     
     .content {
