@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="styles/anchor.css">
     <link rel="stylesheet" href="styles/header.css">
     <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/modal.css">
 
     <!-- Link to the Javascript File -->
     <script src="script.js" defer></script>
@@ -51,28 +52,37 @@
             
             <!-- Project Title -->
             <h1>Relinky: Streamlining Design System Workflow</h1>
-            
-            <!-- Hero Image -->
-            <div class="placeholder">
-                <p>Relinky Plugin Interface</p>
-                <p>A powerful Figma plugin for maintaining design system consistency</p>
+            <p>Relinky is a Figma plugin that automates the detection and management 
+                of unlinked design tokens and variables, significantly reducing design debt 
+                and improving team efficiency.
+            </p>
+            <!-- Image code start -->
+            <div class="image-style">
+                <img src="assets/img-ds/test-ds-image.png" alt="Desgin System cover" class="img-style" onclick="openModal(this)">
             </div>
+            <div class="modal">
+                <span class="close-button" onclick="closeModal()">&times;</span>
+                <img class="modal-content" alt="Full-screen Image">
+            </div>    
+            <!-- Image code end -->
 
+            <p>
+            As a senior product designer working with large-scale design systems, 
+            I came to realise a critical pain point during a handoff process across differeent design teams: 
+            </p>
 
             <!-- Project Overview -->
-            <p class="lead">As a senior product designer working with large-scale design systems, 
-                I came to realise a critical pain point during a handoff process across differeent design teams: 
-                <br>
-                <br>
-                1. Maintaining consistency across large-scale design systems. 
-                <br>
-                <br>
-                2. The handoff process was not seamless and there was a lot of back and forth between the designers and developers.
-                <br>
-                <br>
-                Relinky is a Figma plugin that automates the detection and management 
-                of unlinked design tokens and variables, significantly reducing design debt and improving team efficiency.
-            </p>
+                <div class="card-grid">
+                    <div class="card-small">
+                        <h2 class="card-title">Design System Consistency</h2>
+                        <p class="card-text">Maintaining consistency across large-scale design systems was challenging and time-consuming.</p>
+                    </div>
+                    <div class="card-small">
+                        <h2 class="card-title">Handoff Process</h2>
+                        <p class="card-text">The handoff process was not seamless and required extensive back-and-forth between designers and developers.</p>
+                    </div>
+                </div>
+
 
             <h2>The Design Challenge</h2>
             <p>Design systems in large organizations often face several challenges:</p>
@@ -99,11 +109,17 @@
 
             <!-- Feature Section: Unlinked Values -->
             <h2>Smart Detection System</h2>
-            <div class="project-content">
-                <div class="placeholder">
-                    <p>Unlinked Values Detection Interface</p>
-                    <p>Intelligent scanning system for design inconsistencies</p>
-                </div>
+
+            <!-- Image code start -->
+            <div class="image-style">
+                <img src="assets/img-ds/test-ds-image.png" alt="Desgin System cover" class="img-style" onclick="openModal(this)">
+            </div>
+            <div class="modal">
+                <span class="close-button" onclick="closeModal()">&times;</span>
+                <img class="modal-content" alt="Full-screen Image">
+            </div>    
+            <!-- Image code end -->
+
                 <div class="card-grid">
                     <div class="card-small">
                         <h2 class="card-title">Automated Token Detection</h2>
@@ -121,20 +137,26 @@
 
             <!-- Feature Section: Variables Management -->
             <h2>Variable Management System</h2>
-            <div class="project-content">
-                <div class="placeholder">
-                    <p>Variables Management Dashboard</p>
-                    <p>Comprehensive variable control and monitoring system</p>
-                </div>
-                <h3>Comprehensive Variable Control</h3>
-                <p>The plugin provides powerful tools for managing design variables:</p>
+
+            <!-- Image code start -->
+            <div class="image-style">
+                <img src="assets/img-ds/test-ds-image.png" alt="Desgin System cover" class="img-style" onclick="openModal(this)">
+            </div>
+            <div class="modal">
+                <span class="close-button" onclick="closeModal()">&times;</span>
+                <img class="modal-content" alt="Full-screen Image">
+            </div>    
+            <!-- Image code end -->
+
+            <h3>Comprehensive Variable Control</h3>
+            <p>The plugin provides powerful tools for managing design variables:</p>
                 <ul>
                     <li>Real-time library status monitoring</li>
                     <li>Batch selection and updating of variables</li>
                     <li>Visual preview of variable values</li>
                     <li>Direct library activation from results</li>
                 </ul>
-            </div>
+
 
             <!-- Workflow Improvement -->
             <h2>Impact on Design Workflow</h2>
