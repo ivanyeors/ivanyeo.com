@@ -44,7 +44,7 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="ideas.html">Ideas</a></li>
-                <li aria-current="page" title="Improving Pipeline from Design to Development">Improving Pipeline from Design to Development</li>
+                <li aria-current="page" title="Relinky">Relinky</li>
             </ul>
         </nav>
 
@@ -52,92 +52,145 @@
             
             <!-- Project Title -->
             <h1>Relinky: Streamlining Design System Workflow</h1>
-            <p>Relinky is a Figma plugin that automates the detection and management 
+            <p class="space-layout-r">Relinky is a Figma plugin that automates the detection and management 
                 of unlinked design tokens and variables, significantly reducing design debt 
                 and improving team efficiency.
             </p>
             <!-- Image code start -->
             <div class="image-style">
-                <img src="assets/img-ds/test-ds-image.png" alt="Desgin System cover" class="img-style" onclick="openModal(this)">
+                <img src="assets/img-relinky/cover-main.png" alt="Relinky cover Plugin" class="img-style" onclick="openModal(this)">
             </div>
             <div class="modal">
                 <span class="close-button" onclick="closeModal()">&times;</span>
                 <img class="modal-content" alt="Full-screen Image">
             </div>    
             <!-- Image code end -->
-
-            <p>
-            As a senior product designer working with large-scale design systems, 
+            <br>
+            <p class="space-layout-r">
+            As a product designer working with large-scale design systems, 
             I came to realise a critical pain point during a handoff process across differeent design teams: 
             </p>
 
             <!-- Project Overview -->
+            <h2>Internal Challenges</h2>
                 <div class="card-grid">
                     <div class="card-small">
-                        <h2 class="card-title">Design System Consistency</h2>
-                        <p class="card-text">Maintaining consistency across large-scale design systems was challenging and time-consuming.</p>
+                        <h2 class="card-title">Unlinked values during explorations</h2>
+                        <p class="card-text">Many unlinked values during explorations stage</p>
                     </div>
                     <div class="card-small">
-                        <h2 class="card-title">Handoff Process</h2>
-                        <p class="card-text">The handoff process was not seamless and required extensive back-and-forth between designers and developers.</p>
+                        <h2 class="card-title">Duplicating designs from different projects</h2>
+                        <p class="card-text">Duplicating designs from different projects have unlinked values</p>
                     </div>
                 </div>
 
 
-            <h2>The Design Challenge</h2>
-            <p>Design systems in large organizations often face several challenges:</p>
+            <h2>External Challenges</h2>
+            <p class="space-layout-r">Design systems in large organizations often face several challenges:</p>
             <div class="card-grid">
                 <div class="card-small">
-                    <h2 class="card-title">Design Tokens</h2>
+                    <h2 class="card-title">Design variables inconsistencies</h2>
                     <p class="card-text">
                         <ul>
                             <li>Inconsistent use of design tokens across files and teams</li>
-                            <li>Time-consuming manual audits of design files</li>
+                            <br>
+                            <li>Time-consuming manual changes of multiple design screens</li>
                         </ul>
                     </p>
                 </div>
                 <div class="card-small">
-                    <h2 class="card-title">Components</h2>
+                    <h2 class="card-title">Design to Development handover</h2>
                     <p class="card-text">
                         <ul>
-                            <li>Design drift between components and their instances</li>
-                            <li>Difficulty in maintaining design system compliance</li>
+                            <li>Variables in hanoff screen might come from different libraries</li>
+                            <br>
+                            <li>Nested values within screens might be missed out</li>
                         </ul>
                     </p>
                 </div>
             </div>
 
             <!-- Feature Section: Unlinked Values -->
-            <h2>Smart Detection System</h2>
+            <h2>Relinky's Features</h2>
 
             <!-- Image code start -->
             <div class="image-style">
-                <img src="assets/img-ds/test-ds-image.png" alt="Desgin System cover" class="img-style" onclick="openModal(this)">
+                <img src="assets/img-relinky/cover.png" alt="Relinky's Features" class="img-style" onclick="openModal(this)">
             </div>
             <div class="modal">
                 <span class="close-button" onclick="closeModal()">&times;</span>
                 <img class="modal-content" alt="Full-screen Image">
             </div>    
-            <!-- Image code end -->
 
-                <div class="card-grid">
-                    <div class="card-small">
-                        <h2 class="card-title">Automated Token Detection</h2>
-                        <p class="card-text">
-                            <ul>
-                                <li>Unlinked color values and strokes</li>
-                                <li>Typography inconsistencies</li>
-                                <li>Spacing and layout variations</li>
-                                <li>Component instance deviations</li>
-                            </ul>
-                        </p>
-                    </div>
+            <br>
+            
+            <!-- Image code end -->
+            <h2>Scan for missing values with simple select and replace features</h2>
+            <div class="card-grid">
+                <div class="card-small">
+                    <h3 class="card-title">Color Detection</h3>
+                    <p class="card-text">Identifies unlinked color values and strokes across design files</p>
+                </div>
+                <div class="card-small">
+                    <h2 class="card-title">Typography Check</h2>
+                    <p class="card-text">Scans for typography inconsistencies and unlinked text styles</p>
+                </div>
+                <div class="card-small">
+                    <h2 class="card-title">Spacing Analysis</h2>
+                    <p class="card-text">Detects spacing and layout variations from design system tokens</p>
                 </div>
             </div>
 
+            <h2>Scan for unlinked fill / Stroke Colors</h2>
+            <div class="video-style">
+                <video class="video-thumbnail auto-play-video" muted playsinline onclick="openVideoModal(this)">
+                    <source src="assets/img-relinky/scan-text.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="video-modal">
+                <span class="close-button" onclick="closeVideoModal()">&times;</span>
+                    <video class="modal-video-content" controls>
+                        <source src="" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+            </div>
+            <!-- Video code end -->
+
+            <h2>Scan for unlinked fonts</h2>
+            <div class="video-style">
+                <video class="video-thumbnail auto-play-video" muted playsinline onclick="openVideoModal(this)">
+                    <source src="assets/img-relinky/scan-text.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="video-modal">
+                <span class="close-button" onclick="closeVideoModal()">&times;</span>
+                    <video class="modal-video-content" controls>
+                        <source src="" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+            </div>
+            <!-- Video code end -->
+
+            <h2>Scan for unlinked spacing</h2>
+            <div class="video-style">
+                <video class="video-thumbnail auto-play-video" muted playsinline onclick="openVideoModal(this)">
+                    <source src="assets/img-relinky/scan-text.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="video-modal">
+                <span class="close-button" onclick="closeVideoModal()">&times;</span>
+                    <video class="modal-video-content" controls>
+                        <source src="" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+            </div>
+            <!-- Video code end -->
+
             <!-- Feature Section: Variables Management -->
             <h2>Variable Management System</h2>
-
             <!-- Image code start -->
             <div class="image-style">
                 <img src="assets/img-ds/test-ds-image.png" alt="Desgin System cover" class="img-style" onclick="openModal(this)">
@@ -149,7 +202,7 @@
             <!-- Image code end -->
 
             <h3>Comprehensive Variable Control</h3>
-            <p>The plugin provides powerful tools for managing design variables:</p>
+            <p class="space-layout-r">The plugin provides powerful tools for managing design variables:</p>
                 <ul>
                     <li>Real-time library status monitoring</li>
                     <li>Batch selection and updating of variables</li>
@@ -160,7 +213,7 @@
 
             <!-- Workflow Improvement -->
             <h2>Impact on Design Workflow</h2>
-            <p>Based on real-world implementation, Relinky has demonstrated significant improvements in design team efficiency:</p>
+            <p class="space-layout-r">Based on real-world implementation, Relinky has demonstrated significant improvements in design team efficiency:</p>
             <ul>
                 <li>80% reduction in time spent on design system audits</li>
                 <li>95% improvement in design system compliance</li>
@@ -170,7 +223,7 @@
 
             <!-- Future Development -->
             <h2>Continuous Evolution</h2>
-            <p>The plugin is continuously evolving with planned features including:</p>
+            <p class="space-layout-r">The plugin is continuously evolving with planned features including:</p>
             <ul>
                 <li>Advanced variable scanning capabilities</li>
                 <li>Enhanced typography grouping system</li>
