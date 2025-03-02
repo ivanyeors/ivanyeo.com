@@ -128,6 +128,7 @@ function initializeAnchorLinks() {
   const sections = document.querySelectorAll("section");
   const links = document.querySelectorAll(".anchor-link");
   const anchorLinkList = document.querySelector(".anchor-link-list");
+  const anchorItems = document.querySelectorAll('.anchor-link-list li');
   
   console.log('Initializing anchor links - found sections:', sections.length);
   console.log('Initializing anchor links - found links:', links.length);
@@ -141,66 +142,63 @@ function initializeAnchorLinks() {
       return window.innerWidth <= 768;
     }
     
-    // Track last clicked anchor to implement two-tap behavior
-    let lastClickedAnchor = null;
-    
-    // Prevent default navigation on anchor link clicks in mobile view
-    links.forEach(link => {
-      link.addEventListener('click', (e) => {
-        if (!isMobileView()) return; // Only apply in mobile view
-        
-        if (!anchorLinkList.classList.contains('expanded')) {
-          // First tap - just expand the menu
-          e.preventDefault(); // Prevent navigation
-          anchorLinkList.classList.add('expanded');
-          lastClickedAnchor = link; // Store the clicked link
-          e.stopPropagation();
-        } else if (lastClickedAnchor !== link) {
-          // Different link clicked while expanded - prevent navigation on first tap
-          e.preventDefault();
-          lastClickedAnchor = link; // Update last clicked link
-          e.stopPropagation();
-        } else {
-          // Second tap on same link - allow navigation and collapse
-          // Navigation happens naturally
-          setTimeout(() => {
-            anchorLinkList.classList.remove('expanded');
-            lastClickedAnchor = null; // Reset
-          }, 100);
+    // Handle tap/click on list items to expand in mobile
+    if (isMobileView()) {
+      // Make list items expandable on tap
+      anchorItems.forEach(item => {
+        item.addEventListener('click', function(e) {
+          if (!isMobileView()) return;
+          
+          // Close any other expanded items
+          anchorItems.forEach(otherItem => {
+            if (otherItem !== item) {
+              otherItem.classList.remove('expanded');
+            }
+          });
+          
+          // Toggle expanded state on this item
+          this.classList.toggle('expanded');
+          
+          // Let the event propagate to links if clicking directly on a link
+          if (e.target !== this && !e.target.classList.contains('anchor-link') && !this.contains(e.target.closest('.anchor-link'))) {
+            e.preventDefault();
+            e.stopPropagation();
+          }
+        });
+      });
+      
+      // Handle clicks on the toggle button
+      const navToggle = document.querySelector('.mobile-nav-toggle');
+      if (navToggle) {
+        navToggle.addEventListener('click', function() {
+          anchorLinkList.classList.toggle('hidden');
+          this.classList.toggle('active');
+        });
+      }
+      
+      // Hide expanded items when clicking elsewhere
+      document.addEventListener('click', function(e) {
+        if (!e.target.closest('.anchor-link-list')) {
+          anchorItems.forEach(item => {
+            item.classList.remove('expanded');
+          });
         }
       });
-    });
+    }
     
-    // Add click handler for mobile expansion toggle
-    anchorLinkList.addEventListener("click", (e) => {
-      if (!isMobileView()) return; // Only apply in mobile view
-      
-      // Only toggle expansion when clicking on the list itself, not its children
-      if (e.target === anchorLinkList) {
-        anchorLinkList.classList.toggle('expanded');
-        e.stopPropagation(); // Prevent clicks from propagating
-      }
-    });
-    
-    // Close expanded menu when clicking elsewhere
-    document.addEventListener('click', (e) => {
-      if (isMobileView() && anchorLinkList.classList.contains('expanded') && !anchorLinkList.contains(e.target)) {
-        anchorLinkList.classList.remove('expanded');
-        lastClickedAnchor = null; // Reset last clicked anchor
+    // Update on window resize
+    window.addEventListener('resize', function() {
+      if (isMobileView()) {
+        // Reset expanded states when switching to mobile
+        anchorItems.forEach(item => {
+          item.classList.remove('expanded');
+        });
       }
     });
     
     // Add aria attributes for accessibility
     anchorLinkList.setAttribute('role', 'navigation');
     anchorLinkList.setAttribute('aria-label', 'Page sections');
-    
-    // Check for mobile on resize
-    window.addEventListener('resize', () => {
-      if (!isMobileView()) {
-        anchorLinkList.classList.remove('expanded');
-        lastClickedAnchor = null; // Reset last clicked anchor
-      }
-    });
   }
 
   const observerOptions = {

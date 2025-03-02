@@ -110,170 +110,152 @@
     visibility: hidden;
 }
 
-/* Burger Menu Button(mobile) */
-.burger-menu {
-    font-size: 24px;
-    background: none;
-    border: none;
-    cursor: pointer;
+/* Mobile Navigation Toggle */
+.mobile-nav-toggle {
+    display: none;
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    background-color: var(--background-color-dark);
     color: var(--white);
-    z-index: 1001; /* Ensure it's above other elements */
-    padding: var(--spacing-2xs);
-    transition: transform 0.3s ease;
+    width: 44px;  /* Increased touch target */
+    height: 44px; /* Increased touch target */
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+    align-items: center;
+    justify-content: center;
+    z-index: 1001;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-.burger-menu:focus {
-    outline: 2px solid var(--border-color); /* Accessibility focus outline */
+.mobile-nav-toggle:after {
+    content: '•••';
+    font-size: 12px;
+    letter-spacing: 2px;
 }
 
-/* Add this to HTML structure to wrap the text */
-/* In your HTML, update anchor links to include span tags around the text:
-<a href="#section" class="anchor-link"><span>Section Name</span></a> */
+.mobile-nav-toggle.active {
+    background-color: var(--primary-color);
+}
 
 /* Media Queries for Responsive Design */
 @media (max-width: 768px) {
+    /* Show mobile toggle button */
+    .mobile-nav-toggle {
+        display: flex;
+    }
+
+    /* Position the navigation for mobile */
     .anchor-link-list {
-        top: auto; /* Reset vertical positioning */
-        left: auto; /* Reset horizontal positioning */
-        right: auto; /* Reset horizontal positioning */
-        bottom: 5rem; /* Position higher above the bottom menu */
-        left: 50%; /* Center horizontally */
-        transform: translateX(-50%); /* Center the element */
-        flex-direction: row; /* Horizontal on mobile */
-        max-width: 85%; /* Prevent it from extending beyond screen edges */
-        z-index: 1002; /* Ensure it's above the bottom menu bar */
-        cursor: pointer; /* Show pointer cursor to indicate it's clickable */
-        transition: all 0.3s ease; /* Smooth transitions */
-    }
-    
-    /* Collapsed state (default) */
-    .anchor-link-list ul {
-        flex-direction: row; /* Horizontal navigation */
-        gap: var(--spacing-2xs); /* Adjusted gap for mobile */
-        max-width: fit-content; /* Constrain width in collapsed state */
+        position: fixed;
+        left: auto;
+        right: 1.5rem;
+        top: auto;
+        bottom: 5rem; /* Position just above the bottom bar */
+        transform: none;
+        width: auto;
+        max-width: none;
+        z-index: 990;
+        border-radius: var(--radius-s);
+        padding: 3px; /* Even smaller fixed padding */
+        background-color: rgba(15, 15, 15, 0.85);
+        backdrop-filter: blur(8px);
+        opacity: 1; /* Visible by default */
+        visibility: visible; /* Visible by default */
         transition: all 0.3s ease;
+        display: flex;
+        justify-content: flex-start;
+        border: 1px solid var(--border-color);
+        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        cursor: pointer; /* Show pointer on the entire container */
     }
     
+    /* Format the list for mobile */
+    .anchor-link-list ul {
+        flex-direction: column;
+        gap: 2px; /* Very small fixed gap */
+        width: auto;
+        padding: 2px; /* Very small fixed padding */
+        margin: 0;
+    }
+    
+    /* Each list item takes appropriate width */
     .anchor-link-list li {
-        width: 16px; /* Smaller width on mobile */
+        width: 18px; /* Show only line by default */
         overflow: hidden;
         transition: all 0.3s ease;
-    }
-    
-    /* Expanded state when .expanded class is added */
-    .anchor-link-list.expanded {
-        background-color: rgba(15, 15, 15, 0.9); /* Darker background when expanded */
-        padding: var(--spacing-xs); /* More compact padding */
-        max-width: 160px; /* Constrain width for vertical layout */
-    }
-    
-    .anchor-link-list.expanded ul {
-        flex-direction: column; /* Vertical layout when expanded */
-        gap: var(--spacing-3xs); /* Smaller spacing between items */
-        width: 100%; /* Take full width of container */
-    }
-    
-    .anchor-link-list.expanded li {
-        width: 100%; /* Full width for vertical layout */
-        margin-bottom: 2px; /* Minimal spacing between items */
-        padding: 2px 0; /* Smaller padding to create compact list */
-    }
-    
-    /* Always display spans (text) when expanded */
-    .anchor-link-list.expanded .anchor-link span {
-        opacity: 1;
-        visibility: visible;
-        position: static; /* Reset position */
-        transform: none; /* Reset transform */
-        background-color: transparent; /* No background for inline spans */
-        padding: 0 var(--spacing-3xs); /* Smaller padding */
         margin: 0;
-        pointer-events: auto; /* Allow clicks */
+        padding: 0;
+        cursor: pointer; /* Show pointer on list items */
+    }
+    
+    /* Expand when tapped/clicked */
+    .anchor-link-list li.expanded {
+        width: auto;
+    }
+    
+    /* Style for mobile anchor links */
+    .anchor-link {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 2px 3px; /* Minimal padding */
+        position: relative;
+        opacity: 0.8;
         white-space: nowrap;
-        font-size: 0.8rem; /* Smaller but readable text */
     }
     
-    .anchor-link-list.expanded .anchor-link {
-        padding: 0 var(--spacing-3xs); /* More compact padding */
-    }
-    
-    /* Adjust line indicators in expanded vertical view */
-    .anchor-link-list.expanded .anchor-link::before {
-        width: 10px; /* Shorter line for compact view */
-        margin-right: var(--spacing-3xs); /* Less space between line and text */
-    }
-    
-    .anchor-link-list.expanded .anchor-link.active::before {
-        width: 14px; /* Slightly longer for active items but still compact */
-    }
-    
-    /* Styling for the toggle icon */
-    .anchor-link-toggle {
-        display: none; /* Hidden by default */
-        position: absolute;
-        top: -8px;
-        right: -8px;
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        background-color: var(--border-color);
-        color: var(--white);
-        font-size: 14px;
-        text-align: center;
-        line-height: 20px;
-        cursor: pointer;
-    }
-    
-    /* Show toggle in mobile view */
-    @media (max-width: 768px) {
-        .anchor-link-toggle {
-            display: block;
-        }
-    }
-    
+    /* Line indicator on left side */
     .anchor-link::before {
-        width: 12px; /* Smaller line on mobile */
-        height: 2px;
+        content: '';
+        position: relative;
+        width: 14px;
+        height: 1.5px;
+        background-color: var(--white);
+        margin-right: 8px; /* Smaller margin */
+        opacity: 0.6;
+        transition: all 0.3s ease;
     }
     
+    /* Active indicator */
     .anchor-link.active::before {
-        width: 18px; /* Smaller active line on mobile */
-    }
-    
-    /* Regular hover styling - For touchscreens this becomes tap states */
-    .anchor-link:hover {
+        width: 24px;
         opacity: 1;
     }
     
-    .anchor-link:hover::before {
+    /* Text part of anchor link - hidden by default */
+    .anchor-link span {
+        opacity: 0; /* Hidden by default */
+        transform: translateX(-10px);
+        transition: all 0.3s ease;
+        font-size: 0.75rem; /* Smaller text */
+    }
+    
+    /* Show text when list item is expanded */
+    .anchor-link-list li.expanded .anchor-link span {
         opacity: 1;
-        width: 24px; /* Extend the line a bit on hover/tap */
+        transform: translateX(0);
     }
     
-    /* For non-expanded state, handle the text as tooltips */
-    .anchor-link-list:not(.expanded) .anchor-link span {
-        position: absolute;
-        bottom: 100%;
-        left: 50%;
-        transform: translateX(-50%) translateY(10px);
-        background-color: rgba(15, 15, 15, 0.9);
-        padding: var(--spacing-2xs) var(--spacing-xs);
-        border-radius: var(--radius-xs);
-        pointer-events: none;
-        white-space: nowrap;
-        opacity: 0;
-        visibility: hidden;
-        margin-bottom: var(--spacing-xs);
-    }
-    
-    .anchor-link-list:not(.expanded) .anchor-link:hover span {
+    /* Touch state */
+    .anchor-link:active {
         opacity: 1;
-        visibility: visible;
-        transform: translateX(-50%) translateY(0);
     }
     
-    .burger-menu {
-        display: none; /* Hide burger menu */
+    .anchor-link:active::before {
+        opacity: 1;
+        width: 24px;
+    }
+    
+    /* Animation for toggle button */
+    .mobile-nav-toggle {
+        transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+    
+    .mobile-nav-toggle.active {
+        transform: rotate(90deg);
     }
 }
 
