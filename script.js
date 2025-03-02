@@ -10,19 +10,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const indicator = document.createElement('div');
     indicator.style.cssText = `
         position: fixed;
-        top: 10px;
-        right: 10px;
-        background: green;
+        top: 8px;
+        right: 8px;
+        background: darkgreen;
         padding: 5px;
         color: white;
-        border-radius: 4px;
+        border-radius: 6px;
         z-index: 99999;
     `;
-    indicator.textContent = 'JS Running';
+    indicator.textContent = '✅';
     body.appendChild(indicator);
     
     // Remove after 3 seconds
-    setTimeout(() => indicator.remove(), 3000);
+    setTimeout(() => indicator.remove(), 2000);
 
     // Initialize breadcrumb functionality
     initializeBreadcrumbs();
