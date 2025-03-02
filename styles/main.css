@@ -241,8 +241,8 @@ ul {
 @media (min-width: 1440px) {
     body {
         display: flex; /* Enable Flexbox */
-        align-items: center; /* Center vertically */
-        height: 100vh; /* Full viewport height */
+        flex-direction: column; /* Stack elements vertically */
+        min-height: 100vh; /* Minimum height of viewport */
         margin: 0; /* Remove default margin */
     }
 
@@ -250,6 +250,7 @@ ul {
         text-align: left; /* Ensure content inside is left-aligned */
         width: 100%; /* Take full width of the parent */
         max-width: 1400px; /* Optional: Set a max width for the content */
+        margin: 0 auto; /* Center horizontally */
     }
     .space-layout-r {
         padding-right: 0%;

@@ -192,6 +192,8 @@
 @media (min-width: 1440px) {
     .site-footer {
         padding-bottom: calc(var(--spacing-s) + 3%); /* Space for bottom nav */
+        margin-top: auto; /* Ensure footer stays at bottom */
+        width: 100%; /* Full width */
     }
     
     .footer-inner {

@@ -36,6 +36,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Fetch GitHub repository stats
     fetchGitHubStats();
     
+    // Initialize the anchor link intersection observer
+    initializeAnchorLinks();
+    
     // Initialize other features...
 });
 
@@ -120,9 +123,60 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 });
 
-document.addEventListener("DOMContentLoaded", () => {
+// Initialize anchor links functionality
+function initializeAnchorLinks() {
   const sections = document.querySelectorAll("section");
   const links = document.querySelectorAll(".anchor-link");
+  const anchorLinkList = document.querySelector(".anchor-link-list");
+  
+  console.log('Initializing anchor links - found sections:', sections.length);
+  console.log('Initializing anchor links - found links:', links.length);
+
+  // Make sure anchor links are always visible
+  if (anchorLinkList) {
+    anchorLinkList.classList.remove("hidden");
+    
+    // Mobile toggle functionality
+    function isMobileView() {
+      return window.innerWidth <= 768;
+    }
+    
+    // Add click handler for mobile expansion toggle
+    anchorLinkList.addEventListener("click", (e) => {
+      if (!isMobileView()) return; // Only apply in mobile view
+      
+      // If clicking an anchor link and we're expanded, let the link work then collapse
+      if (e.target.closest('.anchor-link') && anchorLinkList.classList.contains('expanded')) {
+        // Small delay to allow the navigation to occur before collapsing
+        setTimeout(() => {
+          anchorLinkList.classList.remove('expanded');
+        }, 100);
+        return;
+      }
+      
+      // Toggle expanded state
+      anchorLinkList.classList.toggle('expanded');
+      e.stopPropagation(); // Prevent clicks from propagating
+    });
+    
+    // Close expanded menu when clicking elsewhere
+    document.addEventListener('click', (e) => {
+      if (isMobileView() && anchorLinkList.classList.contains('expanded') && !anchorLinkList.contains(e.target)) {
+        anchorLinkList.classList.remove('expanded');
+      }
+    });
+    
+    // Add aria attributes for accessibility
+    anchorLinkList.setAttribute('role', 'navigation');
+    anchorLinkList.setAttribute('aria-label', 'Page sections');
+    
+    // Check for mobile on resize
+    window.addEventListener('resize', () => {
+      if (!isMobileView()) {
+        anchorLinkList.classList.remove('expanded');
+      }
+    });
+  }
 
   const observerOptions = {
     root: null, // Use the viewport as the root
@@ -134,6 +188,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const link = document.querySelector(
         `.anchor-link[href="#${entry.target.id}"]`
       );
+      
+      if (!link) return; // Skip if link not found
 
       if (entry.isIntersecting) {
         // Add active class when section is in view
@@ -146,65 +202,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }, observerOptions);
 
   // Observe each section
-  sections.forEach((section) => observer.observe(section));
-});
-
-// Anchor link in mobile for expand and collapse view
-document.addEventListener("DOMContentLoaded", () => {
-  const burgerMenu = document.querySelector(".burger-menu");
-  const anchorLinks = document.querySelector(".anchor-link");
-
-  burgerMenu.addEventListener("click", () => {
-    anchorLinks.classList.toggle("open"); // Toggle the "open" class
-  });
-});
-
-// Anchor link show / hide state only in mobile view
-document.addEventListener("DOMContentLoaded", () => {
-  const anchorLinks = document.querySelector(".anchor-links");
-
-  let isScrolling;
-
-  window.addEventListener("scroll", () => {
-    anchorLinks.classList.add("visible");
-
-    window.clearTimeout(isScrolling);
-
-    isScrolling = setTimeout(() => {
-      anchorLinks.classList.remove("visible");
-    }, 2000); // Hide after 2 seconds of no scrolling
-  });
-});
-
-// Anchor link show / hide state only in mobile view
-document.addEventListener("DOMContentLoaded", () => {
-  const anchorLinks = document.querySelector(".anchor-link-list");
-
-  let isScrolling;
-
-  function handleScroll() {
-    anchorLinks.classList.remove("hidden");
-
-    window.clearTimeout(isScrolling);
-
-    isScrolling = setTimeout(() => {
-      anchorLinks.classList.add("hidden");
-    }, 1000); // Hide after 1 second of no scrolling
-  }
-
-  function checkViewport() {
-    if (window.innerWidth <= 768) {
-      // Mobile view
-      window.addEventListener("scroll", handleScroll);
-    } else {
-      window.removeEventListener("scroll", handleScroll);
-      anchorLinks.classList.remove("hidden");
+  sections.forEach((section) => {
+    if (section.id) { // Only observe sections with IDs
+      observer.observe(section);
     }
-  }
-
-  window.addEventListener("resize", checkViewport);
-  checkViewport(); // Initial check
-});
+  });
+}
 
 // Header menu
 document.addEventListener("DOMContentLoaded", () => {
