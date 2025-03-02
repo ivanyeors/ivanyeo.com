@@ -149,7 +149,10 @@
     color: var(--stone150);
 }
 
-/* Clickable Card for Modal Popup */
+/* 
+ * Clickable Card for Modal Popup
+ * This is the primary definition for .card-modal used throughout the site
+ */
 .card-modal {
     aspect-ratio: 1 / 1; /* Default square aspect ratio for mobile */
     cursor: pointer;
@@ -166,10 +169,10 @@
     position: relative;
     overflow: hidden;
     z-index: 1;
-    transition: border 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+    transition: border 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease, transform 0.3s ease,
+                visibility 0.3s ease, height 0.3s ease, margin 0.3s ease, padding 0.3s ease;
     width: 100%; /* Full width by default */
     margin-bottom: var(--spacing-m); /* Add spacing between cards */
-    transition: opacity 0.3s ease, visibility 0.3s ease, height 0.3s ease, margin 0.3s ease, padding 0.3s ease;
     opacity: 1;
     visibility: visible;
     height: auto;
@@ -209,6 +212,18 @@
     font-size: 16px;
     color: var(--icon-color);
     transition: transform 0.3s ease; /* Add transition for smooth animation */
+}
+
+/* Mobile adjustments for arrow icon */
+@media (max-width: 767px) {
+    .card-modal .icon-diagonal-arrow {
+        top: var(--spacing-xs); /* Position closer to top edge */
+        right: var(--spacing-xs); /* Position closer to right edge */
+    }
+    
+    .card-modal .arrow-logo {
+        max-width: 24px; /* Slightly smaller icon on mobile */
+    }
 }
 
 .card-modal:hover .icon-diagonal-arrow {
@@ -276,6 +291,14 @@
     background: var(--stone800);
     border-radius: var(--radius-xs);
     font-size: var(--font-size-s);
+}
+
+/* Mobile adjustments for card labels */
+@media (max-width: 767px) {
+    .card-label {
+        font-size: var(--font-size-xs); /* Smaller font size on mobile */
+        padding: var(--spacing-3xs) var(--spacing-2xs); /* Tighter padding */
+    }
 }
 
 /* Specific label colors */

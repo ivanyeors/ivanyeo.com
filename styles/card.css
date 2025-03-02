@@ -6,6 +6,33 @@
     padding: var(--spacing-s) 0; /* Space around the grid */
 }
 
+/* Mobile view - single column */
+@media (max-width: 767px) {
+    .card-grid {
+        grid-template-columns: 1fr !important; /* Force single column on mobile */
+        gap: var(--spacing-s); /* Slightly increase spacing between cards */
+    }
+    
+    /* Adjust card aspect ratio for better mobile display */
+    .card-grid .card-modal {
+        aspect-ratio: 1.2 / 1 !important; /* Slightly shorter cards on mobile */
+        margin-bottom: var(--spacing-xs) !important; /* Add some spacing between cards */
+        width: 100% !important; /* Ensure full width */
+        max-width: 100% !important; /* Override any max-width settings */
+        padding: var(--spacing-s) var(--spacing-m) !important; /* Adjust padding for better mobile layout */
+    }
+    
+    /* Adjust typography for better readability on mobile */
+    .card-grid .card-modal h2 {
+        font-size: var(--font-size-l) !important; /* Ensure title is readable */
+        margin-bottom: var(--spacing-3xs) !important; /* Tighten spacing */
+    }
+    
+    .card-grid .card-modal p {
+        font-size: var(--font-size-s) !important; /* Ensure description is readable */
+    }
+}
+
 /* Handle different numbers of cards */
 .card-grid-1 {
     /* When there's only 1 card */
@@ -20,6 +47,13 @@
 .card-grid-4 {
     /* When there are exactly 4 cards */
     grid-template-columns: repeat(2, 1fr) !important;
+}
+
+/* Grid layout override for cards in ideas.html */
+.card-grid .card-modal {
+    aspect-ratio: 1.5 / 1 !important; /* Square aspect ratio in grid */
+    margin: 0 !important; /* Remove margin for grid layout */
+    max-width: none !important; /* Override the max-width from modal.css */
 }
 
 /* breakpoints */  
@@ -153,25 +187,6 @@
     z-index: 1; /* Set proper stacking context */
     transition: border 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
     }
-
-.card-modal {
-    cursor: pointer;
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-s);
-    padding: var(--spacing-m);
-    background-color: var(--surface-color);
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    margin-bottom: var(--spacing-m);
-    min-height: 200px; /* Minimum height for cards */
-    
-    /* Animation properties */
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    opacity: 1;
-    transform: translateY(0);
-    will-change: opacity, transform;
-}
 
 /* Style for filter buttons container */
 .filter-container {
