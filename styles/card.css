@@ -12,7 +12,7 @@
         display: flex !important; /* Use flexbox instead of grid for more reliable stacking */
         flex-direction: column !important; /* Stack items vertically */
         grid-template-columns: 1fr !important; /* Force single column on mobile */
-        gap: var(--spacing-s) !important; /* Slightly increase spacing between cards */
+        gap: var(--spacing-s) 8; /* Slightly increase spacing between cards */
     }
     
     /* Adjust card aspect ratio for better mobile display */

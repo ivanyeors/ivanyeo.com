@@ -57,6 +57,7 @@
 
 --bg-color: var(--stone950);
 --surface-color: var(--stone850);
+--surface-dark-color: var(--stone950);
 
 --border-color: var(--stone700);
 
@@ -80,6 +81,10 @@
 --label-idea-text: #4ADE80; /* Green */
 --label-thought-bg: var(--stone800);
 --label-thought-text: #60A5FA; /* Blue */
+
+/* Resume section colors */
+--skill-tag-bg: var(--stone800);
+--skill-tag-text: var(--stone50);
 }
 
 /* Spacing Tokens */
@@ -135,8 +140,6 @@
 /* Background colors */
 .bg-surface {background-color: var(--surface-color);}
 .bg-anchor {background-color: var(--anchor-surface-color);}
-
-
 
 /* Reset CSS */
 * {
@@ -225,6 +228,214 @@ ul {
     overflow: visible; /* Ensure sticky works */
 }
 
+/* Resume Section Styles */
+.resume-section {
+    margin-top: var(--spacing-2xl);
+    scroll-margin-top: var(--spacing-xl); /* Ensures the section header is visible when scrolled to */
+    padding: var(--spacing-l) 0 0; /* Removed horizontal padding to align with content */
+}
+
+.resume-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-l);
+    width: 100%;
+}
+
+.resume-header h2 {
+    margin-bottom: 0;
+    font-weight: var(--font-weight-light);
+    flex: 1;
+}
+
+.resume-content {
+    margin-top: 0; /* Adjusted since we have margin on the header now */
+}
+
+.resume-experience {
+    margin-bottom: var(--spacing-l); /* Add consistent bottom margin */
+}
+
+.resume-experience h3, 
+.resume-skills h3 {
+    margin-bottom: var(--spacing-s);
+    font-weight: var(--font-weight-regular); /* More consistent font weight */
+    color: var(--color-rest); /* Softer color for section headers */
+}
+
+.experience-items-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-s) 0 0;
+}
+
+.experience-item {
+    padding: var(--spacing-xs);
+    background-color: var(--surface-dark-color);
+    border-radius: var(--radius-s);
+    border: 1px solid var(--stone800); /* Darker border for better visibility */
+    overflow: hidden; /* Prevents content from spilling out */
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+    margin-bottom: var(--spacing-2xs);
+}
+
+.experience-item.active {
+    border-color: var(--color-hover);
+    background-color: var(--stone900);
+}
+
+.experience-header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2xs);
+    cursor: pointer;
+    position: relative;
+    padding-right: var(--spacing-xl); /* Make room for toggle icon */
+    transition: color 0.3s ease;
+}
+
+.experience-header.hover h4 {
+    color: var(--color-hover);
+}
+
+.toggle-icon {
+    position: absolute;
+    right: var(--spacing-s);
+    top: 0;
+    font-size: var(--font-size-l);
+    color: var(--color-rest);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.experience-header.hover .toggle-icon {
+    color: var(--color-hover);
+    transform: scale(1.1);
+}
+
+.experience-item.active .toggle-icon {
+    color: var(--color-active);
+}
+
+.experience-details {
+    margin-top: var(--spacing-m);
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease, background-color 0.3s ease, padding 0.3s ease;
+}
+
+.experience-details.collapsed {
+    max-height: 0;
+    opacity: 0;
+    margin-top: 0;
+}
+
+.experience-details.expanded {
+    max-height: 500px; /* Arbitrary large value */
+    opacity: 1;
+}
+
+.experience-details p {
+    margin-bottom: var(--spacing-xs);
+}
+
+.experience-details ul {
+    margin-top: var(--spacing-xs);
+    padding-left: var(--spacing-m);
+}
+
+.experience-details li {
+    margin-bottom: var(--spacing-2xs);
+    color: var(--color-rest);
+}
+
+.experience-item h4 {
+    font-weight: var(--font-weight-bold);
+    margin-bottom: 0;
+}
+
+.resume-skills {
+    margin-bottom: var(--spacing-m); /* Add consistent bottom margin */
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+}
+
+.skill-tag {
+    display: inline-block;
+    padding: var(--spacing-xs) var(--spacing-s);
+    background-color: var(--skill-tag-bg);
+    color: var(--skill-tag-text);
+    border-radius: var(--radius-xs);
+    font-size: var(--font-size-s);
+}
+
+.resume-download {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+}
+
+/* Arrow icon for expand/collapse */
+.icon-arrow {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-left: 8px;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  border-color: white;
+  transform: rotate(-45deg);
+  transition: transform 0.3s ease;
+}
+
+.icon-arrow.up {
+  transform: rotate(45deg);
+}
+
+/* Small button variant */
+.btn-small {
+  padding: 6px 12px;
+  font-size: 0.9em;
+}
+
+/* Responsive adjustments for resume section */
+@media (max-width: 768px) {
+    .resume-section {
+        margin-top: var(--spacing-xl);
+        padding: var(--spacing-m) 0 0; /* Removed horizontal padding */
+    }
+    
+    .resume-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-s);
+        margin-bottom: var(--spacing-m);
+    }
+    
+    .experience-item {
+        padding: var(--spacing-s);
+    }
+    
+    .skills-list {
+        gap: var(--spacing-2xs);
+    }
+    
+    .toggle-icon {
+        right: var(--spacing-2xs);
+    }
+    
+    .experience-header {
+        padding-right: var(--spacing-l);
+    }
+    
+    /* Hide arrow icon on mobile */
+    .icon-arrow {
+        display: none;
+    }
+}
 
 @media (max-width: 768px) {
     .space-layout-r {
@@ -255,5 +466,28 @@ ul {
     .space-layout-r {
         padding-right: 0%;
     }
+}
+
+.resume-summary {
+    margin-bottom: var(--spacing-l);
+}
+
+.resume-summary p {
+    color: var(--color-rest);
+    line-height: 1.6;
+    max-width: 80ch; /* Limit line length for better readability */
+}
+
+.resume-education {
+    margin-bottom: var(--spacing-l);
+}
+
+.education-item {
+    margin-bottom: var(--spacing-s);
+}
+
+.education-item h4 {
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-3xs);
 }
 

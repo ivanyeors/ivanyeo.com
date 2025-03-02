@@ -589,3 +589,89 @@ function fetchGitHubStats() {
             issuesElement.textContent = 'N/A';
         });
 }
+
+  // Function to toggle experience details
+  function toggleExperience(element) {
+    const details = element.nextElementSibling;
+    const icon = element.querySelector('.toggle-icon');
+    const item = element.closest('.experience-item');
+    
+    // Toggle the current item
+    if (details.classList.contains('collapsed')) {
+      // First close any open ones
+      const allExpanded = document.querySelectorAll('.experience-details.expanded');
+      allExpanded.forEach(exp => {
+        if (exp !== details) {
+          exp.classList.remove('expanded');
+          exp.classList.add('collapsed');
+          exp.previousElementSibling.querySelector('.toggle-icon').textContent = '+';
+        }
+      });
+      
+      // Then open this one
+      details.classList.remove('collapsed');
+      details.classList.add('expanded');
+      icon.textContent = '−'; // Minus sign
+      item.classList.add('active');
+    } else {
+      details.classList.remove('expanded');
+      details.classList.add('collapsed');
+      icon.textContent = '+'; // Plus sign
+      item.classList.remove('active');
+    }
+  }
+  
+  // Function to toggle all experiences (expand/collapse all)
+  function toggleAllExperiences() {
+    const experienceHeaders = document.querySelectorAll('.experience-header');
+    const expandText = document.getElementById('expand-text');
+    const arrowIcon = document.querySelector('.icon-arrow');
+    
+    // Check if all are already expanded
+    let allExpanded = true;
+    document.querySelectorAll('.experience-details').forEach(detail => {
+      if (detail.classList.contains('collapsed')) {
+        allExpanded = false;
+      }
+    });
+    
+    // Toggle based on current state
+    experienceHeaders.forEach(header => {
+      const details = header.nextElementSibling;
+      const toggleIcon = header.querySelector('.toggle-icon');
+      const item = header.closest('.experience-item');
+      
+      if (allExpanded) {
+        // Collapse all
+        details.classList.remove('expanded');
+        details.classList.add('collapsed');
+        toggleIcon.textContent = '+';
+        expandText.textContent = 'Expand All';
+        arrowIcon.classList.remove('up');
+        item.classList.remove('active');
+      } else {
+        // Expand all
+        details.classList.remove('collapsed');
+        details.classList.add('expanded');
+        toggleIcon.textContent = '−'; // Using the same minus sign as in toggleExperience
+        expandText.textContent = 'Collapse All';
+        arrowIcon.classList.add('up');
+        item.classList.add('active');
+      }
+    });
+  }
+  
+  // Add hover effect for experience headers
+  document.addEventListener('DOMContentLoaded', function() {
+    const headers = document.querySelectorAll('.experience-header');
+    
+    headers.forEach(header => {
+      header.addEventListener('mouseenter', function() {
+        this.classList.add('hover');
+      });
+      
+      header.addEventListener('mouseleave', function() {
+        this.classList.remove('hover');
+      });
+    });
+  });
