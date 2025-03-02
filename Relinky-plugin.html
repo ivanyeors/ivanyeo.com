@@ -48,31 +48,52 @@
             </ul>
         </nav>
 
+        <!-- Anchor Links Navigation -->
+        <nav class="anchor-link-list" aria-label="Page Navigation">
+            <ul>
+                <li><a href="#overview" class="anchor-link"><span>Overview</span></a></li>
+                <li><a href="#internal-challenges" class="anchor-link"><span>Internal Challenges</span></a></li>
+                <li><a href="#external-challenges" class="anchor-link"><span>External Challenges</span></a></li>
+                <li><a href="#features" class="anchor-link"><span>Features</span></a></li>
+                <li><a href="#color-detection" class="anchor-link"><span>Color Detection</span></a></li>
+                <li><a href="#text-styles" class="anchor-link"><span>Text Styles</span></a></li>
+                <li><a href="#spacing" class="anchor-link"><span>Spacing & Radius</span></a></li>
+                <li><a href="#replacement" class="anchor-link"><span>Replacement</span></a></li>
+                <li><a href="#workflow" class="anchor-link"><span>Workflow Impact</span></a></li>
+                <li><a href="#repository" class="anchor-link"><span>Repository</span></a></li>
+                <li><a href="#future" class="anchor-link"><span>Future Updates</span></a></li>
+            </ul>
+        </nav>
+        
+
         <div class="project-content">
             
             <!-- Project Title -->
-            <h1>Relinky: Streamlining Design System Workflow</h1>
-            <p class="space-layout-r">Relinky is a Figma plugin that automates the detection and management 
-                of unlinked design tokens and variables, significantly reducing design debt 
-                and improving team efficiency.
-            </p>
-            <!-- Image code start -->
-            <div class="image-style">
-                <img src="assets/img-relinky/cover-main.png" alt="Relinky cover Plugin" class="img-style" onclick="openModal(this)">
-            </div>
-            <div class="modal">
-                <span class="close-button" onclick="closeModal()">&times;</span>
-                <img class="modal-content" alt="Full-screen Image">
-            </div>    
-            <!-- Image code end -->
-            <br>
-            <p class="space-layout-r">
-            As a product designer working with large-scale design systems, 
-            I came to realise a critical pain point during a handoff process across differeent design teams: 
-            </p>
+            <section id="overview">
+                <h1>Relinky: Streamlining Design System Workflow</h1>
+                <p class="space-layout-r">Relinky is a Figma plugin that automates the detection and management 
+                    of unlinked design tokens and variables, significantly reducing design debt 
+                    and improving team efficiency.
+                </p>
+                <!-- Image code start -->
+                <div class="image-style">
+                    <img src="assets/img-relinky/cover-main.png" alt="Relinky cover Plugin" class="img-style" onclick="openModal(this)">
+                </div>
+                <div class="modal">
+                    <span class="close-button" onclick="closeModal()">&times;</span>
+                    <img class="modal-content" alt="Full-screen Image">
+                </div>    
+                <!-- Image code end -->
+                <br>
+                <p class="space-layout-r">
+                As a product designer working with large-scale design systems, 
+                I came to realise a critical pain point during a handoff process across differeent design teams: 
+                </p>
+            </section>
 
             <!-- Project Overview -->
-            <h2>Internal Challenges</h2>
+            <section id="internal-challenges">
+                <h2>Internal Challenges</h2>
                 <div class="card-grid">
                     <div class="card-small">
                         <h2 class="card-title">Unlinked values during explorations</h2>
@@ -83,209 +104,224 @@
                         <p class="card-text">Duplicating designs from different projects have unlinked values</p>
                     </div>
                 </div>
+            </section>
 
-
-            <h2>External Challenges</h2>
-            <p class="space-layout-r">Design systems in large organizations often face several challenges:</p>
-            <div class="card-grid">
-                <div class="card-small">
-                    <h2 class="card-title">Design variables inconsistencies</h2>
-                    <p class="card-text">
-                        <ul>
-                            <li>Inconsistent use of design tokens across files and teams</li>
-                            <br>
-                            <li>Time-consuming manual changes of multiple design screens</li>
-                        </ul>
-                    </p>
+            <section id="external-challenges">
+                <h2>External Challenges</h2>
+                <p class="space-layout-r">Design systems in large organizations often face several challenges:</p>
+                <div class="card-grid">
+                    <div class="card-small">
+                        <h2 class="card-title">Design variables inconsistencies</h2>
+                        <p class="card-text">
+                            <ul>
+                                <li>Inconsistent use of design tokens across files and teams</li>
+                                <br>
+                                <li>Time-consuming manual changes of multiple design screens</li>
+                            </ul>
+                        </p>
+                    </div>
+                    <div class="card-small">
+                        <h2 class="card-title">Design to Development handover</h2>
+                        <p class="card-text">
+                            <ul>
+                                <li>Variables in hanoff screen might come from different libraries</li>
+                                <br>
+                                <li>Nested values within screens might be missed out</li>
+                            </ul>
+                        </p>
+                    </div>
                 </div>
-                <div class="card-small">
-                    <h2 class="card-title">Design to Development handover</h2>
-                    <p class="card-text">
-                        <ul>
-                            <li>Variables in hanoff screen might come from different libraries</li>
-                            <br>
-                            <li>Nested values within screens might be missed out</li>
-                        </ul>
-                    </p>
-                </div>
-            </div>
+            </section>
 
             <!-- Feature Section: Unlinked Values -->
-            <h2>Relinky's Features</h2>
+            <section id="features">
+                <h2>Relinky's Features</h2>
 
-            <!-- Image code start -->
-            <div class="image-style">
-                <img src="assets/img-relinky/cover.png" alt="Relinky's Features" class="img-style" onclick="openModal(this)">
-            </div>
-            <div class="modal">
-                <span class="close-button" onclick="closeModal()">&times;</span>
-                <img class="modal-content" alt="Full-screen Image">
-            </div>    
+                <!-- Image code start -->
+                <div class="image-style">
+                    <img src="assets/img-relinky/cover.png" alt="Relinky's Features" class="img-style" onclick="openModal(this)">
+                </div>
+                <div class="modal">
+                    <span class="close-button" onclick="closeModal()">&times;</span>
+                    <img class="modal-content" alt="Full-screen Image">
+                </div>    
 
-            <br>
-            
-            <!-- Image code end -->
-            <h2>Scan for missing values with simple select and replace features</h2>
-            <div class="card-grid">
-                <div class="card-small">
-                    <h3 class="card-title">Color Detection</h3>
-                    <p class="card-text">Identifies unlinked color values and strokes across design files</p>
+                <br>
+                
+                <!-- Image code end -->
+                <h2>Scan for missing values with simple select and replace features</h2>
+                <div class="card-grid">
+                    <div class="card-small">
+                        <h3 class="card-title">Color Detection</h3>
+                        <p class="card-text">Identifies unlinked color values and strokes across design files</p>
+                    </div>
+                    <div class="card-small">
+                        <h3 class="card-title">Typography Check</h3>
+                        <p class="card-text">Scans for typography inconsistencies and unlinked text styles</p>
+                    </div>
+                    <div class="card-small">
+                        <h3 class="card-title">Spacing Analysis</h3>
+                        <p class="card-text">Detects spacing, radius and gap values</p>
+                    </div>
                 </div>
-                <div class="card-small">
-                    <h3 class="card-title">Typography Check</h3>
-                    <p class="card-text">Scans for typography inconsistencies and unlinked text styles</p>
-                </div>
-                <div class="card-small">
-                    <h3 class="card-title">Spacing Analysis</h3>
-                    <p class="card-text">Detects spacing, radius and gap values</p>
-                </div>
-            </div>
+            </section>
 
-            <h2>Scan for unlinked fill / Stroke Colors</h2>
-            <div class="video-style">
-                <video class="video-thumbnail auto-play-video" muted playsinline onclick="openVideoModal(this)">
-                    <source src="assets/img-relinky/scan-color.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-            <div class="video-modal">
-                <span class="close-button" onclick="closeVideoModal()">&times;</span>
-                    <video class="modal-video-content" controls>
-                        <source src="" type="video/mp4">
+            <section id="color-detection">
+                <h2>Scan for unlinked fill / Stroke Colors</h2>
+                <div class="video-style">
+                    <video class="video-thumbnail auto-play-video" muted playsinline onclick="openVideoModal(this)">
+                        <source src="assets/img-relinky/scan-color.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
-            </div>
-            <!-- Video code end -->
+                </div>
+                <div class="video-modal">
+                    <span class="close-button" onclick="closeVideoModal()">&times;</span>
+                        <video class="modal-video-content" controls>
+                            <source src="" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                </div>
+            </section>
 
-            <h2>Scan and replace unlinked fonts</h2>
-            <div class="video-style">
-                <video class="video-thumbnail auto-play-video" muted playsinline onclick="openVideoModal(this)">
-                    <source src="assets/img-relinky/scan-text.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-            <div class="video-modal">
-                <span class="close-button" onclick="closeVideoModal()">&times;</span>
-                    <video class="modal-video-content" controls>
-                        <source src="" type="video/mp4">
+            <section id="text-styles">
+                <h2>Scan and replace unlinked fonts</h2>
+                <div class="video-style">
+                    <video class="video-thumbnail auto-play-video" muted playsinline onclick="openVideoModal(this)">
+                        <source src="assets/img-relinky/scan-text.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
-            </div>
-            <!-- Video code end -->
+                </div>
+                <div class="video-modal">
+                    <span class="close-button" onclick="closeVideoModal()">&times;</span>
+                        <video class="modal-video-content" controls>
+                            <source src="" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                </div>
+            </section>
 
-            <h2>Scan and replace unlinked radius / spacing</h2>
-            <div class="video-style">
-                <video class="video-thumbnail auto-play-video" muted playsinline onclick="openVideoModal(this)">
-                    <source src="assets/img-relinky/scan-radius.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-            <div class="video-modal">
-                <span class="close-button" onclick="closeVideoModal()">&times;</span>
-                    <video class="modal-video-content" controls>
-                        <source src="" type="video/mp4">
+            <section id="spacing">
+                <h2>Scan and replace unlinked radius / spacing</h2>
+                <div class="video-style">
+                    <video class="video-thumbnail auto-play-video" muted playsinline onclick="openVideoModal(this)">
+                        <source src="assets/img-relinky/scan-radius.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
-            </div>
-            <!-- Video code end -->
+                </div>
+                <div class="video-modal">
+                    <span class="close-button" onclick="closeVideoModal()">&times;</span>
+                        <video class="modal-video-content" controls>
+                            <source src="" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                </div>
+            </section>
 
             <!-- Replacement features -->
-            <h2>Replacement features</h2>
-            <p class="space-layout-r">Created a simple select all or select individual feature to allow quick variable replacement</p>
-            <!-- Image code start -->
-            <div class="image-style">
-                <img src="assets/img-relinky/cover-2.png" alt="Desgin System cover" class="img-style" onclick="openModal(this)">
-            </div>
-            <div class="modal">
-                <span class="close-button" onclick="closeModal()">&times;</span>
-                <img class="modal-content" alt="Full-screen Image">
-            </div>    
-            <!-- Image code end -->
+            <section id="replacement">
+                <h2>Replacement features</h2>
+                <p class="space-layout-r">Created a simple select all or select individual feature to allow quick variable replacement</p>
+                <!-- Image code start -->
+                <div class="image-style">
+                    <img src="assets/img-relinky/cover-2.png" alt="Desgin System cover" class="img-style" onclick="openModal(this)">
+                </div>
+                <div class="modal">
+                    <span class="close-button" onclick="closeModal()">&times;</span>
+                    <img class="modal-content" alt="Full-screen Image">
+                </div>    
+                <!-- Image code end -->
 
-            <!-- Show / Hide results -->
-            <h2>Show or hide results to streamline workflow</h2>
-            <p class="space-layout-r">In some cases, designers might not want to make a change to hidden layers,
-                this feature allows them to hide the results to streamline their workflow.</p>
-            <!-- Image code start -->
-            <div class="image-style">
-                <img src="assets/img-relinky/cover-3.png" alt="Desgin System cover" class="img-style" onclick="openModal(this)">
-            </div>
-            <div class="modal">
-                <span class="close-button" onclick="closeModal()">&times;</span>
-                <img class="modal-content" alt="Full-screen Image">
-            </div>    
-            <!-- Image code end -->
+                <!-- Show / Hide results -->
+                <h2>Show or hide results to streamline workflow</h2>
+                <p class="space-layout-r">In some cases, designers might not want to make a change to hidden layers,
+                    this feature allows them to hide the results to streamline their workflow.</p>
+                <!-- Image code start -->
+                <div class="image-style">
+                    <img src="assets/img-relinky/cover-3.png" alt="Desgin System cover" class="img-style" onclick="openModal(this)">
+                </div>
+                <div class="modal">
+                    <span class="close-button" onclick="closeModal()">&times;</span>
+                    <img class="modal-content" alt="Full-screen Image">
+                </div>    
+                <!-- Image code end -->
+            </section>
 
             <!-- Workflow Improvement -->
-            <h2>Impact on Design Workflow</h2>
-            <p class="space-layout-r">As Relinky is a new plugin, I am still collecting feedbacks to improve the plugin.
-                <br>
-                Based on interal user and feedbacks, it has shown improvements in our team's design efficiency:</p>
-            <div class="card-grid">
-                <div class="card-small">
-                    <h3 class="card-title">Time Efficiency</h3>
-                    <p class="card-text">180% reduction in time spent on projects that has old designs files with many unlinked values</p>
+            <section id="workflow">
+                <h2>Impact on Design Workflow</h2>
+                <p class="space-layout-r">As Relinky is a new plugin, I am still collecting feedbacks to improve the plugin.
+                    <br>
+                    Based on interal user and feedbacks, it has shown improvements in our team's design efficiency:</p>
+                <div class="card-grid">
+                    <div class="card-small">
+                        <h3 class="card-title">Time Efficiency</h3>
+                        <p class="card-text">180% reduction in time spent on projects that has old designs files with many unlinked values</p>
+                    </div>
+                    <div class="card-small">
+                        <h3 class="card-title">Improved Collaboration</h3>
+                        <p class="card-text">Reduced developers and designers realignemnt time by 70%</p>
+                    </div>
+                    <div class="card-small">
+                        <h3 class="card-title">Design Consistency</h3>
+                        <p class="card-text">Have a consistent design system across the entire project files</p>
+                    </div>
                 </div>
-                <div class="card-small">
-                    <h3 class="card-title">Improved Collaboration</h3>
-                    <p class="card-text">Reduced developers and designers realignemnt time by 70%</p>
-                </div>
-                <div class="card-small">
-                    <h3 class="card-title">Design Consistency</h3>
-                    <p class="card-text">Have a consistent design system across the entire project files</p>
-                </div>
-            </div>
+            </section>
 
             <!-- GitHub Repository Section -->
-            <h2>Relinky's Repository</h2>
-            <p class="space-layout-r">Source code on GitHub! Consider contributing to the plugin!</p>
-            
-            <div class="github-embed">
-                <div class="github-card">
-                    <div class="github-card-header">
-                        <img src="assets/github-logo.svg" alt="GitHub Logo" class="github-logo" style="filter: brightness(0) invert(1);">
-                        <h3><a href="https://github.com/ivanyeors/Relinky" target="_blank" rel="noopener noreferrer">ivanyeors/Relinky</a></h3>
-                    </div>
-                    <div class="github-card-description">
-                        <p>A powerful Figma plugin to help you find and manage unlinked design tokens and styles across your files.</p>
-                    </div>
-                    <div class="github-card-stats">
-                        <div class="github-stat">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" fill="currentColor">
-                                <path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"></path>
-                            </svg>
-                            <span id="github-stars">Stars</span>
+            <section id="repository">
+                <h2>Relinky's Repository</h2>
+                <p class="space-layout-r">Source code on GitHub! Consider contributing to the plugin!</p>
+                
+                <div class="github-embed">
+                    <div class="github-card">
+                        <div class="github-card-header">
+                            <img src="assets/github-logo.svg" alt="GitHub Logo" class="github-logo" style="filter: brightness(0) invert(1);">
+                            <h3><a href="https://github.com/ivanyeors/Relinky" target="_blank" rel="noopener noreferrer">ivanyeors/Relinky</a></h3>
                         </div>
-                        <div class="github-stat">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" fill="currentColor">
-                                <path d="M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75v-.878a2.25 2.25 0 1 1 1.5 0v.878a2.25 2.25 0 0 1-2.25 2.25h-1.5v2.128a2.251 2.251 0 1 1-1.5 0V8.5h-1.5A2.25 2.25 0 0 1 3.5 6.25v-.878a2.25 2.25 0 1 1 1.5 0ZM5 3.25a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm6.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm-3 8.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Z"></path>
-                            </svg>
-                            <span id="github-forks">Forks</span>
+                        <div class="github-card-description">
+                            <p>A powerful Figma plugin to help you find and manage unlinked design tokens and styles across your files.</p>
                         </div>
-                        <div class="github-stat">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" fill="currentColor">
-                                <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"></path><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z"></path>
-                            </svg>
-                            <span id="github-issues">Issues</span>
+                        <div class="github-card-stats">
+                            <div class="github-stat">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" fill="currentColor">
+                                    <path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"></path>
+                                </svg>
+                                <span id="github-stars">Stars</span>
+                            </div>
+                            <div class="github-stat">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" fill="currentColor">
+                                    <path d="M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75v-.878a2.25 2.25 0 1 1 1.5 0v.878a2.25 2.25 0 0 1-2.25 2.25h-1.5v2.128a2.251 2.251 0 1 1-1.5 0V8.5h-1.5A2.25 2.25 0 0 1 3.5 6.25v-.878a2.25 2.25 0 1 1 1.5 0ZM5 3.25a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm6.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm-3 8.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Z"></path>
+                                </svg>
+                                <span id="github-forks">Forks</span>
+                            </div>
+                            <div class="github-stat">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" fill="currentColor">
+                                    <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"></path><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z"></path>
+                                </svg>
+                                <span id="github-issues">Issues</span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="github-card-footer">
-                        <a href="https://github.com/ivanyeors/Relinky" class="btn github-btn" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                        <div class="github-card-footer">
+                            <a href="https://github.com/ivanyeors/Relinky" class="btn github-btn" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <!-- Future Development -->
-            <h2>Stay tuned for more updates!</h2>
-            <!-- Image code start -->
-            <div class="image-style">
-                <img src="assets/img-relinky/relinky-main.png" alt="relinky-main" class="img-style" onclick="openModal(this)">
-            </div>
-            <div class="modal">
-                <span class="close-button" onclick="closeModal()">&times;</span>
-                <img class="modal-content" alt="Full-screen Image">
-            </div>    
-            <!-- Image code end -->
+            <section id="future">
+                <h2>Stay tuned for more updates!</h2>
+                <!-- Image code start -->
+                <div class="image-style">
+                    <img src="assets/img-relinky/relinky-main.png" alt="relinky-main" class="img-style" onclick="openModal(this)">
+                </div>
+                <div class="modal">
+                    <span class="close-button" onclick="closeModal()">&times;</span>
+                    <img class="modal-content" alt="Full-screen Image">
+                </div>    
+                <!-- Image code end -->
+            </section>
 
         </div>
     </div>
@@ -337,6 +373,66 @@
             <span>LinkedIn</span>
         </a>
     </nav>
+
+    <script>
+        // JavaScript for anchor link functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all anchor links
+            const anchorLinks = document.querySelectorAll('.anchor-link');
+            const sections = document.querySelectorAll('section[id]');
+            
+            // Function to check which section is in view
+            function highlightCurrentSection() {
+                let scrollPosition = window.scrollY + 100; // Add offset
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+                    const sectionId = section.getAttribute('id');
+                    
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                        // Remove active class from all links
+                        anchorLinks.forEach(link => {
+                            link.classList.remove('active');
+                        });
+                        
+                        // Add active class to current section link
+                        const activeLink = document.querySelector(`.anchor-link[href="#${sectionId}"]`);
+                        if (activeLink) {
+                            activeLink.classList.add('active');
+                        }
+                    }
+                });
+            }
+            
+            // Handle scroll events
+            window.addEventListener('scroll', highlightCurrentSection);
+            
+            // Initial check on page load
+            highlightCurrentSection();
+            
+            // For mobile: expand/collapse list items on tap
+            if (window.innerWidth <= 768) {
+                const listItems = document.querySelectorAll('.anchor-link-list li');
+                
+                listItems.forEach(item => {
+                    item.addEventListener('click', function(e) {
+                        // Don't prevent default on the actual anchor link
+                        if (!e.target.classList.contains('anchor-link')) {
+                            e.preventDefault();
+                            
+                            // Toggle expanded class
+                            listItems.forEach(li => {
+                                if (li !== this) li.classList.remove('expanded');
+                            });
+                            
+                            this.classList.toggle('expanded');
+                        }
+                    });
+                });
+            }
+        });
+    </script>
 </body>
 
 </html> 
