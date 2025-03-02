@@ -30,6 +30,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize filter functionality
     initializeFilters();
     
+    // Initialize card grid layout
+    initializeCardGridLayout();
+    
+    // Fetch GitHub repository stats
+    fetchGitHubStats();
+    
     // Initialize other features...
 });
 
@@ -438,4 +444,122 @@ function initializeFilters() {
     // Initialize with 'all' filter
     console.log('Setting initial filter: all');
     filterCards('all');
+}
+
+// Function to handle card grid layout based on number of cards
+function initializeCardGridLayout() {
+    console.log('Initializing card grid layout...');
+    
+    // Get all card grid containers
+    const cardGrids = document.querySelectorAll('.card-grid');
+    
+    // Apply layout initially
+    applyCardGridLayout(cardGrids);
+    
+    // Add resize event listener to update layout when window size changes
+    window.addEventListener('resize', () => {
+        // Use debounce to prevent excessive function calls during resize
+        clearTimeout(window.resizeTimer);
+        window.resizeTimer = setTimeout(() => {
+            console.log('Window resized, updating card grid layout...');
+            // Re-apply the layout
+            applyCardGridLayout(document.querySelectorAll('.card-grid'));
+        }, 250); // Wait 250ms after resize ends before updating
+    });
+    
+    // Set up a mutation observer to watch for dynamically added card grids
+    const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+            if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+                // Check if any added nodes are card grids or contain card grids
+                mutation.addedNodes.forEach((node) => {
+                    if (node.nodeType === Node.ELEMENT_NODE) {
+                        // Check if the node itself is a card grid
+                        if (node.classList && node.classList.contains('card-grid')) {
+                            console.log('New card grid added, updating layout...');
+                            applyCardGridLayout([node]);
+                        }
+                        
+                        // Check if the node contains any card grids
+                        const childGrids = node.querySelectorAll('.card-grid');
+                        if (childGrids.length > 0) {
+                            console.log('Found card grids in added content, updating layout...');
+                            applyCardGridLayout(childGrids);
+                        }
+                    }
+                });
+            }
+        });
+    });
+    
+    // Start observing the document body for changes
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true
+    });
+}
+
+// Function to apply the appropriate grid layout based on card count
+function applyCardGridLayout(cardGrids) {
+    // Process each card grid
+    cardGrids.forEach(grid => {
+        const cardCount = grid.children.length;
+        console.log(`Processing card grid with ${cardCount} cards`);
+        
+        // Remove any existing grid classes
+        grid.classList.remove('card-grid-1', 'card-grid-2', 'card-grid-4');
+        
+        // Apply appropriate class based on card count
+        if (cardCount === 1) {
+            grid.classList.add('card-grid-1');
+        } else if (cardCount === 2) {
+            grid.classList.add('card-grid-2');
+        } else if (cardCount === 4) {
+            grid.classList.add('card-grid-4');
+        }
+    });
+}
+
+// Function to fetch GitHub repository stats
+function fetchGitHubStats() {
+    const repo = 'ivanyeors/Relinky';
+    const starsElement = document.getElementById('github-stars');
+    const forksElement = document.getElementById('github-forks');
+    const issuesElement = document.getElementById('github-issues');
+    
+    if (!starsElement || !forksElement || !issuesElement) {
+        console.log('GitHub stats elements not found on this page');
+        return;
+    }
+    
+    console.log('Fetching GitHub stats for repository:', repo);
+    
+    // Set loading state
+    starsElement.textContent = 'Loading...';
+    forksElement.textContent = 'Loading...';
+    issuesElement.textContent = 'Loading...';
+    
+    fetch(`https://api.github.com/repos/${repo}`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('GitHub API request failed');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('GitHub API response:', data);
+            
+            // Update stats with actual data
+            starsElement.textContent = data.stargazers_count || '0';
+            forksElement.textContent = data.forks_count || '0';
+            issuesElement.textContent = data.open_issues_count || '0';
+        })
+        .catch(error => {
+            console.error('Error fetching GitHub stats:', error);
+            
+            // Set fallback values on error
+            starsElement.textContent = 'N/A';
+            forksElement.textContent = 'N/A';
+            issuesElement.textContent = 'N/A';
+        });
 }
