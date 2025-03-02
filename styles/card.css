@@ -1,7 +1,7 @@
 /* Grid container */
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Changed from auto-fit to auto-fill and increased min width */
     gap: var(--spacing-xs); /* Space between cards */
     padding: var(--spacing-s) 0; /* Space around the grid */
 }
@@ -9,11 +9,14 @@
 /* Mobile view - single column */
 @media (max-width: 767px) {
     .card-grid {
+        display: flex !important; /* Use flexbox instead of grid for more reliable stacking */
+        flex-direction: column !important; /* Stack items vertically */
         grid-template-columns: 1fr !important; /* Force single column on mobile */
-        gap: var(--spacing-s); /* Slightly increase spacing between cards */
+        gap: var(--spacing-s) !important; /* Slightly increase spacing between cards */
     }
     
     /* Adjust card aspect ratio for better mobile display */
+    .card-grid .card,
     .card-grid .card-modal {
         aspect-ratio: 1.2 / 1 !important; /* Slightly shorter cards on mobile */
         margin-bottom: var(--spacing-xs) !important; /* Add some spacing between cards */
@@ -23,11 +26,13 @@
     }
     
     /* Adjust typography for better readability on mobile */
+    .card-grid .card h2,
     .card-grid .card-modal h2 {
         font-size: var(--font-size-l) !important; /* Ensure title is readable */
         margin-bottom: var(--spacing-3xs) !important; /* Tighten spacing */
     }
     
+    .card-grid .card p,
     .card-grid .card-modal p {
         font-size: var(--font-size-s) !important; /* Ensure description is readable */
     }
@@ -51,12 +56,18 @@
 
 /* Grid layout override for cards in ideas.html */
 .card-grid .card-modal {
-    aspect-ratio: 1.5 / 1 !important; /* Square aspect ratio in grid */
+    aspect-ratio: 1.5 / 1 !important; /* Rectangle aspect ratio in grid */
     margin: 0 !important; /* Remove margin for grid layout */
     max-width: none !important; /* Override the max-width from modal.css */
 }
 
 /* breakpoints */  
+@media (min-width: 768px) and (max-width: 1023px) {
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr) !important; /* 2 columns for tablets */
+    }
+}
+
 @media (min-width: 1024px) {
     .card-grid {
         grid-template-columns: repeat(3, 1fr);
@@ -67,12 +78,15 @@
     .card-grid {
         max-width: 1440px; /* Set a maximum width for large screens */
     }
+    .card {
+        aspect-ratio: 2 / 1 !important; /* Change to 2:1 aspect ratio for large screens with important flag */
+    }
 }
 
 
   /* Card styling */
   .card {
-    aspect-ratio: 1 / 1; /* Maintains a 1:1 aspect ratio for squares */
+    aspect-ratio: 1 / 1; /* Default 1:1 aspect ratio for squares */
     cursor: pointer;
     border: 1px solid var(--border-color); /* Border */
     border-radius: var(--radius-s); /* Rounded corners */

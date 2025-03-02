@@ -141,28 +141,52 @@ function initializeAnchorLinks() {
       return window.innerWidth <= 768;
     }
     
+    // Track last clicked anchor to implement two-tap behavior
+    let lastClickedAnchor = null;
+    
+    // Prevent default navigation on anchor link clicks in mobile view
+    links.forEach(link => {
+      link.addEventListener('click', (e) => {
+        if (!isMobileView()) return; // Only apply in mobile view
+        
+        if (!anchorLinkList.classList.contains('expanded')) {
+          // First tap - just expand the menu
+          e.preventDefault(); // Prevent navigation
+          anchorLinkList.classList.add('expanded');
+          lastClickedAnchor = link; // Store the clicked link
+          e.stopPropagation();
+        } else if (lastClickedAnchor !== link) {
+          // Different link clicked while expanded - prevent navigation on first tap
+          e.preventDefault();
+          lastClickedAnchor = link; // Update last clicked link
+          e.stopPropagation();
+        } else {
+          // Second tap on same link - allow navigation and collapse
+          // Navigation happens naturally
+          setTimeout(() => {
+            anchorLinkList.classList.remove('expanded');
+            lastClickedAnchor = null; // Reset
+          }, 100);
+        }
+      });
+    });
+    
     // Add click handler for mobile expansion toggle
     anchorLinkList.addEventListener("click", (e) => {
       if (!isMobileView()) return; // Only apply in mobile view
       
-      // If clicking an anchor link and we're expanded, let the link work then collapse
-      if (e.target.closest('.anchor-link') && anchorLinkList.classList.contains('expanded')) {
-        // Small delay to allow the navigation to occur before collapsing
-        setTimeout(() => {
-          anchorLinkList.classList.remove('expanded');
-        }, 100);
-        return;
+      // Only toggle expansion when clicking on the list itself, not its children
+      if (e.target === anchorLinkList) {
+        anchorLinkList.classList.toggle('expanded');
+        e.stopPropagation(); // Prevent clicks from propagating
       }
-      
-      // Toggle expanded state
-      anchorLinkList.classList.toggle('expanded');
-      e.stopPropagation(); // Prevent clicks from propagating
     });
     
     // Close expanded menu when clicking elsewhere
     document.addEventListener('click', (e) => {
       if (isMobileView() && anchorLinkList.classList.contains('expanded') && !anchorLinkList.contains(e.target)) {
         anchorLinkList.classList.remove('expanded');
+        lastClickedAnchor = null; // Reset last clicked anchor
       }
     });
     
@@ -174,6 +198,7 @@ function initializeAnchorLinks() {
     window.addEventListener('resize', () => {
       if (!isMobileView()) {
         anchorLinkList.classList.remove('expanded');
+        lastClickedAnchor = null; // Reset last clicked anchor
       }
     });
   }
