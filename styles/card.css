@@ -3,8 +3,24 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Changed from auto-fit to auto-fill and increased min width */
     gap: var(--spacing-xs); /* Space between cards */
-    padding: var(--spacing-s) 0; /* Space around the grid */
+    padding: 0; /* Space around the grid */
 }
+
+.card-small {
+    border-radius: var(--radius-s); /* Rounded corners */
+    padding: var(--spacing-s) var(--spacing-m); /* Space inside each card */
+    background-color: var(--surface-color); /* Default card background */
+    text-decoration: none; /* Remove underline from links */
+    color: var(--text-color-active); /* Default text color */
+    display: flex; /* Use Flexbox */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: flex-start; /* Push content to the bottom */
+    align-items: flex-start; /* Align content to the left */
+    position: relative; /* Ensure pseudo-element positioning works */
+    overflow: hidden; /* Prevent pseudo-element from overflowing */
+    z-index: 1; /* Set proper stacking context */
+    transition: border 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+    }
 
 /* Mobile view - single column */
 @media (max-width: 767px) {
@@ -12,7 +28,10 @@
         display: flex !important; /* Use flexbox instead of grid for more reliable stacking */
         flex-direction: column !important; /* Stack items vertically */
         grid-template-columns: 1fr !important; /* Force single column on mobile */
-        gap: var(--spacing-s) 8; /* Slightly increase spacing between cards */
+        gap: var(--spacing-s); /* Slightly increase spacing between cards */
+    }
+    .card-small {
+        padding: var(--spacing-xs); /* Adjust padding for better mobile layout */
     }
     
     /* Adjust card aspect ratio for better mobile display */
@@ -185,22 +204,6 @@
     margin-top: 0; /* Ensure no extra spacing above the description */
   }  
 
-
-.card-small {
-    border-radius: var(--radius-s); /* Rounded corners */
-    padding: var(--spacing-s) var(--spacing-l); /* Space inside each card */
-    background-color: var(--surface-color); /* Default card background */
-    text-decoration: none; /* Remove underline from links */
-    color: var(--text-color-active); /* Default text color */
-    display: flex; /* Use Flexbox */
-    flex-direction: column; /* Stack children vertically */
-    justify-content: flex-start; /* Push content to the bottom */
-    align-items: flex-start; /* Align content to the left */
-    position: relative; /* Ensure pseudo-element positioning works */
-    overflow: hidden; /* Prevent pseudo-element from overflowing */
-    z-index: 1; /* Set proper stacking context */
-    transition: border 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
-    }
 
 /* Style for filter buttons container */
 .filter-container {

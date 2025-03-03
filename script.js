@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
         border-radius: 6px;
         z-index: 99999;
     `;
-    indicator.textContent = '✅';
+    indicator.textContent = ' ';
     body.appendChild(indicator);
     
     // Remove after 3 seconds

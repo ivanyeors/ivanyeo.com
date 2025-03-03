@@ -330,8 +330,9 @@ ul {
 }
 
 .experience-details.expanded {
-    max-height: 500px; /* Arbitrary large value */
+    max-height: 2000px; /* Increased from 500px to accommodate longer content */
     opacity: 1;
+    overflow-y: auto; /* Allow scrolling if content is too long */
 }
 
 .experience-details p {
