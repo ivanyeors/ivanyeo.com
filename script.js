@@ -1,8 +1,58 @@
 console.log('Script loaded');
 
+// Handle clean URLs (redirect from URLs without .html to the actual HTML files)
+(function() {
+    // Only run this code when someone accesses the page directly without .html
+    // For example: example.com/page instead of example.com/page.html
+    const path = window.location.pathname;
+    const isRoot = path === '/' || path === '';
+    const hasExtension = path.includes('.');
+    const hasTrailingSlash = path.endsWith('/');
+    
+    // Don't redirect if we're at the root, already have an extension, or if we're in local development
+    if (isRoot || hasExtension || window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        return;
+    }
+    
+    // Clean the path (remove trailing slash if present)
+    const cleanPath = hasTrailingSlash ? path.slice(0, -1) : path;
+    
+    // Redirect to the HTML version
+    window.location.href = cleanPath + '.html';
+})();
+
 // Add this at the start of your file
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM Content Loaded - Initializing all features');
+
+    // Handle clean URLs (remove .html extension from the URL after page loads)
+    const handleCleanUrls = () => {
+        const path = window.location.pathname;
+        
+        // Check if the current URL ends with .html
+        if (path.endsWith('.html')) {
+            // Remove the .html extension
+            const cleanPath = path.slice(0, -5);
+            
+            // Update the URL without reloading the page
+            try {
+                window.history.replaceState(null, document.title, cleanPath);
+            } catch (e) {
+                console.error('Error updating browser history:', e);
+            }
+        }
+        
+        // Update all internal links to remove .html
+        document.querySelectorAll('a').forEach(link => {
+            const href = link.getAttribute('href');
+            if (href && href.endsWith('.html') && !href.startsWith('http') && !href.startsWith('//')) {
+                link.setAttribute('href', href.slice(0, -5));
+            }
+        });
+    };
+    
+    // Run the clean URL handler
+    handleCleanUrls();
 
     // Add a visible indicator that JS is running
     const body = document.body;
