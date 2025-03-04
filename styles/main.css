@@ -64,7 +64,7 @@
 /* states */
 --color-rest: var(--stone300);
 --color-active: var(--stone50);
---color-hover: var(--stone150);
+--color-hover: var(--stone600);
 --color-pressed: var(--stone200);
 --color-disabled: var(--stone600);
 
