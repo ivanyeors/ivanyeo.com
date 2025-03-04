@@ -38,7 +38,7 @@
     .card-grid .card,
     .card-grid .card-modal {
         aspect-ratio: 1.2 / 1 !important; /* Slightly shorter cards on mobile */
-        margin-bottom: var(--spacing-xs) !important; /* Add some spacing between cards */
+        margin-bottom: var(--spacing-xs) 0; /* Add some spacing between cards */
         width: 100% !important; /* Ensure full width */
         max-width: 100% !important; /* Override any max-width settings */
         padding: var(--spacing-s) var(--spacing-m) !important; /* Adjust padding for better mobile layout */
