@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">    
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>IYRS</title>
+
+    <!-- Fonts Import -->    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- Link to the CSS file -->
+    <link rel="stylesheet" href="styles/main.css?v=1.0">
+    <link rel="stylesheet" href="styles/breadcrumbs.css?v=1.0">
+    <link rel="stylesheet" href="styles/button.css">
+    <link rel="stylesheet" href="styles/card.css">
+    <link rel="stylesheet" href="styles/images.css">
+    <link rel="stylesheet" href="styles/anchor.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/modal.css">
+
+    <!-- Link to the Javascript File -->
+    <script src="script.js" defer></script>
+</head>
+
+<body id="top">
+    <header class="main-header">
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="assets/Ivan-logo.svg" alt="Company Logo" class="logo">
+            </a>
+            <div class="btn-menu">
+                <a href="https://ivanyeo.com" class="btn" rel="noopener noreferrer">Home</a>
+                <a href="assets/IvanYeo - 96374631.pdf" class="btn" target="_blank" rel="noopener noreferrer">Resume</a>
+                <a href="https://www.linkedin.com/in/ivanyeors/" class="btn" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
+        </div>
+    </header> 
+    <div class="content space-l">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="ideas.html">Ideas</a></li>
+                <li aria-current="page" title="Corne">Corne Keyboard</li>
+            </ul>
+        </nav>
+
+        <!-- Anchor Links Navigation -->
+        <nav class="anchor-link-list" aria-label="Page Navigation">
+            <ul>
+                <li><a href="#overview" class="anchor-link"><span>Overview</span></a></li>
+                <li><a href="#why-corne" class="anchor-link"><span>Why Corne</span></a></li>
+                <li><a href="#components" class="anchor-link"><span>Components</span></a></li>
+                <li><a href="#build-process" class="anchor-link"><span>Build Process</span></a></li>
+                <li><a href="#firmware" class="anchor-link"><span>Firmware Setup</span></a></li>
+                <li><a href="#customization" class="anchor-link"><span>Customization</span></a></li>
+                <li><a href="#final-build" class="anchor-link"><span>Final Build</span></a></li>
+                <li><a href="#learnings" class="anchor-link"><span>Learnings</span></a></li>
+            </ul>
+        </nav>
+
+        <div class="project-content">
+            <!-- Project Title -->
+            <section id="overview">
+                <h1>My Journey Building a Corne Keyboard</h1>
+                <p class="space-layout-r">As someone who spends countless hours typing, I decided to embark on a fun DIY adventure 
+                    to build my own split ergonomic keyboard. This project combines my love for technology, 
+                    hands-on building, and the satisfaction of creating something uniquely mine.
+                </p>
+                <!-- Main Image -->
+                <div class="image-style">
+                    <img src="assets/img-corne/cover-main.png" alt="My Completed Corne Keyboard" class="img-style" onclick="openModal(this)">
+                </div>
+                <div class="modal">
+                    <span class="close-button" onclick="closeModal()">&times;</span>
+                    <img class="modal-content" alt="Full-screen Image">
+                </div>
+                
+                <p class="space-layout-r">What started as curiosity about mechanical keyboards turned into an exciting 
+                    weekend project that taught me about electronics, firmware programming, and the joy of building something with my own hands.
+                </p>
+            </section>
+
+            <!-- Why Corne Section -->
+            <section id="why-corne">
+                <h2>Why I Chose the Corne</h2>
+                <p class="space-layout-r">After diving deep into the mechanical keyboard community and researching various options, 
+                    the Corne keyboard caught my eye for several reasons:</p>
+                <div class="card-grid">
+                    <div class="card-small">
+                        <h2 class="card-title">Perfect for My Setup</h2>
+                        <p class="card-text">The split design lets me position each half exactly where I want, making long coding sessions much more comfortable</p>
+                    </div>
+                    <div class="card-small">
+                        <h2 class="card-title">Fun to Build</h2>
+                        <p class="card-text">The DIY aspect appealed to my maker spirit - from soldering to programming, every step was a new learning experience</p>
+                    </div>
+                    <div class="card-small">
+                        <h2 class="card-title">Minimalist Design</h2>
+                        <p class="card-text">With just 36 keys, it challenged me to rethink my typing habits and create efficient layer layouts</p>
+                    </div>
+                </div>
+                <!-- Inspiration Images -->
+                <div class="image-style">
+                    <img src="assets/img-corne/inspiration.png" alt="Keyboard Inspiration" class="img-style" onclick="openModal(this)">
+                </div>
+            </section>
+
+            <!-- Components Section -->
+            <section id="components">
+                <h2>My Component Choices</h2>
+                <p class="space-layout-r">Selecting parts was like putting together a puzzle - each component affecting the final feel and sound of the keyboard.</p>
+                <div class="card-grid">
+                    <div class="card-small">
+                        <h3 class="card-title">The Heart of the Build</h3>
+                        <p class="card-text">Went with the classic black PCB and aluminum plates for that premium feel</p>
+                    </div>
+                    <div class="card-small">
+                        <h3 class="card-title">Tactile Goodness</h3>
+                        <p class="card-text">Chose Boba U4T switches for their satisfying tactile feedback and deep sound profile</p>
+                    </div>
+                    <div class="card-small">
+                        <h3 class="card-title">Brain Power</h3>
+                        <p class="card-text">Elite-C controllers for their reliability and USB-C convenience</p>
+                    </div>
+                </div>
+                <!-- Components Layout Image -->
+                <div class="image-style">
+                    <img src="assets/img-corne/components.png" alt="Keyboard Components" class="img-style" onclick="openModal(this)">
+                </div>
+            </section>
+
+            <!-- Build Process Section -->
+            <section id="build-process">
+                <h2>The Build Adventure</h2>
+                <p class="space-layout-r">Every step of the build process was both challenging and rewarding. Here's how my weekend project unfolded:</p>
+                
+                <!-- PCB Soldering -->
+                <h3>Day 1: PCB Assembly</h3>
+                <div class="image-style">
+                    <img src="assets/img-corne/soldering.png" alt="Soldering Process" class="img-style" onclick="openModal(this)">
+                </div>
+                <p class="space-layout-r">First time soldering! After watching countless YouTube tutorials, I finally got to try it myself.</p>
+
+                <!-- Switch Installation -->
+                <h3>Day 2: Switch Installation</h3>
+                <div class="image-style">
+                    <img src="assets/img-corne/switches.png" alt="Installing Switches" class="img-style" onclick="openModal(this)">
+                </div>
+                <p class="space-layout-r">Testing each switch before and after soldering was tedious but crucial.</p>
+            </section>
+
+            <!-- Firmware Section -->
+            <section id="firmware">
+                <h2>Adventures in ZMK Firmware</h2>
+                <p class="space-layout-r">Initially started with QMK, but later switched to ZMK for its excellent wireless support and better battery life. 
+                    The journey of customizing my keyboard layout has been incredibly fun!</p>
+                <!-- Firmware Setup Image -->
+                <div class="image-style">
+                    <img src="assets/img-corne/zmk-setup.png" alt="ZMK Setup" class="img-style" onclick="openModal(this)">
+                </div>
+                <p class="space-layout-r">After several iterations, I finally found my perfect layout combining efficiency and comfort. 
+                    Check out my ZMK configuration below!</p>
+
+                <!-- GitHub Repository Section -->
+                <div class="github-embed">
+                    <div class="github-card">
+                        <div class="github-card-header">
+                            <img src="assets/github-logo.svg" alt="GitHub Logo" class="github-logo" style="filter: brightness(0) invert(1);">
+                            <h3><a href="https://github.com/ivanyeors/zmk-config-corne-6col" target="_blank" rel="noopener noreferrer">ivanyeors/zmk-config-corne-6col</a></h3>
+                        </div>
+                        <div class="github-card-description">
+                            <p>My personal ZMK firmware configuration for the wireless Corne keyboard. Features custom keymaps, 
+                               layers, and optimizations for daily programming use.</p>
+                        </div>
+                        <div class="github-card-stats">
+                            <div class="github-stat">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" fill="currentColor">
+                                    <path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"></path>
+                                </svg>
+                                <span id="github-stars">Stars</span>
+                            </div>
+                            <div class="github-stat">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" fill="currentColor">
+                                    <path d="M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75v-.878a2.25 2.25 0 1 1 1.5 0v.878a2.25 2.25 0 0 1-2.25 2.25h-1.5v2.128a2.251 2.251 0 1 1-1.5 0V8.5h-1.5A2.25 2.25 0 0 1 3.5 6.25v-.878a2.25 2.25 0 1 1 1.5 0ZM5 3.25a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm6.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm-3 8.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Z"></path>
+                                </svg>
+                                <span id="github-forks">Forks</span>
+                            </div>
+                            <div class="github-stat">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" fill="currentColor">
+                                    <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"></path><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z"></path>
+                                </svg>
+                                <span id="github-issues">Issues</span>
+                            </div>
+                        </div>
+                        <div class="github-card-footer">
+                            <a href="https://github.com/ivanyeors/zmk-config-corne-6col" class="btn github-btn" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="space-layout-r">The repository contains my complete ZMK configuration, including:</p>
+                <ul class="feature-list">
+                    <li>Custom keymap layouts for coding and daily use</li>
+                    <li>Wireless optimization settings for better battery life</li>
+                    <li>Multiple layers for symbols, numbers, and function keys</li>
+                    <li>Automated GitHub Actions for firmware builds</li>
+                </ul>
+            </section>
+
+            <!-- Customization Section -->
+            <section id="customization">
+                <h2>Making It Mine</h2>
+                <p class="space-layout-r">The best part about building your own keyboard is adding personal touches:</p>
+                <!-- Customization Images -->
+                <div class="image-style">
+                    <img src="assets/img-corne/customization.png" alt="Customization Process" class="img-style" onclick="openModal(this)">
+                </div>
+                <div class="card-grid">
+                    <div class="card-small">
+                        <h3 class="card-title">Keycap Choice</h3>
+                        <p class="card-text">Went with a minimalist black and white theme that matches my desk setup</p>
+                    </div>
+                    <div class="card-small">
+                        <h3 class="card-title">LED Configuration</h3>
+                        <p class="card-text">Added subtle underglow effects for those late-night coding sessions</p>
+                    </div>
+                    <div class="card-small">
+                        <h3 class="card-title">Custom Case</h3>
+                        <p class="card-text">3D printed a custom case with a slight tilt for optimal typing angle</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Final Build Section -->
+            <section id="final-build">
+                <h2>The Final Result</h2>
+                <p class="space-layout-r">After weeks of tinkering and fine-tuning, here's my daily driver:</p>
+                <!-- Final Build Images -->
+                <div class="image-style">
+                    <img src="assets/img-corne/final-1.png" alt="Final Build Front View" class="img-style" onclick="openModal(this)">
+                </div>
+                <div class="image-style">
+                    <img src="assets/img-corne/final-2.png" alt="Final Build Setup" class="img-style" onclick="openModal(this)">
+                </div>
+            </section>
+
+            <!-- Learnings Section -->
+            <section id="learnings">
+                <h2>What I Learned Along the Way</h2>
+                <p class="space-layout-r">This hobby project taught me more than just keyboard building:</p>
+                <div class="card-grid">
+                    <div class="card-small">
+                        <h3 class="card-title">New Skills</h3>
+                        <p class="card-text">From soldering to coding in QMK, picked up some really useful maker skills</p>
+                    </div>
+                    <div class="card-small">
+                        <h3 class="card-title">Community</h3>
+                        <p class="card-text">Found an amazing community of keyboard enthusiasts always willing to help</p>
+                    </div>
+                    <div class="card-small">
+                        <h3 class="card-title">Future Projects</h3>
+                        <p class="card-text">Already planning my next build with wireless capabilities!</p>
+                    </div>
+                </div>
+                <!-- Setup Image -->
+                <div class="image-style">
+                    <img src="assets/img-corne/desk-setup.png" alt="Complete Setup" class="img-style" onclick="openModal(this)">
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <footer class="site-footer content space-l">
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-branding">
+                    <img src="assets/Ivan-logo.svg" alt="Ivan Yeo Logo" class="footer-logo">
+                    <h1>Ivan Yeo</h1>
+                </div>
+                <div class="footer-social">
+                    <ul class="social-links">
+                        <li>
+                            <a href="mailto:ivanyeoart@gmail.com" class="social-icon" aria-label="Email">
+                                <img src="assets/email-icon.svg" alt=" ">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://wa.me/6596374631" class="social-icon" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
+                                <img src="assets/whatsapp-icon.svg" alt=" ">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/ivanyeors/" class="social-icon" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                                <img src="assets/linkedin-icon.svg" alt=" ">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.behance.net/ivanyeors" class="social-icon" aria-label="Behance" target="_blank" rel="noopener noreferrer">
+                                <img src="assets/behance-icon.svg" alt=" ">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <a href="#top" class="back-to-top">Back to top</a>
+            </div>
+        </div>
+    </footer>
+
+    <nav class="bottom-app-bar">
+        <a href="https://ivanyeo.com" class="app-bar-item" rel="noopener noreferrer">
+            <span>Home</span>
+        </a>
+        <a href="assets/IvanYeo - 96374631.pdf" class="app-bar-item" target="_blank" rel="noopener noreferrer">
+            <span>Resume</span>
+        </a>
+        <a href="https://www.linkedin.com/in/ivanyeors/" class="app-bar-item" target="_blank" rel="noopener noreferrer">
+            <span>LinkedIn</span>
+        </a>
+    </nav>
+
+    <script>
+        // JavaScript for anchor link functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all anchor links
+            const anchorLinks = document.querySelectorAll('.anchor-link');
+            const sections = document.querySelectorAll('section[id]');
+            
+            // Function to check which section is in view
+            function highlightCurrentSection() {
+                let scrollPosition = window.scrollY + 100; // Add offset
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+                    const sectionId = section.getAttribute('id');
+                    
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                        // Remove active class from all links
+                        anchorLinks.forEach(link => {
+                            link.classList.remove('active');
+                        });
+                        
+                        // Add active class to current section link
+                        const activeLink = document.querySelector(`.anchor-link[href="#${sectionId}"]`);
+                        if (activeLink) {
+                            activeLink.classList.add('active');
+                        }
+                    }
+                });
+            }
+            
+            // Handle scroll events
+            window.addEventListener('scroll', highlightCurrentSection);
+            
+            // Initial check on page load
+            highlightCurrentSection();
+            
+            // For mobile: expand/collapse list items on tap
+            if (window.innerWidth <= 768) {
+                const listItems = document.querySelectorAll('.anchor-link-list li');
+                
+                listItems.forEach(item => {
+                    item.addEventListener('click', function(e) {
+                        // Don't prevent default on the actual anchor link
+                        if (!e.target.classList.contains('anchor-link')) {
+                            e.preventDefault();
+                            
+                            // Toggle expanded class
+                            listItems.forEach(li => {
+                                if (li !== this) li.classList.remove('expanded');
+                            });
+                            
+                            this.classList.toggle('expanded');
+                        }
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
