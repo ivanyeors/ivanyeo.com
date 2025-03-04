@@ -492,3 +492,21 @@ ul {
     margin-bottom: var(--spacing-3xs);
 }
 
+
+.source-citation {
+    font-size: var(--font-size-s);
+    color: var(--stone500);
+    margin-top: var(--spacing-3xs);
+    font-style: italic;
+}
+
+.source-citation a {
+    color: var(--stone500);
+    text-decoration: underline;
+    text-decoration-style: dotted;
+}
+
+.source-citation a:hover {
+    color: var(--white);
+    text-decoration-style: solid;
+}

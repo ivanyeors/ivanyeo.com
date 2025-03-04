@@ -20,9 +20,15 @@
     <link rel="stylesheet" href="styles/anchor.css">
     <link rel="stylesheet" href="styles/header.css">
     <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/modal.css">
+
+    <!-- Chart.js for data visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <!-- Link to the Javascript File -->
     <script src="script.js" defer></script>
+    
+
 </head>
 
 <header class="main-header">
@@ -41,13 +47,429 @@
 <body id="top">
     <div class="parent-container">
         <div class="content space-l">
-            <h1 class="space-l">Evydence Platform</h1>
+            <h1>Evydence Platform</h1>
             <nav class="breadcrumbs" aria-label="Breadcrumb">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li aria-current="page">Evydence Platform</li>
                 </ul>
             </nav>
+
+            <!-- Anchor Links Navigation -->
+            <nav class="anchor-link-list" aria-label="Page Navigation">
+                <ul>
+                    <li><a href="#overview" class="anchor-link"><span>Overview</span></a></li>
+                    <li><a href="#market-size" class="anchor-link"><span>Market Size & Growth</span></a></li>
+                    <li><a href="#companies" class="anchor-link"><span>Companies in AI & Data</span></a></li>
+                    <li><a href="#current-offering" class="anchor-link"><span>Current Product Offering</span></a></li>
+                    <li><a href="#product-features" class="anchor-link"><span>Product Features</span></a></li>
+                    <li><a href="#user-insights" class="anchor-link"><span>User Insights</span></a></li>
+                    <li><a href="#evydence-issues" class="anchor-link"><span>Evydence Issues</span></a></li>
+                    <li><a href="#problem-statement" class="anchor-link"><span>Problem Statement</span></a></li>
+                    <li><a href="#proposed-solutions" class="anchor-link"><span>Proposed Solutions</span></a></li>
+                </ul>
+            </nav>
+
+            <div class="project-content">
+                <!-- Overview Section -->
+                <section id="overview">
+                    <h1>Evydence Platform: AI-Integrated Healthcare Analytics</h1>
+                    <p class="space-layout-r">
+                        The Evydence Platform is a comprehensive healthcare analytics solution that leverages AI to assist users in data analysis, visualization, and decision-making.
+                    </p>
+
+                    <div class="card-grid">
+                        <div class="card-small">
+                        <h2 class="card-title">Tools</h2>
+                        <p class="card-text">
+                            <ul>
+                                <li>Figma / Figjam</li>
+                            </ul>
+                        </p>
+                        </div>
+                        <div class="card-small">
+                        <h2 class="card-title">Role</h2>
+                        <p class="card-text">
+                            <ul>
+                                <li>Lead User Interviews</li>
+                                <li>Validate design decisions</li>
+                                <li>Ensure design consistency</li>
+                            </ul>    
+                        </p>
+                        </div>
+                        <div class="card-small">
+                        <h2 class="card-title">Team</h2>
+                        <p class="card-text">
+                            <ul>
+                                <li>2 Designers</li>
+                                <li>1 Product Manager</li>
+                                <li>4 Developer</li>
+                            </ul>    
+                        </p>
+                        </div>
+                    </div>
+                    
+                    <h2>Overview</h2>
+                    <p class="space-layout-r">
+                        AI-Integrated feature for evydence platform:
+                    </p>
+                    <div class="video-style">
+                        <video class="video-thumbnail auto-play-video" muted playsinline onclick="openVideoModal(this)">
+                            <source src="assets/img-ev/ai-integration.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="video-modal">
+                        <span class="close-button" onclick="closeVideoModal()">&times;</span>
+                            <video class="modal-video-content" controls>
+                                <source src="" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                    </div>
+                    <!-- Video code end -->
+                    <h2>Overview</h2>
+                    <div class="card-grid">
+                        <div class="card-small">
+                            <h3 class="card-title">AI-Assisted SQL Generation</h3>
+                            <p class="card-text">Integrate AI to assist in generating and refining SQL code based on user queries</p>
+                        </div>
+                        <div class="card-small">
+                            <h3 class="card-title">Improved workflow and user control</h3>
+                            <p class="card-text">Allow users to adjust AI-generated SQL code before running the code</p>
+                        </div>
+                        <div class="card-small">
+                            <h3 class="card-title">Data discrepancy detection</h3>
+                            <p class="card-text">AI helps to check for discrepancies in data model and data assets</p>
+                        </div>
+                        <div class="card-small">
+                            <h3 class="card-title">Enhanced UX & Interaction experience</h3>
+                            <p class="card-text">Improve search functionality and user interface based on user feedback</p>
+                        </div>
+                    </div>
+                </section>
+
+                <h1>Research framework</h1>
+                <!-- Image code start -->
+                <div class="image-style">
+                    <img src="assets/img-ev/1.png" alt="To understand why we make informed design decisions 
+                    to improve our product, we first have to understand the broader economic outlook of the industry, 
+                    then narrowing down to the user level to help with the UX research that aligns with both market 
+                    realities and user needs." class="img-style" onclick="openModal(this)">
+                </div>
+                <div class="modal">
+                    <span class="close-button" onclick="closeModal()">&times;</span>
+                    <img class="modal-content" alt="Full-screen Image">
+                </div>    
+                <!-- Image code end -->
+
+
+                <!-- Market Size Section -->
+                <section id="market-size">
+                    <h2>Market Size & Growth Potential</h2>
+                    <p class="space-layout-r">
+                        The healthcare analytics market in the Asia-Pacific region shows significant growth potential, particularly in AI and population health management.
+                    </p>
+                    
+                    <!-- Chart container -->
+                    <div class="card-grid">
+                        <div class="card-small">
+                            <h3 class="card-title">AI in Healthcare (Asia-Pacific)</h3>
+                            <div class="chart-container" style="position: relative; height:250px; width:100%;">
+                                <canvas id="aiHealthcareChart"></canvas>
+                            </div>
+                            <p class="card-text">
+                                <ul>
+                                    <li>2023: $4.6B</li>
+                                    <li>2030: $50.9B</li>
+                                    <li>CAGR: 40.9%</li>
+                                </ul>
+                                <p class="source-citation">Source: <a href="https://www.grandviewresearch.com/industry-analysis/artificial-intelligence-ai-healthcare-market" target="_blank" rel="noopener noreferrer">Grand View Research</a>, <a href="https://www.marketsandmarkets.com/Market-Reports/artificial-intelligence-healthcare-market-54679303.html" target="_blank" rel="noopener noreferrer">MarketsandMarkets</a></p>
+                            </p>
+                        </div>
+                        <div class="card-small">
+                            <h3 class="card-title">Population Health Management (Asia-Pacific)</h3>
+                            <div class="chart-container" style="position: relative; height:250px; width:100%;">
+                                <canvas id="populationHealthChart"></canvas>
+                            </div>
+                            <p class="card-text">
+                                <ul>
+                                    <li>2023: $12.8B</li>
+                                    <li>2030: $54.7B</li>
+                                    <li>CAGR: 23.1%</li>
+                                </ul>
+                                <p class="source-citation">Source: <a href="https://www.verifiedmarketresearch.com/product/population-health-management-market/" target="_blank" rel="noopener noreferrer">Verified Market Research</a>, <a href="https://www.mordorintelligence.com/industry-reports/population-health-management-market" target="_blank" rel="noopener noreferrer">Mordor Intelligence</a></p>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- CAGR Comparison Chart -->
+                    <br>
+                    <div class="card-small space-m" style="grid-column: 1 / -1;">
+                        <h3 class="card-title">Growth Comparison (2023-2030)</h3>
+                        <div class="chart-container" style="position: relative; height:350px; width:100%;">
+                            <canvas id="cagrComparisonChart"></canvas>
+                        </div>
+                        <p class="card-text">
+                            The chart illustrates the dramatic growth trajectory of both markets. The AI in Healthcare market is growing at a much faster rate (40.9% CAGR) compared to Population Health Management (23.1% CAGR), though both represent significant opportunities.
+                            <p class="source-citation">Data compiled from multiple market research reports including <a href="https://www.precedenceresearch.com/healthcare-analytics-market" target="_blank" rel="noopener noreferrer">Precedence Research</a> and <a href="https://www.globenewswire.com/news-release/2023/03/06/2620927/0/en/Population-Health-Management-Market-to-Surpass-USD-95-7-Billion-by-2030-driven-by-Increasing-Focus-on-Value-Based-Care.html" target="_blank" rel="noopener noreferrer">Fortune Business Insights</a>.</p>
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Companies Section -->
+                <section id="companies">
+                    <h2>Companies in AI & Data Governance</h2>
+                    <p class="space-layout-r">
+                        The competitive landscape shows various approaches to healthcare analytics platforms, with opportunities for differentiation through user experience.
+                    </p>
+                    <!-- Image code start -->
+                    <div class="image-style">
+                        <img src="assets/img-ev/2.png" alt="Companies in AI & Data Governance" class="img-style" onclick="openModal(this)">
+                    </div>
+                    <div class="modal">
+                        <span class="close-button" onclick="closeModal()">&times;</span>
+                        <img class="modal-content" alt="Full-screen Image">
+                    </div>    
+                    <br>
+                    <!-- Image code end -->
+                    <div class="card-grid">
+                        <div class="card-small">
+                            <h3 class="card-title">Current Competitors</h3>
+                            <p class="card-text">
+                                Companies like Oracle and Synapxe focus on technology but lack user-friendly interfaces
+                            </p>
+                        </div>
+                        <div class="card-small">
+                            <h3 class="card-title">Strategic Positioning</h3>
+                            <p class="card-text">
+                                Evyd should position its products alongside companies like Samsung SDS and IBM Watson Health, which combine innovative platforms with robust AI capabilities
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Current Product Offering -->
+                <section id="current-offering">
+                    <h2>Current Product Offering</h2>
+                    <p class="space-layout-r">
+                        Evyd's products are positioned as a suite with multiple features across platforms. However, several challenges have been identified:
+                    </p>
+                    <div class="card-grid">
+                        <div class="card-small">
+                            <h3 class="card-title">Functionality Issues</h3>
+                            <p class="card-text">Not all features are functional or user-friendly</p>
+                        </div>
+                        <div class="card-small">
+                            <h3 class="card-title">User Retention</h3>
+                            <p class="card-text">Users may leave the platform for alternatives that better suit their workflow</p>
+                        </div>
+                        <div class="card-small">
+                            <h3 class="card-title">Product Clarity</h3>
+                            <p class="card-text">Ambiguous product offerings and outdated databases</p>
+                        </div>
+                        <div class="card-small">
+                            <h3 class="card-title">Technical Limitations</h3>
+                            <p class="card-text">Lack of AI capabilities and complex navigation</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Product Features -->
+                <section id="product-features">
+                    <h2>Product Features</h2>
+                    <p class="space-layout-r">
+                        The key product features of the Evydence platform include:
+                    </p>
+                    <div class="card-grid">
+                        <div class="card-small">
+                            <h3 class="card-title">Clinical Center</h3>
+                            <p class="card-text">Provides disease statistics and data related to clinics and hospitals</p>
+                        </div>
+                        <div class="card-small">
+                            <h3 class="card-title">Research Platform</h3>
+                            <p class="card-text">Allows internal users and clients to access existing research papers</p>
+                        </div>
+                        <div class="card-small">
+                            <h3 class="card-title">Evydence & Insights</h3>
+                            <p class="card-text">Facilitates data extraction, discovery, and analysis using SQL editors</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- User Insights -->
+                <section id="user-insights">
+                    <h2>User Interviews - Key Insights</h2>
+                        <!-- Image code start -->
+                        <div class="image-style">
+                            <img src="assets/img-ev/3-working.png" alt="User Interviews - Key Insights" class="img-style" onclick="openModal(this)">
+                        </div>
+                        <div class="modal">
+                            <span class="close-button" onclick="closeModal()">&times;</span>
+                            <img class="modal-content" alt="Full-screen Image">
+                        </div>    
+                        <br>
+                        <!-- Image code end -->
+                    <h3>Primary Goals</h3>
+
+                    <div class="card-grid">
+                        <div class="card-small">
+                            <h3 class="card-title">AI Understanding</h3>
+                            <p class="card-text">Integrate AI that understands data analysts' needs and user intentions on the platform</p>
+                        </div>
+                        <div class="card-small">
+                            <h3 class="card-title">Data Credibility</h3>
+                            <p class="card-text">Ensure AI provides up-to-date information with credible data sources</p>
+                        </div>
+                        <div class="card-small">
+                            <h3 class="card-title">Visualization</h3>
+                            <p class="card-text">Enable AI to generate demographic charts and answer detailed follow-up questions</p>
+                        </div>
+                    </div>
+
+                    <h3>Secondary Goals</h3>
+                    <div class="card-grid">
+                        <div class="card-small">
+                            <h3 class="card-title">Manual Control</h3>
+                            <p class="card-text">Allow manual adjustments to AI-generated SQL code</p>
+                        </div>
+                        <div class="card-small">
+                            <h3 class="card-title">Structured Guidance</h3>
+                            <p class="card-text">Provide templates for different AI queries and structured guidance for prompts</p>
+                        </div>
+                        <div class="card-small">
+                            <h3 class="card-title">Data Merging</h3>
+                            <p class="card-text">Facilitate merging of data from multiple graphs into new charts, similar to existing tools like Superset</p>
+                        </div>
+                        <div class="card-small">
+                            <h3 class="card-title">Automation</h3>
+                            <p class="card-text">Automate processes such as exporting, tidying, and generating charts and graphs</p>
+                        </div>
+                        <div class="card-small">
+                            <h3 class="card-title">Accessibility</h3>
+                            <p class="card-text">Ensure AI is accessible to clients without data analytics backgrounds</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Evydence Issues -->
+                <section id="evydence-issues">
+                    <h2>Evydence Issues</h2>
+                    <p class="space-layout-r">
+                        User feedback has identified several specific issues with the current Evydence platform:
+                    </p>
+                    <div class="card-grid">
+                        <div class="card-small">
+                            <h3 class="card-title">Navigation</h3>
+                            <p class="card-text">
+                                <ul>
+                                    <li>Preference for the search tree on the Insight platform over Evydence</li>
+                                    <li>Navigation improvements needed for features like 'My Collections'</li>
+                                </ul>
+                            </p>
+                        </div>
+                        <div class="card-small">
+                            <h3 class="card-title">UI/UX</h3>
+                            <p class="card-text">
+                                <ul>
+                                    <li>Revert 'Insert' button to 'Copy' to prevent unintended code insertion</li>
+                                    <li>Some users prefer using interfaces and functions on other platforms, such as Yanagishima, over Evydence</li>
+                                </ul>
+                            </p>
+                        </div>
+                        <div class="card-small">
+                            <h3 class="card-title">Data Manipulation</h3>
+                            <p class="card-text">
+                                <ul>
+                                    <li>Develop a sandbox feature for clients to manipulate joined data freely, reducing reliance on external tools like Excel</li>
+                                    <li>Implement left join table functions and allow joining of original and/or unified data</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Problem Statement -->
+                <section id="problem-statement">
+                    <h2>Problem Statement</h2>
+                    <div class="card-grid">
+                        <div class="card-small">
+                            <h3 class="card-title">User Adoption & Engagement</h3>
+                            <p class="card-text">
+                                <ul>
+                                    <li>Decrease in adoption as users have moved to other platforms that help them get their work done</li>
+                                    <li>Analytics show disengaged user behavior based on the engagement rate</li>
+                                </ul>
+                            </p>
+                        </div>
+                        <div class="card-small">
+                            <h3 class="card-title">Operational Efficiency</h3>
+                            <p class="card-text">
+                                Users took a long time to navigate the platform, find the data they need, and debug errors
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Proposed Solutions -->
+                <section id="proposed-solutions">
+                    <h2>Proposed Solutions</h2>
+                    <h3>AI-driven Workflow</h3>
+                    <div class="card-grid">
+                        <div class="card-small">
+                            <h3 class="card-title">SQL Generation</h3>
+                            <p class="card-text">Integrate AI to assist in generating and refining SQL code based on user queries</p>
+                        </div>
+                        <div class="card-small">
+                            <h3 class="card-title">User Control</h3>
+                            <p class="card-text">Allow users to adjust AI-generated SQL code before execution</p>
+                        </div>
+                        <div class="card-small">
+                            <h3 class="card-title">Visualization</h3>
+                            <p class="card-text">Enable AI to assist in chart generation and data visualization</p>
+                        </div>
+                        <div class="card-small">
+                            <h3 class="card-title">Search & UI</h3>
+                            <p class="card-text">Improve search functionality and user interface based on user feedback</p>
+                        </div>
+                    </div>
+
+                    <h3>Enhanced AI Capabilities</h3>
+                    <div class="card-grid">
+                        <div class="card-small">
+                            <h3 class="card-title">Follow-up Questions</h3>
+                            <p class="card-text">Ensure AI can follow up with questions to generate more accurate answers</p>
+                        </div>
+                        <div class="card-small">
+                            <h3 class="card-title">Data Credibility</h3>
+                            <p class="card-text">Retrieve data from credible sources to ensure accuracy</p>
+                        </div>
+                        <div class="card-small">
+                            <h3 class="card-title">Accessibility</h3>
+                            <p class="card-text">Accommodate users without data analytics backgrounds</p>
+                        </div>
+                        <div class="card-small">
+                            <h3 class="card-title">Manual Control</h3>
+                            <p class="card-text">Allow manual adjustments to AI-generated SQL code</p>
+                        </div>
+                    </div>
+
+                    <h3>Platform & UI Improvements</h3>
+                    <div class="card-grid">
+                        <div class="card-small">
+                            <h3 class="card-title">Copy Function</h3>
+                            <p class="card-text">Reintroduce the 'Copy' function instead of 'Insert' to prevent unintended code insertion</p>
+                        </div>
+                        <div class="card-small">
+                            <h3 class="card-title">Sandbox Feature</h3>
+                            <p class="card-text">Develop a sandbox feature for clients to manipulate joined data freely</p>
+                        </div>
+                        <div class="card-small">
+                            <h3 class="card-title">Join Functions</h3>
+                            <p class="card-text">Implement left join table functions and allow joining of original and/or unified data</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
         </div>
     </div>
 

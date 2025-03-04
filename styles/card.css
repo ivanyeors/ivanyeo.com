@@ -185,6 +185,20 @@
     transition: opacity 0.3s ease, transform 0.3s ease;    
 }
 
+.card-ev::before {
+    background: linear-gradient(
+        45deg,
+        #16A085, #F1C40F, #48D1CC, #DAA520, 
+        #40E0D0, #FFD700, #20B2AA, #00CED1 
+    );
+    background-size: 250%;
+    z-index: -1; /* Place it behind the card content */
+    filter: blur(100px); /* Apply blur only to the pseudo-element */
+    opacity: 0; /* Hidden by default */
+    animation: glowing 30s linear infinite;
+    transition: opacity 0.3s ease, transform 0.3s ease;    
+}
+
 
 .card:hover::before {
     opacity: 1; /* Show the background effect on hover */

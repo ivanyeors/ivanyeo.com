@@ -39,6 +39,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize the anchor link intersection observer
     initializeAnchorLinks();
     
+    // Initialize Evydence charts
+    initializeEvydenceCharts();
+    
     // Initialize other features...
 });
 
@@ -675,3 +678,187 @@ function fetchGitHubStats() {
       });
     });
   });
+
+// Function to initialize the charts for the Evydence platform
+function initializeEvydenceCharts() {
+    // Check if we're on the Evydence page
+    if (!document.getElementById('aiHealthcareChart') || !document.getElementById('populationHealthChart')) {
+        return;
+    }
+    
+    console.log('Initializing Evydence charts');
+    
+    // AI in Healthcare Chart
+    const aiCtx = document.getElementById('aiHealthcareChart').getContext('2d');
+    const aiHealthcareChart = new Chart(aiCtx, {
+        type: 'bar',
+        data: {
+            labels: ['2023', '2030'],
+            datasets: [{
+                label: 'Market Size (Billion USD)',
+                data: [4.6, 50.9],
+                borderRadius: 6,
+                backgroundColor: [
+                    'rgba(54, 162, 235, 0.6)',
+                    'rgba(54, 162, 235, 0.9)'
+                ],
+                borderColor: [
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(54, 162, 235, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Billion USD'
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    display: false
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            return `$${context.raw}B`;
+                        }
+                    }
+                }
+            }
+        }
+    });
+
+    // Population Health Management Chart
+    const phCtx = document.getElementById('populationHealthChart').getContext('2d');
+    const populationHealthChart = new Chart(phCtx, {
+        type: 'bar',
+        data: {
+            labels: ['2023', '2030'],
+            datasets: [{
+                label: 'Market Size (Billion USD)',
+                data: [12.8, 54.7],
+                borderRadius: 6,
+                backgroundColor: [
+                    'rgba(75, 192, 192, 0.6)',
+                    'rgba(75, 192, 192, 0.9)'
+                ],
+                borderColor: [
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(75, 192, 192, 1)'
+                ],
+                borderWidth: 1,
+
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Billion USD'
+                    },
+                    grid: {
+                        display: true,
+                        drawBorder: true,
+                        lineWidth: 0.5
+                    }
+                },
+                x: {
+                    grid: {
+                        display: true,
+                        drawBorder: true,
+                        lineWidth: 0.5
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    display: false
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            return `$${context.raw}B`;
+                        }
+                    }
+                }
+            }
+        }
+    });
+    
+    // Add a third chart to show CAGR comparison
+    const cagrCtx = document.getElementById('cagrComparisonChart')?.getContext('2d');
+    if (cagrCtx) {
+        const cagrComparisonChart = new Chart(cagrCtx, {
+            type: 'line',
+            data: {
+                labels: ['2023', '2024', '2025', '2026', '2027', '2028', '2029', '2030'],
+                datasets: [
+                    {
+                        label: 'AI in Healthcare (40.9% CAGR)',
+                        data: [4.6, 6.48, 9.13, 12.86, 18.12, 25.53, 35.97, 50.9],
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        backgroundColor: 'rgba(54, 162, 235, 0.1)',
+                        fill: true,
+                        tension: 0.4,
+                        borderWidth: 2
+                    },
+                    {
+                        label: 'Population Health Management (23.1% CAGR)',
+                        data: [12.8, 15.76, 19.4, 23.88, 29.4, 36.2, 44.56, 54.85],
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        backgroundColor: 'rgba(75, 192, 192, 0.1)',
+                        fill: true,
+                        tension: 0.4,
+                        borderWidth: 2
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Billion USD'
+                        },
+                        grid: {
+                            display: true,
+                            drawBorder: true,
+                            lineWidth: 0.5
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: true,
+                            drawBorder: true,
+                            lineWidth: 0.5
+                        }
+                    }
+                },
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return `${context.dataset.label}: $${context.raw}B`;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    }
+}
