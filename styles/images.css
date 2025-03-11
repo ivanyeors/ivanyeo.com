@@ -142,3 +142,120 @@
     background-color: rgba(255, 255, 255, 0.6);
     color: black;
 }
+
+.video-style iframe {
+    border-radius: var(--radius-s);
+    overflow: hidden;
+    border: none;
+    width: 100%;
+    height: 400px;
+}
+
+/* Modern Component Gallery */
+.component-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: var(--spacing-s);
+    margin: var(--spacing-m) 0;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: var(--radius-s);
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    border-radius: var(--radius-s);
+    background-color: var(--surface-color);
+}
+
+.gallery-item:hover .gallery-img {
+    transform: scale(1.05);
+}
+
+.gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: var(--spacing-xs) var(--spacing-s);
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.8) 0%,
+        rgba(0, 0, 0, 0.6) 50%,
+        rgba(0, 0, 0, 0) 100%
+    );
+    color: var(--white);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    border-bottom-left-radius: var(--radius-s);
+    border-bottom-right-radius: var(--radius-s);
+}
+
+.gallery-item:hover .gallery-caption {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.gallery-title {
+    font-size: var(--font-size-m);
+    margin-bottom: var(--spacing-3xs);
+    font-weight: var(--font-weight-bold);
+}
+
+.gallery-desc {
+    font-size: var(--font-size-xs);
+    opacity: 0.9;
+}
+
+/* Masonry-like variation - for highlighting specific components */
+.gallery-item-featured {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+    .component-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .gallery-item-featured {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+}
+
+@media (min-width: 1440px) {
+    .component-gallery {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Video Grid Layout */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-m);
+    margin: var(--spacing-m) 0;
+}
+
+@media (max-width: 767px) {
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+}

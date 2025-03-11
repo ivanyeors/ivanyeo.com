@@ -52,118 +52,260 @@
         <nav class="anchor-link-list" aria-label="Page Navigation">
             <ul>
                 <li><a href="#overview" class="anchor-link"><span>Overview</span></a></li>
-                <li><a href="#why-corne" class="anchor-link"><span>Why Corne</span></a></li>
-                <li><a href="#components" class="anchor-link"><span>Components</span></a></li>
-                <li><a href="#build-process" class="anchor-link"><span>Build Process</span></a></li>
-                <li><a href="#firmware" class="anchor-link"><span>Firmware Setup</span></a></li>
-                <li><a href="#customization" class="anchor-link"><span>Customization</span></a></li>
-                <li><a href="#final-build" class="anchor-link"><span>Final Build</span></a></li>
-                <li><a href="#learnings" class="anchor-link"><span>Learnings</span></a></li>
+                <li><a href="#why-corne" class="anchor-link"><span>What makes up a Corne</span></a></li>
+                <li><a href="#components" class="anchor-link"><span>Initial Investments</span></a></li>
+                <li><a href="#build-process" class="anchor-link"><span>Learning to Solder</span></a></li>
+                <li><a href="#firmware" class="anchor-link"><span>Learning from Experts</span></a></li>
+                <li><a href="#customization" class="anchor-link"><span>Testing the Build</span></a></li>
+                <li><a href="#final-build" class="anchor-link"><span>Summary</span></a></li>
             </ul>
         </nav>
 
         <div class="project-content">
             <!-- Project Title -->
             <section id="overview">
-                <h1>My Journey Building a Corne Keyboard</h1>
-                <p class="space-layout-r">As someone who spends countless hours typing, I decided to embark on a fun DIY adventure 
-                    to build my own split ergonomic keyboard. This project combines my love for technology, 
-                    hands-on building, and the satisfaction of creating something uniquely mine.
+                <h1>The split keyboard building Journey begins!</h1>
+                <p class="space-layout-r">I've been fascinated by the mechanical keyboard community and their incredible custom builds.
+                    What particularly caught my attention was how enthusiasts were building their own Corne keyboards - 
+                    an open source split ergonomic keyboard design created by a dedicated community of keyboard lovers.
                 </p>
                 <!-- Main Image -->
                 <div class="image-style">
-                    <img src="assets/img-corne/cover-main.png" alt="My Completed Corne Keyboard" class="img-style" onclick="openModal(this)">
+                    <img src="assets/img-corne/final-1.jpg" alt="My Completed Corne Keyboard" class="img-style" onclick="openModal(this)">
                 </div>
                 <div class="modal">
                     <span class="close-button" onclick="closeModal()">&times;</span>
                     <img class="modal-content" alt="Full-screen Image">
                 </div>
                 
-                <p class="space-layout-r">What started as curiosity about mechanical keyboards turned into an exciting 
-                    weekend project that taught me about electronics, firmware programming, and the joy of building something with my own hands.
+                <p class="space-layout-r">I was particularly inspired after watching a build video by EIGA on YouTube that showcased
+                    the entire process beautifully. This isn't a tutorial, but rather a retrospective of my journey building
+                    this amazing ergonomic keyboard from scratch.
                 </p>
-            </section>
-
-            <!-- Why Corne Section -->
-            <section id="why-corne">
-                <h2>Why I Chose the Corne</h2>
-                <p class="space-layout-r">After diving deep into the mechanical keyboard community and researching various options, 
-                    the Corne keyboard caught my eye for several reasons:</p>
-                <div class="card-grid">
-                    <div class="card-small">
-                        <h2 class="card-title">Perfect for My Setup</h2>
-                        <p class="card-text">The split design lets me position each half exactly where I want, making long coding sessions much more comfortable</p>
-                    </div>
-                    <div class="card-small">
-                        <h2 class="card-title">Fun to Build</h2>
-                        <p class="card-text">The DIY aspect appealed to my maker spirit - from soldering to programming, every step was a new learning experience</p>
-                    </div>
-                    <div class="card-small">
-                        <h2 class="card-title">Minimalist Design</h2>
-                        <p class="card-text">With just 36 keys, it challenged me to rethink my typing habits and create efficient layer layouts</p>
-                    </div>
-                </div>
-                <!-- Inspiration Images -->
-                <div class="image-style">
-                    <img src="assets/img-corne/inspiration.png" alt="Keyboard Inspiration" class="img-style" onclick="openModal(this)">
-                </div>
-            </section>
-
-            <!-- Components Section -->
-            <section id="components">
-                <h2>My Component Choices</h2>
-                <p class="space-layout-r">Selecting parts was like putting together a puzzle - each component affecting the final feel and sound of the keyboard.</p>
-                <div class="card-grid">
-                    <div class="card-small">
-                        <h3 class="card-title">The Heart of the Build</h3>
-                        <p class="card-text">Went with the classic black PCB and aluminum plates for that premium feel</p>
-                    </div>
-                    <div class="card-small">
-                        <h3 class="card-title">Tactile Goodness</h3>
-                        <p class="card-text">Chose Boba U4T switches for their satisfying tactile feedback and deep sound profile</p>
-                    </div>
-                    <div class="card-small">
-                        <h3 class="card-title">Brain Power</h3>
-                        <p class="card-text">Elite-C controllers for their reliability and USB-C convenience</p>
-                    </div>
-                </div>
-                <!-- Components Layout Image -->
-                <div class="image-style">
-                    <img src="assets/img-corne/components.png" alt="Keyboard Components" class="img-style" onclick="openModal(this)">
-                </div>
-            </section>
-
-            <!-- Build Process Section -->
-            <section id="build-process">
-                <h2>The Build Adventure</h2>
-                <p class="space-layout-r">Every step of the build process was both challenging and rewarding. Here's how my weekend project unfolded:</p>
                 
-                <!-- PCB Soldering -->
-                <h3>Day 1: PCB Assembly</h3>
-                <div class="image-style">
-                    <img src="assets/img-corne/soldering.png" alt="Soldering Process" class="img-style" onclick="openModal(this)">
+                <!-- YouTube Video Embed -->
+                <div class="video-style">
+                    <iframe src="https://www.youtube.com/embed/hXohJwatIpA" 
+                            title="Corne Keyboard Build by EIGA"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen></iframe>
                 </div>
-                <p class="space-layout-r">First time soldering! After watching countless YouTube tutorials, I finally got to try it myself.</p>
-
-                <!-- Switch Installation -->
-                <h3>Day 2: Switch Installation</h3>
-                <div class="image-style">
-                    <img src="assets/img-corne/switches.png" alt="Installing Switches" class="img-style" onclick="openModal(this)">
-                </div>
-                <p class="space-layout-r">Testing each switch before and after soldering was tedious but crucial.</p>
             </section>
 
-            <!-- Firmware Section -->
-            <section id="firmware">
-                <h2>Adventures in ZMK Firmware</h2>
-                <p class="space-layout-r">Initially started with QMK, but later switched to ZMK for its excellent wireless support and better battery life. 
-                    The journey of customizing my keyboard layout has been incredibly fun!</p>
-                <!-- Firmware Setup Image -->
-                <div class="image-style">
-                    <img src="assets/img-corne/zmk-setup.png" alt="ZMK Setup" class="img-style" onclick="openModal(this)">
+            <!-- What makes up a Corne Section -->
+            <section id="why-corne">
+                <h2>What makes up a Corne Keyboard?</h2>
+                <p class="space-layout-r">A Corne keyboard consists of 31 different parts! It's quite complex for a beginner,
+                    but the modular nature makes it an excellent learning project. Here are the key components:</p>
+                
+                <!-- Modern Component Gallery -->
+                <div class="component-gallery">
+                    <!-- Featured item (PCB - larger) -->
+                    <div class="gallery-item gallery-item-featured" onclick="openModal(this)">
+                        <img src="assets/img-corne/pcb.jpg" alt="Corne PCB" class="gallery-img">
+                        <div class="gallery-caption">
+                            <h3 class="gallery-title">PCB</h3>
+                            <p class="gallery-desc">The printed circuit board is the foundation of the keyboard, containing all electrical connections</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Regular gallery items -->
+                    <div class="gallery-item" onclick="openModal(this)">
+                        <img src="assets/img-corne/3D-print-case.png" alt="Keyboard Case" class="gallery-img">
+                        <div class="gallery-caption">
+                            <h3 class="gallery-title">Case</h3>
+                            <p class="gallery-desc">Protects the PCB and components, available in different materials</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" onclick="openModal(this)">
+                        <img src="assets/img-corne/microcontroller.jpg" alt="Microcontroller" class="gallery-img">
+                        <div class="gallery-caption">
+                            <h3 class="gallery-title">MCU</h3>
+                            <p class="gallery-desc">The brain of the keyboard, handles all key inputs and communications</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" onclick="openModal(this)">
+                        <img src="assets/img-corne/oled-screen.jpg" alt="OLED Screen" class="gallery-img">
+                        <div class="gallery-caption">
+                            <h3 class="gallery-title">OLED Screen</h3>
+                            <p class="gallery-desc">Displays keyboard layer and status information</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" onclick="openModal(this)">
+                        <img src="assets/img-corne/inv-battery.jpg" alt="Batteries" class="gallery-img">
+                        <div class="gallery-caption">
+                            <h3 class="gallery-title">Batteries</h3>
+                            <p class="gallery-desc">Powers the wireless version of the keyboard</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" onclick="openModal(this)">
+                        <img src="assets/img-corne/inv-switches.jpg" alt="Keyboard Switches" class="gallery-img">
+                        <div class="gallery-caption">
+                            <h3 class="gallery-title">Switches</h3>
+                            <p class="gallery-desc">The mechanical components that register keystrokes</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" onclick="openModal(this)">
+                        <img src="assets/img-corne/inv-keycaps.jpg" alt="Keycaps" class="gallery-img">
+                        <div class="gallery-caption">
+                            <h3 class="gallery-title">Keycaps</h3>
+                            <p class="gallery-desc">The tops of the switches that you touch when typing</p>
+                        </div>
+                    </div>
                 </div>
-                <p class="space-layout-r">After several iterations, I finally found my perfect layout combining efficiency and comfort. 
-                    Check out my ZMK configuration below!</p>
+                
+                <p class="space-layout-r">The 31 parts include diodes, resistors, headers, and various other small components that all need to be carefully assembled:</p>
+                
+                <!-- Inventory Image -->
+                <div class="image-style">
+                    <img src="assets/img-corne/inventory.jpg" alt="Corne Keyboard Parts Inventory" class="img-style" onclick="openModal(this)">
+                </div>
+            </section>
+
+            <!-- Initial Investments Section -->
+            <section id="components">
+                <h2>Initial Investments</h2>
+                <p class="space-layout-r">Many build videos demonstrate the process, but few discuss the actual cost involved. 
+                    After gathering the entire cost of the parts. The entire cost to build the keyboard seems quite reasonable.</p>
+                
+                <p class="space-layout-r">Here is a detailed Bill of Materials (BOM) to track every component needed and their associated costs:</p>
+                
+                <!-- BOM Image -->
+                <div class="image-style">
+                    <img src="assets/img-corne/BOM.png" alt="Bill of Materials for Corne Keyboard" class="img-style" onclick="openModal(this)">
+                </div>
+                <br>
+                <div class="card-grid">
+                    <div class="card-small">
+                        <h3 class="card-title">Base Components</h3>
+                        <p class="card-text">PCBs, controllers, and cases form the foundation of the build cost</p>
+                    </div>
+                    <div class="card-small">
+                        <h3 class="card-title">Switches, Keycaps and parts</h3>
+                        <p class="card-text">From bolts and nuts to diodes and resistors</p>
+                    </div>
+                    <div class="card-small">
+                        <h3 class="card-title">Tools</h3>
+                        <p class="card-text">Also factoring in soldering equipment and other tools needed</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Learning to Solder Section -->
+            <section id="build-process">
+                <h2>Learning how to solder</h2>
+                <p class="space-layout-r">Building a Corne keyboard requires patience and precision. The soldering process was one of the most challenging aspects of this build:</p>
+                
+                <div class="video-grid">
+                    <!-- prep soldering Video -->
+                    <div class="video-style">
+                        <video class="video-thumbnail auto-play-video" muted playsinline onclick="openVideoModal(this)">
+                            <source src="assets/img-corne/video/building-hotswap-sockets.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+
+                    <!-- Hotswap Sockets Video -->
+                    <div class="video-style">
+                        <video class="video-thumbnail auto-play-video" muted playsinline onclick="openVideoModal(this)">
+                            <source src="assets/img-corne/video/prep-soldering.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+
+                <!-- Video Modal (shared) -->
+                <div class="video-modal">
+                    <span class="close-button" onclick="closeVideoModal()">&times;</span>
+                    <video class="modal-video-content" controls>
+                        <source src="" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                <p class="space-layout-r">The build process taught me that practice makes perfect. I had to solder dozens of tiny diodes, 
+                    switches, and delicate controller pins. Each mistake was an opportunity to learn and improve my technique.
+                    Working with such small components requires incredible focus and steady hands!</p>
+                
+                <!-- soldering Video -->
+                <div class="video-style">
+                    <video class="video-thumbnail auto-play-video" muted playsinline onclick="openVideoModal(this)">
+                        <source src="assets/img-corne/video/building-millmax-soldering.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="video-modal">
+                    <span class="close-button" onclick="closeVideoModal()">&times;</span>
+                    <video class="modal-video-content" controls>
+                        <source src="" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </section>
+
+            <!-- Learning from Experts Section -->
+            <section id="firmware">
+                <h2>Learning from experts</h2>
+                <p class="space-layout-r">I was fortunate to connect with experienced keyboard builders who provided invaluable guidance throughout my journey.
+                    The keyboard community is incredibly supportive and willing to help!</p>
+                
+                <!-- Issues and Help Images -->
+                <div class="image-style">
+                    <img src="assets/img-corne/issuess-1.jpg" alt="Troubleshooting keyboard issues with help from the community" class="img-style" onclick="openModal(this)">
+                </div>
+                
+                <p class="space-layout-r">When I ran into issues with my OLED screen and soldering mistakes, 
+                    community members were quick to identify the problems and suggest solutions. Having mentors 
+                    who've been through the same process was the key to my successful build.</p>
+                
+                <!-- Working Screen Image -->
+                <div class="image-style">
+                    <img src="assets/img-corne/working-screen.jpg" alt="Testing the keyboard build and firmware" class="img-style" onclick="openModal(this)">
+                </div>
+                
+                <h3>Learning PCB Design with KiCAD</h3>
+                <p class="space-layout-r">One of the most fascinating aspects of this journey was learning how to read and understand PCB schematics.
+                    The Corne keyboard is open-source, which means all design files are available, but interpreting them requires knowledge I didn't initially have.</p>
+                
+                <!-- PCB Design Image -->
+                <div class="image-style">
+                    <img src="assets/img-corne/corne-pcb-schematics.png" alt="PCB Design in KiCAD" class="img-style" onclick="openModal(this)">
+                </div>
+                
+                <p class="space-layout-r">I invested some time in learning KiCAD, an open-source electronics design automation software, 
+                    to understand how the PCB was designed.
+                    This allowed me to:</p>
+                
+                <div class="card-grid">
+                    <div class="card-small">
+                        <h3 class="card-title">Visualize connections</h3>
+                        <p class="card-text">Understanding how components connect on the PCB helped me troubleshoot issues when they arose</p>
+                    </div>
+                    <div class="card-small">
+                        <h3 class="card-title">Handle errors</h3>
+                        <p class="card-text">Going back to the drawing board to understand how mishandling soldering can affect other areas of the PCB</p>
+                    </div>
+                </div>
+                
+                <p class="space-layout-r">This really deepened my appreciation for the engineering behind custom keyboards and 
+                    gave me confidence to tackle more complex electronics projects in the future (hopefully).</p>
+            </section>
+
+            <!-- Testing the actual build Section -->
+            <section id="customization">
+                <h2>Testing the actual build</h2>
+                <p class="space-layout-r">After completing the physical assembly, I had to learn about GitHub and ZMK firmware to make the keyboard functional:</p>
+                
+                <!-- Testing Gallery -->
+                <div class="image-style">
+                    <img src="assets/img-corne/keymaps-github-code.png" alt="Testing the keyboard build and firmware" class="img-style" onclick="openModal(this)">
+                </div>
+                
 
                 <!-- GitHub Repository Section -->
                 <div class="github-embed">
@@ -173,8 +315,8 @@
                             <h3><a href="https://github.com/ivanyeors/zmk-config-corne-6col" target="_blank" rel="noopener noreferrer">ivanyeors/zmk-config-corne-6col</a></h3>
                         </div>
                         <div class="github-card-description">
-                            <p>My personal ZMK firmware configuration for the wireless Corne keyboard. Features custom keymaps, 
-                               layers, and optimizations for daily programming use.</p>
+                            <p>We have to clone the ZMK firmware configuration for the wireless Corne keyboard to our own git. 
+                            From there we can customise our own keymaps, layers to our liking.</p>
                         </div>
                         <div class="github-card-stats">
                             <div class="github-stat">
@@ -201,75 +343,116 @@
                         </div>
                     </div>
                 </div>
+                                
+                <p class="space-layout-r">I wanted to give back to the community that helped me, so I started selling extra parts and offering 
+                    my soldering services for a small fee. Helping others build their own Corne keyboards has been incredibly rewarding!</p>
+                
+                <p class="space-layout-r">Here are some examples of the keyboards I've helped others build:</p>
 
-                <p class="space-layout-r">The repository contains my complete ZMK configuration, including:</p>
-                <ul class="feature-list">
-                    <li>Custom keymap layouts for coding and daily use</li>
-                    <li>Wireless optimization settings for better battery life</li>
-                    <li>Multiple layers for symbols, numbers, and function keys</li>
-                    <li>Automated GitHub Actions for firmware builds</li>
-                </ul>
-            </section>
+                <div class="video-grid">
+                    <!-- Customer Build Video -->
+                    <div class="video-style">
+                        <video class="video-thumbnail auto-play-video" muted playsinline onclick="openVideoModal(this)">
+                            <source src="assets/img-corne/video/cust-5corne.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
 
-            <!-- Customization Section -->
-            <section id="customization">
-                <h2>Making It Mine</h2>
-                <p class="space-layout-r">The best part about building your own keyboard is adding personal touches:</p>
-                <!-- Customization Images -->
-                <div class="image-style">
-                    <img src="assets/img-corne/customization.png" alt="Customization Process" class="img-style" onclick="openModal(this)">
-                </div>
-                <div class="card-grid">
-                    <div class="card-small">
-                        <h3 class="card-title">Keycap Choice</h3>
-                        <p class="card-text">Went with a minimalist black and white theme that matches my desk setup</p>
-                    </div>
-                    <div class="card-small">
-                        <h3 class="card-title">LED Configuration</h3>
-                        <p class="card-text">Added subtle underglow effects for those late-night coding sessions</p>
-                    </div>
-                    <div class="card-small">
-                        <h3 class="card-title">Custom Case</h3>
-                        <p class="card-text">3D printed a custom case with a slight tilt for optimal typing angle</p>
+                    <!-- Keycap Addition Video -->
+                    <div class="video-style">
+                        <video class="video-thumbnail auto-play-video" muted playsinline onclick="openVideoModal(this)">
+                            <source src="assets/img-corne/video/building-keycap-add.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
                 </div>
+
+                <!-- Video Modals -->
+                <div class="video-modal">
+                    <span class="close-button" onclick="closeVideoModal()">&times;</span>
+                    <video class="modal-video-content" controls>
+                        <source src="" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                <!-- Community Build Gallery -->
+                <div class="component-gallery">
+                    <div class="gallery-item" onclick="openModal(this)">
+                        <img src="assets/img-corne/cust-1.jpg" alt="Community Build 1" class="gallery-img">
+                        <div class="gallery-caption">
+                            <h3 class="gallery-title">Custom Case Build</h3>
+                            <p class="gallery-desc">A sleek build with existing case</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" onclick="openModal(this)">
+                        <img src="assets/img-corne/cust-2.jpg" alt="Community Build 3" class="gallery-img">
+                        <div class="gallery-caption">
+                            <h3 class="gallery-title">Black Aesthetic</h3>
+                            <p class="gallery-desc">Minimalist build featuring all black XDA keycaps</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" onclick="openModal(this)">
+                        <img src="assets/img-corne/cust-3.jpg" alt="Community Build 4" class="gallery-img">
+                        <div class="gallery-caption">
+                            <h3 class="gallery-title">Translucent Case and keycaps build</h3>
+                            <p class="gallery-desc">Meticulous sanding to achieve the perfect finish on a custom acrylic case</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" onclick="openModal(this)">
+                        <img src="assets/img-corne/cust-4.jpg" alt="Community Build 5" class="gallery-img">
+                        <div class="gallery-caption">
+                            <h3 class="gallery-title">My own Keyboard</h3>
+                            <p class="gallery-desc">A custom layout with a programmer layout and a custom firmware</p>
+                        </div>
+                    </div>
+                    
+                </div>
             </section>
 
-            <!-- Final Build Section -->
+            <!-- Summary Section -->
             <section id="final-build">
-                <h2>The Final Result</h2>
-                <p class="space-layout-r">After weeks of tinkering and fine-tuning, here's my daily driver:</p>
-                <!-- Final Build Images -->
-                <div class="image-style">
-                    <img src="assets/img-corne/final-1.png" alt="Final Build Front View" class="img-style" onclick="openModal(this)">
-                </div>
-                <div class="image-style">
-                    <img src="assets/img-corne/final-2.png" alt="Final Build Setup" class="img-style" onclick="openModal(this)">
-                </div>
-            </section>
-
-            <!-- Learnings Section -->
-            <section id="learnings">
-                <h2>What I Learned Along the Way</h2>
-                <p class="space-layout-r">This hobby project taught me more than just keyboard building:</p>
+                <h2>Summary</h2>
+                <p class="space-layout-r">This project taught me so much more than just how to build a keyboard:</p>
+                
                 <div class="card-grid">
                     <div class="card-small">
-                        <h3 class="card-title">New Skills</h3>
-                        <p class="card-text">From soldering to coding in QMK, picked up some really useful maker skills</p>
+                        <h3 class="card-title">Technical Skills</h3>
+                        <p class="card-text">Learned how to use GitHub, solder electronic components, and customize firmware</p>
                     </div>
                     <div class="card-small">
-                        <h3 class="card-title">Community</h3>
-                        <p class="card-text">Found an amazing community of keyboard enthusiasts always willing to help</p>
+                        <h3 class="card-title">Value of Mentorship</h3>
+                        <p class="card-text">Discovered the importance of having experienced mentors - there are limits to what AI can teach you!</p>
                     </div>
                     <div class="card-small">
-                        <h3 class="card-title">Future Projects</h3>
-                        <p class="card-text">Already planning my next build with wireless capabilities!</p>
+                        <h3 class="card-title">Community Engagement</h3>
+                        <p class="card-text">Found joy in giving back and helping others on their own keyboard building journeys</p>
                     </div>
                 </div>
-                <!-- Setup Image -->
+                <br>
+                <!-- Final Video -->
+                <div class="video-style">
+                    <video class="video-thumbnail auto-play-video" muted playsinline onclick="openVideoModal(this)">
+                        <source src="assets/img-corne/video/build-complete.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="video-modal">
+                    <span class="close-button" onclick="closeVideoModal()">&times;</span>
+                        <video class="modal-video-content" controls>
+                            <source src="" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                </div>
+                
+                <!-- Final Keyboard Image -->
                 <div class="image-style">
-                    <img src="assets/img-corne/desk-setup.png" alt="Complete Setup" class="img-style" onclick="openModal(this)">
+                    <img src="assets/img-corne/final-1.jpg" alt="My completed Corne keyboard setup" class="img-style" onclick="openModal(this)">
                 </div>
+
             </section>
         </div>
     </div>
@@ -385,3 +568,4 @@
     </script>
 </body>
 </html>
+
