@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">    
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>IYRS</title>
+
+    <!-- Fonts Import -->    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- Link to the CSS file -->
+    <link rel="stylesheet" href="styles/main.css?v=1.0">
+    <link rel="stylesheet" href="styles/breadcrumbs.css?v=1.0">
+    <link rel="stylesheet" href="styles/button.css">
+    <link rel="stylesheet" href="styles/card.css">
+    <link rel="stylesheet" href="styles/images.css">
+    <link rel="stylesheet" href="styles/anchor.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/modal.css">
+
+    <!-- Chart.js for data visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Link to the Javascript File -->
+    <script src="script.js" defer></script>
+</head>
+
+<header class="main-header">
+    <div class="logo-container">
+        <a href="index.html">
+            <img src="assets/Ivan-logo.svg" alt="Company Logo" class="logo">
+        </a>
+        <div class="btn-menu">
+            <a href="https://ivanyeo.com" class="btn" rel="noopener noreferrer">Home</a>
+            <a href="assets/IvanYeo - 96374631.pdf" class="btn" target="_blank" rel="noopener noreferrer">Resume</a>
+            <a href="https://www.linkedin.com/in/ivanyeors/" class="btn" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+    </div>
+</header>
+
+<body id="top">
+    <div class="parent-container">
+        <div class="content space-l">
+            <h1>Generative AI Research</h1>
+            <nav class="breadcrumbs" aria-label="Breadcrumb">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="ideas.html">Ideas</a></li>
+                    <li aria-current="page">Generative AI Research</li>
+                </ul>
+            </nav>
+
+            <!-- Anchor Links Navigation -->
+            <nav class="anchor-link-list" aria-label="Page Navigation">
+                <ul>
+                    <li><a href="#overview" class="anchor-link"><span>Overview</span></a></li>
+                    <li><a href="#exploration-objectives" class="anchor-link"><span>Exploration Objectives</span></a></li>
+                    <li><a href="#how-genai-works" class="anchor-link"><span>How GenAI Works</span></a></li>
+                    <li><a href="#common-terminologies" class="anchor-link"><span>Common Terminologies</span></a></li>
+                    <li><a href="#controlnet" class="anchor-link"><span>How ControlNet Works</span></a></li>
+                    <li><a href="#thoughts" class="anchor-link"><span>Thoughts</span></a></li>
+                </ul>
+            </nav>
+
+            <div class="project-content">
+                <!-- Project Title -->
+                <section id="overview">
+                    <h1>My Generative AI Research Journey</h1>
+                    <p class="space-layout-r">
+                        I've been fascinated by the rapid advancements in Generative AI technology and the incredible 
+                        potential it holds for businesses and creative professionals. This project documents my journey 
+                        learning about, experimenting with, and researching various generative AI models and applications.
+                    </p>
+                    
+                    <!-- Main Image -->
+                    <div class="image-style">
+                        <img src="assets/img-genai/cover.jpg" alt="Generative AI Research Cover Image" class="img-style" onclick="openModal(this)">
+                    </div>
+                    <div class="modal">
+                        <span class="close-button" onclick="closeModal()">&times;</span>
+                        <img class="modal-content" alt="Full-screen Image">
+                    </div>
+                    
+                    <p class="space-layout-r">
+                        What started as curiosity about text-to-image generators quickly evolved into a deep dive into the 
+                        technical frameworks, terminology, and inner workings of generative AI systems. This documentation 
+                        traces my learning journey to understand these complex systems.
+                    </p>
+                    
+                    <!-- ComfyUI Gallery -->
+                    <div class="component-gallery">
+                        <div class="gallery-item" onclick="openModal(this)">
+                            <img src="assets/img-genai/ComfyUI_00114_.png" alt="ComfyUI Workflow Example 1" class="gallery-img">
+                            <div class="gallery-caption">
+                                <h3 class="gallery-title">Research Framework</h3>
+                                <p class="gallery-desc">My approach to systematically learning about generative AI systems</p>
+                            </div>
+                        </div>
+                        
+                        <div class="gallery-item" onclick="openModal(this)">
+                            <img src="assets/img-genai/ComfyUI_00117_.png" alt="ComfyUI Workflow Example 2" class="gallery-img">
+                            <div class="gallery-caption">
+                                <h3 class="gallery-title">Implementation Framework</h3>
+                                <p class="gallery-desc">Structured approach to implementing generative AI capabilities</p>
+                            </div>
+                        </div>
+                        
+                        <div class="gallery-item" onclick="openModal(this)">
+                            <img src="assets/img-genai/ComfyUI_00121_.png" alt="ComfyUI Workflow Example 3" class="gallery-img">
+                            <div class="gallery-caption">
+                                <h3 class="gallery-title">Workflow Progression</h3>
+                                <p class="gallery-desc">Evolution of my workflows as I learned more about the systems</p>
+                            </div>
+                        </div>
+                        
+                        <div class="gallery-item" onclick="openModal(this)">
+                            <img src="assets/img-genai/ComfyUI_00122_.png" alt="ComfyUI Workflow Example 4" class="gallery-img">
+                            <div class="gallery-caption">
+                                <h3 class="gallery-title">Diffusion Process</h3>
+                                <p class="gallery-desc">Understanding how diffusion models generate images through iterative denoising</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Modal for ComfyUI gallery -->
+                    <div class="modal">
+                        <span class="close-button" onclick="closeModal()">&times;</span>
+                        <img class="modal-content" alt="Full-screen Image">
+                    </div>
+                    
+                    <div class="card-grid">
+                        <div class="card-small">
+                            <h2 class="card-title">Tools Explored</h2>
+                            <p class="card-text">
+                                <ul>
+                                    <li>ComfyUI</li>
+                                    <li>Stable Diffusion</li>
+                                    <li>ChatGPT & GPT-4</li>
+                                    <li>Midjourney</li>
+                                </ul>
+                            </p>
+                        </div>
+                        <div class="card-small">
+                            <h2 class="card-title">Skills Gained</h2>
+                            <p class="card-text">
+                                <ul>
+                                    <li>Prompt Engineering</li>
+                                    <li>Model Fine-tuning</li>
+                                    <li>Technical Workflows</li>
+                                    <li>Image Composition</li>
+                                </ul>    
+                            </p>
+                        </div>
+                        <div class="card-small">
+                            <h2 class="card-title">Project Duration</h2>
+                            <p class="card-text">
+                                <ul>
+                                    <li>3 Months</li>
+                                    <li>Over 200 experiments</li>
+                                    <li>10+ models tested</li>
+                                </ul>    
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Exploration Objectives Section -->
+                <section id="exploration-objectives">
+                    <h2>Exploration Objectives</h2>
+                    <p class="space-layout-r">
+                        When I began this journey, I established clear objectives to guide my exploration of generative AI technologies:
+                    </p>
+                    
+                    <!-- Objectives Image -->
+                    <div class="image-style">
+                        <img src="assets/img-genai/2.jpg" alt="Exploration Objectives Visualization" class="img-style" onclick="openModal(this)">
+                    </div>
+                    
+                    <!-- Modal for objectives image -->
+                    <div class="modal">
+                        <span class="close-button" onclick="closeModal()">&times;</span>
+                        <img class="modal-content" alt="Full-screen Image">
+                    </div>
+                    
+                    <div class="card-grid">
+                        <div class="card-small">
+                            <h3 class="card-title">Understand How Generative AI Works</h3>
+                            <p class="card-text">Explore the underlying mechanisms of diffusion models, transformers, and other architectures that power generative AI systems</p>
+                        </div>
+                        <div class="card-small">
+                            <h3 class="card-title">Master Terminologies</h3>
+                            <p class="card-text">Learn the technical vocabulary needed to effectively use and discuss generative AI tools and concepts</p>
+                        </div>
+                        <div class="card-small">
+                            <h3 class="card-title">Gain Creative Control</h3>
+                            <p class="card-text">Develop techniques to achieve more precise and controllable image generation outcomes</p>
+                        </div>
+                    </div>
+                    
+                    <p class="space-layout-r">
+                        As I progressed, I discovered that understanding the technical terminology was often the key to unlocking 
+                        greater creative control. The specialized vocabulary wasn't just jargon—it represented fundamental concepts 
+                        that affected how these AI systems functioned.
+                    </p>
+                </section>
+
+                <!-- How GenAI Works Section -->
+                <section id="how-genai-works">
+                    <h2>How Generative AI Works: Text to Image</h2>
+                    <p class="space-layout-r">
+                        My first challenge was understanding the fundamental process of how text prompts are transformed into images. 
+                        This process is more complex than I initially imagined:
+                    </p>
+                    
+                    <!-- Text to Image Process Image -->
+                    <div class="image-style">
+                        <img src="assets/img-genai/3.jpg" alt="Text to Image Process" class="img-style" onclick="openModal(this)">
+                    </div>
+                    
+                    <!-- Modal for text to image process -->
+                    <div class="modal">
+                        <span class="close-button" onclick="closeModal()">&times;</span>
+                        <img class="modal-content" alt="Full-screen Image">
+                    </div>
+                    
+                    <p class="space-layout-r">
+                        The text-to-image generation process involves several sophisticated steps. First, a text encoder (typically CLIP) 
+                        converts your text prompt into a numerical representation that captures its semantic meaning. Then, a diffusion 
+                        model gradually transforms random noise into a coherent image guided by that text embedding.
+                    </p>
+                    
+                    <p class="space-layout-r">
+                        What fascinated me was how these models understand relationships between concepts. For example, when you prompt 
+                        "a cat wearing a space helmet," the model needs to understand what cats and space helmets look like, and how they 
+                        would realistically combine. This represents a remarkable level of conceptual understanding.
+                    </p>
+                    
+                    <div class="card-grid">
+                        <div class="card-small">
+                            <h3 class="card-title">Text Encoding</h3>
+                            <p class="card-text">The prompt is encoded into a numerical representation using models like CLIP that understand language concepts</p>
+                        </div>
+                        <div class="card-small">
+                            <h3 class="card-title">Diffusion Process</h3>
+                            <p class="card-text">Starting from random noise, the model gradually refines the image through multiple denoising steps</p>
+                        </div>
+                        <div class="card-small">
+                            <h3 class="card-title">Sampling Methods</h3>
+                            <p class="card-text">Different sampling algorithms (Euler, DPM, etc.) control how the noise is removed, affecting image quality and style</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Common Terminologies Section -->
+                <section id="common-terminologies">
+                    <h2>Common Terminologies in Generative AI</h2>
+                    <p class="space-layout-r">
+                        While picking up image generative AI software, there are some terms that often show up while using them. 
+                        Having a better understanding of these terms will help facilitate more control over the images we want to generate:
+                    </p>
+                    
+                    <!-- Terminology Diagram Image -->
+                    <div class="image-style">
+                        <img src="assets/img-genai/5.jpg" alt="AI Terminology Diagram" class="img-style" onclick="openModal(this)">
+                    </div>
+                    
+                    <!-- Modal for terminology diagram -->
+                    <div class="modal">
+                        <span class="close-button" onclick="closeModal()">&times;</span>
+                        <img class="modal-content" alt="Full-screen Image">
+                    </div>
+                    
+                    <div class="card-grid">
+                        <div class="card-small">
+                            <h3 class="card-title">Checkpoint (ckpt)</h3>
+                            <p class="card-text">A saved state of a trained model. Different checkpoints specialize in different styles or subject matter. For example, some are better at realistic portraits, while others excel at anime styles.</p>
+                        </div>
+                        <div class="card-small">
+                            <h3 class="card-title">CLIP</h3>
+                            <p class="card-text">Contrastive Language-Image Pre-training. This is the part of the model that understands your text prompt and translates it into a form the image generator can use to guide the creation process.</p>
+                        </div>
+                        <div class="card-small">
+                            <h3 class="card-title">VAE</h3>
+                            <p class="card-text">Variational Auto-Encoder. This component compresses images into a compact representation (latent space) and then decodes them back. It's responsible for the final image quality and color reproduction.</p>
+                        </div>
+                        <div class="card-small">
+                            <h3 class="card-title">Latent Space</h3>
+                            <p class="card-text">A compressed mathematical representation where images exist as points or vectors. The diffusion process occurs in this space, which is much more efficient than working with full-resolution pixel data.</p>
+                        </div>
+                    </div>
+                    
+                    <h3>Understanding Sampling Methods</h3>
+                    <p class="space-layout-r">
+                        I discovered that sampling methods significantly impact image generation. These algorithms control how the model transforms noise into an image:
+                    </p>
+                    
+                    <div class="card-grid">
+                        <div class="card-small">
+                            <h3 class="card-title">Euler</h3>
+                            <p class="card-text">A fast sampling method that produces good results with fewer steps. Great for quick iterations and testing prompts.</p>
+                        </div>
+                        <div class="card-small">
+                            <h3 class="card-title">DPM Solver</h3>
+                            <p class="card-text">A more advanced sampling method that can achieve higher quality results with fewer steps compared to traditional methods.</p>
+                        </div>
+                        <div class="card-small">
+                            <h3 class="card-title">Sampling Steps</h3>
+                            <p class="card-text">The number of iterations the diffusion process goes through. More steps generally mean higher quality but take longer to generate.</p>
+                        </div>
+                        <div class="card-small">
+                            <h3 class="card-title">CFG Scale</h3>
+                            <p class="card-text">Classifier-Free Guidance scale. This controls how closely the image follows your prompt. Higher values create images that match your prompt more closely but may look less natural.</p>
+                        </div>
+                    </div>
+                    
+                    <p class="space-layout-r">
+                        Learning these terms transformed my ability to control and customize the generation process. What once seemed 
+                        like random technical jargon now represented powerful tools for image refinement.
+                    </p>
+                </section>
+
+                <!-- ControlNet Section -->
+                <section id="controlnet">
+                    <h2>How ControlNet Works</h2>
+                    <p class="space-layout-r">
+                        One of the most exciting breakthroughs in my research was discovering ControlNet, which adds remarkable 
+                        control over the generation process:
+                    </p>
+                    
+                    <!-- ControlNet Overview Image -->
+                    <div class="image-style">
+                        <img src="assets/img-genai/7.jpg" alt="ControlNet Overview" class="img-style" onclick="openModal(this)">
+                    </div>
+                    
+                    <!-- Modal for ControlNet overview -->
+                    <div class="modal">
+                        <span class="close-button" onclick="closeModal()">&times;</span>
+                        <img class="modal-content" alt="Full-screen Image">
+                    </div>
+                    
+                    <p class="space-layout-r">
+                        ControlNet allows for precise control over image generation by using conditioning inputs like edges, depth maps, 
+                        or pose estimation. This technology essentially lets you "guide" the diffusion model by providing structural 
+                        information that the generated image should follow.
+                    </p>
+                    
+                    <!-- ControlNet Workflow Image -->
+                    <div class="image-style">
+                        <img src="assets/img-genai/6.jpg" alt="ControlNet Workflow" class="img-style" onclick="openModal(this)">
+                    </div>
+                    
+                    <!-- Modal for ControlNet workflow -->
+                    <div class="modal">
+                        <span class="close-button" onclick="closeModal()">&times;</span>
+                        <img class="modal-content" alt="Full-screen Image">
+                    </div>
+                    
+                    <p class="space-layout-r">
+                        I spent hours experimenting with different ControlNet modules and discovered how they could dramatically 
+                        improve the reliability and precision of image generation:
+                    </p>
+                    
+                    <div class="card-grid">
+                        <div class="card-small">
+                            <h3 class="card-title">Canny Edge</h3>
+                            <p class="card-text">Uses edge detection to maintain the structural outlines of an image or sketch</p>
+                        </div>
+                        <div class="card-small">
+                            <h3 class="card-title">Depth Map</h3>
+                            <p class="card-text">Controls the spatial relationships and perspective in the generated image</p>
+                        </div>
+                        <div class="card-small">
+                            <h3 class="card-title">Pose Control</h3>
+                            <p class="card-text">Guides the positioning of human figures based on skeletal keypoints</p>
+                        </div>
+                        <div class="card-small">
+                            <h3 class="card-title">Segmentation</h3>
+                            <p class="card-text">Defines regions of the image for specific content based on color-coded masks</p>
+                        </div>
+                    </div>
+                    
+                    <!-- ControlNet Results Image -->
+                    <div class="image-style">
+                        <img src="assets/img-genai/8.jpg" alt="ControlNet Results" class="img-style" onclick="openModal(this)">
+                    </div>
+                    
+                    <!-- Modal for ControlNet results -->
+                    <div class="modal">
+                        <span class="close-button" onclick="closeModal()">&times;</span>
+                        <img class="modal-content" alt="Full-screen Image">
+                    </div>
+                    
+                    <p class="space-layout-r">
+                        The power of ControlNet becomes evident when trying to maintain compositional consistency across multiple generations. 
+                        For designers, this is invaluable when creating variations of a concept while keeping core elements in place.
+                    </p>
+                    
+                    <!-- ControlNet Applications Image -->
+                    <div class="image-style">
+                        <img src="assets/img-genai/9.jpg" alt="ControlNet Applications" class="img-style" onclick="openModal(this)">
+                    </div>
+                    
+                    <!-- Modal for ControlNet applications -->
+                    <div class="modal">
+                        <span class="close-button" onclick="closeModal()">&times;</span>
+                        <img class="modal-content" alt="Full-screen Image">
+                    </div>
+                    
+                    <p class="space-layout-r">
+                        After mastering ControlNet, I could reliably generate images that followed specific layouts, maintained consistent 
+                        character appearances, and respected spatial relationships—capabilities that are essential for professional design work.
+                    </p>
+                    
+                    <!-- Technical Models Gallery -->
+                    <h3>Different Models and Their Applications</h3>
+                    <div class="component-gallery">
+                        <div class="gallery-item" onclick="openModal(this)">
+                            <img src="assets/img-genai/image 17.png" alt="GANs Concept" class="gallery-img">
+                            <div class="gallery-caption">
+                                <h3 class="gallery-title">GANs</h3>
+                                <p class="gallery-desc">Generative Adversarial Networks - using generator and discriminator networks in competition</p>
+                            </div>
+                        </div>
+                        
+                        <div class="gallery-item" onclick="openModal(this)">
+                            <img src="assets/img-genai/image 18.png" alt="Transformers Architecture" class="gallery-img">
+                            <div class="gallery-caption">
+                                <h3 class="gallery-title">Transformers</h3>
+                                <p class="gallery-desc">Self-attention mechanisms that revolutionized language models and enable contextual understanding</p>
+                            </div>
+                        </div>
+                        
+                        <div class="gallery-item" onclick="openModal(this)">
+                            <img src="assets/img-genai/image 19.png" alt="VAEs Concept" class="gallery-img">
+                            <div class="gallery-caption">
+                                <h3 class="gallery-title">VAEs</h3>
+                                <p class="gallery-desc">Neural networks that compress images to latent space and reconstruct them with probabilistic modeling</p>
+                            </div>
+                        </div>
+                        
+                        <div class="gallery-item" onclick="openModal(this)">
+                            <img src="assets/img-genai/image 20.png" alt="ComfyUI Workflow" class="gallery-img">
+                            <div class="gallery-caption">
+                                <h3 class="gallery-title">ComfyUI Workflow</h3>
+                                <p class="gallery-desc">Visual node-based interface showing the complete image generation pipeline with multiple components</p>
+                            </div>
+                        </div>
+                        
+                        <div class="gallery-item" onclick="openModal(this)">
+                            <img src="assets/img-genai/image 21.png" alt="Basic Output Example" class="gallery-img">
+                            <div class="gallery-caption">
+                                <h3 class="gallery-title">Base Model Output</h3>
+                                <p class="gallery-desc">Simple image generation with standard settings and basic prompt structure</p>
+                            </div>
+                        </div>
+                        
+                        <div class="gallery-item" onclick="openModal(this)">
+                            <img src="assets/img-genai/image 22.png" alt="Advanced Output Example" class="gallery-img">
+                            <div class="gallery-caption">
+                                <h3 class="gallery-title">Advanced Technique Output</h3>
+                                <p class="gallery-desc">Enhanced image quality using ControlNet, optimized parameters, and structured prompting</p>
+                            </div>
+                        </div>
+                        
+                        <div class="gallery-item" onclick="openModal(this)">
+                            <img src="assets/img-genai/image 23.png" alt="Application Example 1" class="gallery-img">
+                            <div class="gallery-caption">
+                                <h3 class="gallery-title">Design Application</h3>
+                                <p class="gallery-desc">Product concept renders generated rapidly through AI with consistent brand aesthetics</p>
+                            </div>
+                        </div>
+                        
+                        <div class="gallery-item" onclick="openModal(this)">
+                            <img src="assets/img-genai/image 24.png" alt="Application Example 2" class="gallery-img">
+                            <div class="gallery-caption">
+                                <h3 class="gallery-title">Marketing Application</h3>
+                                <p class="gallery-desc">Campaign visuals with unified style across multiple deliverables and formats</p>
+                            </div>
+                        </div>
+                        
+                        <div class="gallery-item" onclick="openModal(this)">
+                            <img src="assets/img-genai/image 25.png" alt="Application Example 3" class="gallery-img">
+                            <div class="gallery-caption">
+                                <h3 class="gallery-title">Content Creation</h3>
+                                <p class="gallery-desc">Social media assets and illustrations created through multi-step AI workflows</p>
+                            </div>
+                        </div>
+                        
+                        <div class="gallery-item" onclick="openModal(this)">
+                            <img src="assets/img-genai/image 26.png" alt="Application Example 4" class="gallery-img">
+                            <div class="gallery-caption">
+                                <h3 class="gallery-title">Prototyping Example</h3>
+                                <p class="gallery-desc">UI/UX interface mockups generated and refined through iterative AI assistance</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Modal for gallery images -->
+                    <div class="modal">
+                        <span class="close-button" onclick="closeModal()">&times;</span>
+                        <img class="modal-content" alt="Full-screen Image">
+                    </div>
+                </section>
+
+                <!-- Thoughts Section -->
+                <section id="thoughts">
+                    <h2>Thoughts on the Future of Generative AI</h2>
+                    <p class="space-layout-r">
+                        After deep diving into the rabbit hole of Generative AI, the possibilities seem endless.
+                        Anyone can create beautiful images, songs, and art with these powerful tools.
+                    </p>
+                    
+                    <!-- Final Thoughts Image -->
+                    <div class="image-style">
+                        <img src="assets/img-genai/image 27.png" alt="Future of AI in Design" class="img-style" onclick="openModal(this)">
+                    </div>
+                    
+                    <!-- Modal for final thoughts -->
+                    <div class="modal">
+                        <span class="close-button" onclick="closeModal()">&times;</span>
+                        <img class="modal-content" alt="Full-screen Image">
+                    </div>
+                    
+                    <p class="space-layout-r">
+                        AI in UX/UI will soon become the norm when UI screen designs can be generated and UX flows can be created 
+                        with just a click of a button from a prompt. This raises an important question for our field: How will we 
+                        set ourselves apart as UX/UI designers in this new landscape?
+                    </p>
+                    
+                    <p class="space-layout-r">
+                        I believe the answer lies in understanding both the technology and human needs at a deeper level. While AI can 
+                        generate options, designers who understand the technical terminology and concepts behind these tools will be 
+                        able to direct and refine AI outputs with precision. Our value will shift from pixel-perfect execution to 
+                        strategic guidance and human-centered evaluation of AI-generated solutions.
+                    </p>
+                    
+                    <div class="card-grid">
+                        <div class="card-small">
+                            <h3 class="card-title">Technical Fluency</h3>
+                            <p class="card-text">Understanding AI terminology and concepts will become a core skill for designers to effectively direct these tools</p>
+                        </div>
+                        <div class="card-small">
+                            <h3 class="card-title">Curation & Refinement</h3>
+                            <p class="card-text">The ability to critically evaluate and refine AI outputs will become more valuable than creation from scratch</p>
+                        </div>
+                        <div class="card-small">
+                            <h3 class="card-title">Strategic Integration</h3>
+                            <p class="card-text">Knowing when and how to integrate AI tools into the design process will differentiate expert designers</p>
+                        </div>
+                        <div class="card-small">
+                            <h3 class="card-title">Human Connection</h3>
+                            <p class="card-text">Understanding the nuanced human needs that AI might miss will remain a distinctly human advantage</p>
+                        </div>
+                    </div>
+                    
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer content space-l">
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-branding">
+                    <img src="assets/Ivan-logo.svg" alt="Ivan Yeo Logo" class="footer-logo">
+                    <h1>Ivan Yeo</h1>
+                </div>
+                <div class="footer-social">
+                    <ul class="social-links">
+                        <li>
+                            <a href="mailto:ivanyeoart@gmail.com" class="social-icon" aria-label="Email">
+                                <img src="assets/email-icon.svg" alt=" ">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://wa.me/6596374631" class="social-icon" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
+                                <img src="assets/whatsapp-icon.svg" alt=" ">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/ivanyeors/" class="social-icon" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                                <img src="assets/linkedin-icon.svg" alt=" ">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.behance.net/ivanyeors" class="social-icon" aria-label="Behance" target="_blank" rel="noopener noreferrer">
+                                <img src="assets/behance-icon.svg" alt=" ">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <a href="#top" class="back-to-top">Back to top</a>
+            </div>
+        </div>
+    </footer>
+
+    <nav class="bottom-app-bar">
+        <a href="https://ivanyeo.com" class="app-bar-item" rel="noopener noreferrer">
+            <span>Home</span>
+        </a>
+        <a href="assets/IvanYeo - 96374631.pdf" class="app-bar-item" target="_blank" rel="noopener noreferrer">
+            <span>Resume</span>
+        </a>
+        <a href="https://www.linkedin.com/in/ivanyeors/" class="app-bar-item" target="_blank" rel="noopener noreferrer">
+            <span>LinkedIn</span>
+        </a>
+    </nav>
+</body>
+</html>

@@ -46,18 +46,50 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Open the modal
-function openModal(imageElement) {
-  const modal = document.querySelector(".modal");
+function openModal(element) {
+  const modal = element.closest('section').querySelector(".modal");
+  if (!modal) {
+    console.error("Modal not found in section");
+    return;
+  }
+  
   const modalImage = modal.querySelector(".modal-content");
-
-  modalImage.src = imageElement.src; // Set the modal image source
-  modal.style.display = "flex"; // Display the modal
+  
+  // Determine the image source based on the element type
+  let imgSrc = '';
+  
+  if (element.tagName === 'IMG') {
+    // Direct click on an image
+    imgSrc = element.src;
+  } else if (element.classList.contains('gallery-item')) {
+    // Click on gallery item container
+    const img = element.querySelector('img');
+    if (img) {
+      imgSrc = img.src;
+    }
+  } else {
+    // Click on another container with an image inside
+    const img = element.querySelector('img');
+    if (img) {
+      imgSrc = img.src;
+    }
+  }
+  
+  if (!imgSrc) {
+    console.error("Could not find image source");
+    return;
+  }
+  
+  modalImage.src = imgSrc;
+  modal.style.display = "flex";
 }
 
 // Close the modal
 function closeModal() {
-  const modal = document.querySelector(".modal");
-  modal.style.display = "none"; // Hide the modal
+  const modals = document.querySelectorAll(".modal");
+  modals.forEach(modal => {
+    modal.style.display = "none";
+  });
 }
 
 // Close the modal with Esc key

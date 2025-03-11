@@ -159,11 +159,23 @@
                     </div>
                 </div>
                 
+                <!-- Modal for component gallery -->
+                <div class="modal">
+                    <span class="close-button" onclick="closeModal()">&times;</span>
+                    <img class="modal-content" alt="Full-screen Image">
+                </div>
+                
                 <p class="space-layout-r">The 31 parts include diodes, resistors, headers, and various other small components that all need to be carefully assembled:</p>
                 
                 <!-- Inventory Image -->
                 <div class="image-style">
                     <img src="assets/img-corne/inventory.jpg" alt="Corne Keyboard Parts Inventory" class="img-style" onclick="openModal(this)">
+                </div>
+                
+                <!-- Modal for inventory image -->
+                <div class="modal">
+                    <span class="close-button" onclick="closeModal()">&times;</span>
+                    <img class="modal-content" alt="Full-screen Image">
                 </div>
             </section>
 
@@ -178,6 +190,12 @@
                 <!-- BOM Image -->
                 <div class="image-style">
                     <img src="assets/img-corne/BOM.png" alt="Bill of Materials for Corne Keyboard" class="img-style" onclick="openModal(this)">
+                </div>
+                
+                <!-- Modal for BOM image -->
+                <div class="modal">
+                    <span class="close-button" onclick="closeModal()">&times;</span>
+                    <img class="modal-content" alt="Full-screen Image">
                 </div>
                 <br>
                 <div class="card-grid">
@@ -259,6 +277,12 @@
                     <img src="assets/img-corne/issuess-1.jpg" alt="Troubleshooting keyboard issues with help from the community" class="img-style" onclick="openModal(this)">
                 </div>
                 
+                <!-- Modal for issues image -->
+                <div class="modal">
+                    <span class="close-button" onclick="closeModal()">&times;</span>
+                    <img class="modal-content" alt="Full-screen Image">
+                </div>
+                
                 <p class="space-layout-r">When I ran into issues with my OLED screen and soldering mistakes, 
                     community members were quick to identify the problems and suggest solutions. Having mentors 
                     who've been through the same process was the key to my successful build.</p>
@@ -268,6 +292,12 @@
                     <img src="assets/img-corne/working-screen.jpg" alt="Testing the keyboard build and firmware" class="img-style" onclick="openModal(this)">
                 </div>
                 
+                <!-- Modal for working screen image -->
+                <div class="modal">
+                    <span class="close-button" onclick="closeModal()">&times;</span>
+                    <img class="modal-content" alt="Full-screen Image">
+                </div>
+                
                 <h3>Learning PCB Design with KiCAD</h3>
                 <p class="space-layout-r">One of the most fascinating aspects of this journey was learning how to read and understand PCB schematics.
                     The Corne keyboard is open-source, which means all design files are available, but interpreting them requires knowledge I didn't initially have.</p>
@@ -275,6 +305,12 @@
                 <!-- PCB Design Image -->
                 <div class="image-style">
                     <img src="assets/img-corne/corne-pcb-schematics.png" alt="PCB Design in KiCAD" class="img-style" onclick="openModal(this)">
+                </div>
+                
+                <!-- Modal for PCB design image -->
+                <div class="modal">
+                    <span class="close-button" onclick="closeModal()">&times;</span>
+                    <img class="modal-content" alt="Full-screen Image">
                 </div>
                 
                 <p class="space-layout-r">I invested some time in learning KiCAD, an open-source electronics design automation software, 
@@ -304,6 +340,12 @@
                 <!-- Testing Gallery -->
                 <div class="image-style">
                     <img src="assets/img-corne/keymaps-github-code.png" alt="Testing the keyboard build and firmware" class="img-style" onclick="openModal(this)">
+                </div>
+                
+                <!-- Modal for testing image -->
+                <div class="modal">
+                    <span class="close-button" onclick="closeModal()">&times;</span>
+                    <img class="modal-content" alt="Full-screen Image">
                 </div>
                 
 
@@ -411,6 +453,12 @@
                     </div>
                     
                 </div>
+                
+                <!-- Modal for community build gallery -->
+                <div class="modal">
+                    <span class="close-button" onclick="closeModal()">&times;</span>
+                    <img class="modal-content" alt="Full-screen Image">
+                </div>
             </section>
 
             <!-- Summary Section -->
@@ -451,6 +499,12 @@
                 <!-- Final Keyboard Image -->
                 <div class="image-style">
                     <img src="assets/img-corne/final-1.jpg" alt="My completed Corne keyboard setup" class="img-style" onclick="openModal(this)">
+                </div>
+                
+                <!-- Modal for final keyboard image -->
+                <div class="modal">
+                    <span class="close-button" onclick="closeModal()">&times;</span>
+                    <img class="modal-content" alt="Full-screen Image">
                 </div>
 
             </section>
@@ -506,66 +560,6 @@
             <span>LinkedIn</span>
         </a>
     </nav>
-
-    <script>
-        // JavaScript for anchor link functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            // Get all anchor links
-            const anchorLinks = document.querySelectorAll('.anchor-link');
-            const sections = document.querySelectorAll('section[id]');
-            
-            // Function to check which section is in view
-            function highlightCurrentSection() {
-                let scrollPosition = window.scrollY + 100; // Add offset
-                
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    const sectionHeight = section.offsetHeight;
-                    const sectionId = section.getAttribute('id');
-                    
-                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                        // Remove active class from all links
-                        anchorLinks.forEach(link => {
-                            link.classList.remove('active');
-                        });
-                        
-                        // Add active class to current section link
-                        const activeLink = document.querySelector(`.anchor-link[href="#${sectionId}"]`);
-                        if (activeLink) {
-                            activeLink.classList.add('active');
-                        }
-                    }
-                });
-            }
-            
-            // Handle scroll events
-            window.addEventListener('scroll', highlightCurrentSection);
-            
-            // Initial check on page load
-            highlightCurrentSection();
-            
-            // For mobile: expand/collapse list items on tap
-            if (window.innerWidth <= 768) {
-                const listItems = document.querySelectorAll('.anchor-link-list li');
-                
-                listItems.forEach(item => {
-                    item.addEventListener('click', function(e) {
-                        // Don't prevent default on the actual anchor link
-                        if (!e.target.classList.contains('anchor-link')) {
-                            e.preventDefault();
-                            
-                            // Toggle expanded class
-                            listItems.forEach(li => {
-                                if (li !== this) li.classList.remove('expanded');
-                            });
-                            
-                            this.classList.toggle('expanded');
-                        }
-                    });
-                });
-            }
-        });
-    </script>
 </body>
 </html>
 
